@@ -531,6 +531,14 @@ I also used a selection of off-white and off-black colours to provide additional
 
 #### **Language/Tone**
 
+I wanted the language to reflect a semiserious but fun atmosphere, reflecting a the brands goal to deliver fitness programming via challenging, but fun fitness programming. Therefore content was written in this style, avoiding overly technical or formal language where possible.
+
+Similarly, I wanted to use fonts that reinforce the identity of the site, while remaining easy to read. To achieve this I used the following two Google Fonts;
+
+- IBM Plex Sans - A typeface designed for IBM to capture the relationship between humankind and machine. This relates well to IFCs brand, who wish to capture the relationship being mind (spirit) and body (machine).
+- Poppins - A geometric sans serif, designed for to be monolinear and highly legible.
+- Sans-serif - Web safe font, used if primary two fonts fail to load.
+
 #### **Styling Considerations**
 
 Before beginning development, I listed some styling ideas that I felt benefit the website. The majority of these can be seen in the wireframes.
