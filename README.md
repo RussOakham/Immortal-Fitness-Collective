@@ -414,7 +414,7 @@ All inputs will prefill with customer information if user already logged in.
 - _Customer Details_: Input for name, email, contact number.
 - _Delivery Address_: Input for delivery address.
 - _Payment Information_: Input for payment information, card details, billing address - using Stripe payments integration.
-- _Basket Summary_: Itemised summary of basket being paid for, including total cost breakdowns.
+- _Basket Summary_: Itemised summary of basket being paid for, including total cost breakdowns. Include payment plan information if purchasing programming subscription.
 
 </details>
 
@@ -423,22 +423,6 @@ All inputs will prefill with customer information if user already logged in.
 
 - _Purchase Confirmation / Error Message_: Message confirming successful or unsuccessful completion of purchase.
 - _Purchase Summary_: Summary of purchase information, including delivery address.
-
-</details>
-
-<details>
-<summary>Programme Sign Up:</summary>
-
-- _Programme Image_: Provides users a visual of the product.
-- _Product Title_: Provides users with the name of the product.
-- _Rating_: Allows users to see how highly other users have rated the recipe.
-- _Description & Details_: Description of product, including any relevant details.
-- _Size Picker_: Allows users to choose product size if applicable.
-- _Colour Picker_: Allows users to choose product colour if applicable.
-- _Add to Cart_: Button allowing customers to add to cart.
-- _Product Price_: Overview of product price showing ex VAT, VAT and Total values.
-- _Rate & Review_: Input area, allowing users to submit a rating and review for items they have purchased.
-- _Historic Reviews_: List of reviews submitted by users for the product.
 
 </details>
 
@@ -456,20 +440,61 @@ All inputs will prefill with customer information if user already logged in.
 <details>
 <summary>User Profile:</summary>
 
+- _Username Banner_: Banner displaying the username of logged in account, allowing users to quickly identify if they are logged into their correct desired account.
+- _Purchase History_: All historical purchases by the user displayed in list format.
+- _Active Subscriptions_: List of all active subscriptions, with links to private programming pages.
+
 </details>
 
 <details>
 <summary>Members Programming:</summary>
+
+- _Daily Workout_: Daily view of workouts programmed for the week, with details on exercise standards and time domains.
+- _Pagination_: Each page shows one week of programming.
 
 </details>
 
 <details>
 <summary>Add Blog Post:</summary>
 
+- _Input areas for below blog post data points_:
+- Blog Title - Text
+- Image - File upload and preview
+- Blog Content - Text
+
 </details>
 
 <details>
 <summary>Edit Post Detail:</summary>
+
+Inputs are pre-populated with historic blog information.
+
+- _Input areas for below blog post data points_:
+- Blog Title - Text
+- Image - File upload and preview
+- Blog Content - Text
+
+</details>
+
+<details>
+<summary>Add Programming:</summary>
+
+- _Input areas for below blog post data points_:
+- Workout Title - Text
+- Date - Date Picket
+- Workout - Text
+
+</details>
+
+<details>
+<summary>Edit Programming:</summary>
+
+Inputs are pre-populated with historic blog information.
+
+- _Input areas for below blog post data points_:
+- Workout Title - Text
+- Date - Date Picket
+- Workout - Text
 
 </details>
 
@@ -485,8 +510,20 @@ This is the sensory design section of a website, or how it looks, feels and soun
 
 #### **Colour & Styling**
 
+Upon deciding the brand the website as 'Immortal Fitness Collective' I found [this](markdown-resources\img\immortal-fc-logo.png) in Canva.
+
+I decided to style the logo with the following three colours, to envoke the related emotions;
+
+- Gold: To represent a goal to be striven for.
+- Gun metal grey: To represent industry and hard work required to achieve the goal.
+- White: To denote transparency and honesty found in hard work.
+
+These colours also serve to provide a light and clean aesthetic, which fits desired design of the wider site very well. Once these colours were picked, I used Canva's colour palette generator to find complementary colours to use across the site.
+
 <details>
 <summary>Colour Palette</summary>
+
+![IFC Colour Palette](markdown-resources\img\immortal-fitness-collective-colour-palette.png)
 
 </details>
 
@@ -516,7 +553,7 @@ Before beginning development, I listed some styling ideas that I felt benefit th
 
 ## 3. **Database Design**
 
-MongoDB was the database solution used for the website development, using the below, structured plan.
+PostgreSQL was the database solution used for the website development, using the below, structured plan.
 
 &nbsp;
 
