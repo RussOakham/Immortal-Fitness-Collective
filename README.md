@@ -320,6 +320,91 @@ Overview of UX design decisions, including examples of websites I have viewed as
 
 Overview of site and page structure, explaining functionality and purpose.
 
+<details>
+<summary>Home Page:</summary>
+
+</details>
+
+<details>
+<summary>About Us:</summary>
+
+</details>
+
+<details>
+<summary>Blog:</summary>
+
+</details>
+
+<details>
+<summary>Blog Post Detail:</summary>
+
+</details>
+
+<details>
+<summary>Programming:</summary>
+
+</details>
+
+<details>
+<summary>Shop / Product Catelogue:</summary>
+
+</details>
+
+<details>
+<summary>Product Detail:</summary>
+
+</details>
+
+<details>
+<summary>Basket Overview:</summary>
+
+</details>
+
+<details>
+<summary>Checkout:</summary>
+
+</details>
+
+<details>
+<summary>Purchase Confirmation:</summary>
+
+</details>
+
+<details>
+<summary>Sign Up:</summary>
+
+</details>
+
+<details>
+<summary>Contact Us:</summary>
+
+</details>
+
+<details>
+<summary>User Login / Registration:</summary>
+
+</details>
+
+<details>
+<summary>User Profile:</summary>
+
+</details>
+
+<details>
+<summary>Members Programming:</summary>
+
+</details>
+
+<details>
+<summary>Add Blog Post:</summary>
+
+</details>
+
+<details>
+<summary>Edit Post Detail:</summary>
+
+</details>
+
 &nbsp;
 
 ### **Skeleton**
