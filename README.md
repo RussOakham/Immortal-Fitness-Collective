@@ -74,33 +74,251 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <th>Reason</th>
     </tr>
     <tr>
-      <td>US001</td>
+      <td>US101</td>
       <td>Generic User</td>
       <td>Easily understand purpose and layout of site</td>
       <td>Intuitive navigation, without need for additional instruction</td>
     </tr>
     <tr>
-      <td>US002</td>
+      <td>US102</td>
       <td>Generic User</td>
       <td>Site is responsive across all devices</td>
       <td>Able to view site across all devices easily and without compromise</td>
     </tr>
     <tr>
-      <td>US003</td>
+      <td>US103</td>
       <td>Generic User</td>
       <td>Navigation easily accessible at all times</td>
       <td>Quickly and easily navigate across all site pages</td>
+    </tr>
+    <tr>
+      <td>US104</td>
+      <td>Registered User</td>
+      <td>Easily access my purchased fitness programme and purchase history</td>
+      <td>Quickly and conventiently access product information</td>
+    </tr>
+    <tr>
+      <td>US105</td>
+      <td>Generic User</td>
+      <td>Easily access recent and historical blog posts</td>
+      <td>Review content conveniently and time efficiently</td>
     </tr>
   </table>
 
 </details>
 &nbsp;
 
-Generic User <br>
-New User <br>
-Registered User <br>
-Admin <br>
+<details>
+  <summary>Searching</summary>
 
+  <table>
+    <tr>
+      <th>Story ID</th>
+      <th>User Type</th>
+      <th>Goal</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td>US201</td>
+      <td>Generic User</td>
+      <td>Easily view products by category</td>
+      <td>Find products of specific type I want</td>
+    </tr>
+    <tr>
+      <td>US203</td>
+      <td>Generic User</td>
+      <td>View Product Details</td>
+      <td>View product details such as description, size and colour</td>
+    </tr>
+    <tr>
+      <td>US204</td>
+      <td>Generic User</td>
+      <td>Search products by keyword</td>
+      <td>Find products easily, for example by name or brand</td>
+    </tr>
+    <tr>
+      <td>US205</td>
+      <td>Generic User</td>
+      <td>Search and filter products by rating</td>
+      <td>Find only the highest-rated products to choose from</td>
+    </tr>
+    <tr>
+      <td>US206</td>
+      <td>Generic User</td>
+      <td>Search and filter products by brand</td>
+      <td>Find only the products from specific brands</td>
+    </tr>
+    <tr>
+      <td>US207</td>
+      <td>Generic User</td>
+      <td>Search historic blog content by keyword</td>
+      <td>Find blog posts easily that fit my search criteria</td>
+    </tr>
+  </table>
+
+</details>
+&nbsp;
+
+<details>
+  <summary>Users</summary>
+
+  <table>
+    <tr>
+      <th>Story ID</th>
+      <th>User Type</th>
+      <th>Goal</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td>US301</td>
+      <td>New User</td>
+      <td>Easily register with the site</td>
+      <td>Easily purchase products and programming</td>
+    </tr>
+    <tr>
+      <td>US302</td>
+      <td>Registered User</td>
+      <td>Login and Logout of my account</td>
+      <td>Access and update personal details, view subscribed programming and review purchase history, keep my account secure</td>
+    </tr>
+    <tr>
+      <td>US304</td>
+      <td>Registered User</td>
+      <td>Reset Password</td>
+      <td>To improve security of my account and recover access if I forget my password</td>
+    </tr>
+    <tr>
+      <td>US304</td>
+      <td>Registered User</td>
+      <td>Submit ratings and reviews for purchased products and programming</td>
+      <td>Share my experience of the products and programming for other users</td>
+    </tr>
+    <tr>
+      <td>US305</td>
+      <td>Registered User</td>
+      <td>Unsubscribe from products</td>
+      <td>Cease subscription when is appropriate to the user</td>
+    </tr>
+  </table>
+
+</details>
+&nbsp;
+
+<details>
+  <summary>Administration</summary>
+
+  <table>
+    <tr>
+      <th>Story ID</th>
+      <th>User Type</th>
+      <th>Goal</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td>US401</td>
+      <td>Admin</td>
+      <td>Add, Edit and Delete Blog Content to the site</td>
+      <td>Easily and time efficeintly manage site content, ensuring strong brand promotion</td>
+    </tr>
+    <tr>
+      <td>US402</td>
+      <td>Admin</td>
+      <td>Add, Edit and Delete fitness programming for subscription members</td>
+      <td>Easily and time efficeintly manage subscribed content, ensuring high quality product delivery and brand promotion</td>
+    </tr>
+    <tr>
+      <td>US403</td>
+      <td>Admin</td>
+      <td>Add, Edit and Delete fitness products within site shop</td>
+      <td>Manage store content to ensure it is up-to-date and accurate</td>
+    </tr>
+    <tr>
+      <td>US404</td>
+      <td>Admin</td>
+      <td>Manage access to Subscribed content</td>
+      <td>Ensure only users with active subscriptions can access paid-for content</td>
+    </tr>
+  </table>
+
+</details>
+&nbsp;
+
+<details>
+  <summary>Purchasing and Checkout</summary>
+
+  <table>
+    <tr>
+      <th>Story ID</th>
+      <th>User Type</th>
+      <th>Goal</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td>US601</td>
+      <td>Generic User</td>
+      <td>Easily select type and amount of product to add to basket</td>
+      <td>Ensure accuracy of selections</td>
+    </tr>
+    <tr>
+      <td>US602</td>
+      <td>Generic User</td>
+      <td>View basket contents prior to checkout</td>
+      <td>Identify total quantity and cost of items I will recieve</td>
+    </tr>
+    <tr>
+      <td>US603</td>
+      <td>Generic User</td>
+      <td>Adjust quantity and type of individual products in basket</td>
+      <td>Ensure final basket is accurate for desires, prior to checkout</td>
+    </tr>
+    <tr>
+      <td>US604</td>
+      <td>Generic User</td>
+      <td>Easily enter payment details</td>
+      <td>Checkout quickly and efficiently, with minimal hassle</td>
+    </tr>
+    <tr>
+      <td>US605</td>
+      <td>Generic User</td>
+      <td>Receive assurance personal and payment information is safe and secure</td>
+      <td>Confidently provide perosonal and payment information needed to make a purchase</td>
+    </tr>
+    <tr>
+      <td>US606</td>
+      <td>Generic User</td>
+      <td>View order confirmation after checkout</td>
+      <td>Review order details, to ensure there are no user or system mistakes in the order</td>
+    </tr>
+    <tr>
+      <td>US607</td>
+      <td>Generic User</td>
+      <td>Recieve order confirmation from e-mail after checkout</td>
+      <td>Keep order confirmation and purchase details for personal record keeping</td>
+    </tr>
+  </table>
+
+</details>
+&nbsp;
+
+<details>
+  <summary>General</summary>
+
+  <table>
+    <tr>
+      <th>Story ID</th>
+      <th>User Type</th>
+      <th>Goal</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td>US701</td>
+      <td>Generic User</td>
+      <td>Receive clear feedback for actions on the site</td>
+      <td>Know if actions such as product purchase are complete or require further steps</td>
+    </tr>
+  </table>
+
+</details>
 &nbsp;
 
 ### **Structure**
@@ -416,6 +634,6 @@ The photos and images used for this site were obtained.
 
 ### **Acknowledgements**
 
-- Thanks to my mentor, [Precious Ijege](https://github.com/precious-ijege) for his suggestions, time and support.
+- Thanks to my mentor, [Precious Ijege](https://github.com/precious-ijege) for their suggestions, time and support.
 - Thanks to those on Slack for reviewing my project and making suggestions.
 - Thanks to my housemates, friends and family for reviewing the project and offering constructive feedback.
