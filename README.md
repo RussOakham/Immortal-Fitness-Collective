@@ -321,47 +321,100 @@ Overview of UX design decisions, including examples of websites I have viewed as
 Overview of site and page structure, explaining functionality and purpose.
 
 <details>
+<summary>Present on all pages</summary>
+
+- _Header/Footer_: For navigation across the site, access their basket and to external resources such as social media pages.
+- _Website Logo_: To identify the 'Immortal Fitness Collective' site branding.
+
+</details>
+
+<details>
 <summary>Home Page:</summary>
+
+- _Hero Banner_: Promote 'Immortal Fitness Collective' brand awareness and call to action.
+- _Testimonials_: Customer testimonials to build brand confidence.
+- _Programme Overview_: Banner promoting subscription based fitness programmes on offer.
+- _Product Highlight_: Banner highlighting featured products in online shop.
+- _Contact Us_: Modal popup to submit contact request form, so users can ask additional questions.
 
 </details>
 
 <details>
 <summary>About Us:</summary>
 
+- _About Us Banner_: Promote 'Immortal Fitness Collective' brand awareness and call to action.
+- _Our Mission_: Overview of company mission, values and goals.
+- _Meet the team_: Staff Profiles, including biographies, qualifications and area of responsibility
+
 </details>
 
 <details>
 <summary>Blog:</summary>
+
+- _Blog Post Summaries_: Card format summaries of blog posts, including title, image, description, date posted and author.
 
 </details>
 
 <details>
 <summary>Blog Post Detail:</summary>
 
+- _Blog Post Detail_: Full blog article, showing blog title, image, date posted, author and full content.
+
 </details>
 
 <details>
 <summary>Programming:</summary>
+
+- _Programming Banner_: Promote 'Immortal Fitness Collective' Brand awareness.
+- _Programme Summaries_: Overview of each fitness programmes package, including suitable fitness goals, time requirement, equipment required and sample workout.
+- _Programme CTA_: Call to action link, directing customer to subscription checkout.
 
 </details>
 
 <details>
 <summary>Shop / Product Catelogue:</summary>
 
+- _Search Bar_: Text input bar, allowing users to search products by keyword, category and minimum rating.
+- _Product Catalogue_: Card format view of products in shop, showing title, image, rating, price and buy now option. Catalogue with update in line with search parameters entered in search bar.
+- _Pagination_: Page is paginated after 20 products are displayed, to ensure quick page load and efficient user navigation.
+
 </details>
 
 <details>
 <summary>Product Detail:</summary>
 
+- _Product Image_: Provides users a visual of the product.
+- _Product Title_: Provides users with the name of the product.
+- _Rating_: Allows users to see how highly other users have rated the recipe.
+- _Description & Details_: Description of product, including any relevant details.
+- _Size Picker_: Allows users to choose product size if applicable.
+- _Colour Picker_: Allows users to choose product colour if applicable.
+- _Add to Cart_: Button allowing customers to add to cart.
+- _Product Price_: Overview of product price showing ex VAT, VAT and Total values.
+- _Rate & Review_: Input area, allowing users to submit a rating and review for items they have purchased.
+- _Historic Reviews_: List of reviews submitted by users for the product.
+
 </details>
 
 <details>
-<summary>Basket Overview:</summary>
+<summary>Your Basket:</summary>
+
+- _Items in basket_: List of items in basket, showing image, title and price breakdown.
+- _Basket Totals_: Overview of basket totals, including quantity and price breakdown.
+- _Edit Basket Options_: Options to increase/decrease quantities and remove items from basket.
+- _Checkout Now_: Button directing customer to checkout page.
 
 </details>
 
 <details>
 <summary>Checkout:</summary>
+
+All inputs will prefill with customer information if user already logged in.
+
+- _Customer Details_: Input for name, email, contact number.
+- _Delivery Address_: Input for delivery address.
+- _Payment Information_: Input for payment information, card details, billing address - using Stripe payments integration.
+- _Basket Summary_: Itemised summary of basket being paid for, including total cost breakdowns.
 
 </details>
 
