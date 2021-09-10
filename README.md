@@ -106,7 +106,6 @@ Overview of UX design decisions, including examples of websites I have viewed as
   </table>
 
 </details>
-&nbsp;
 
 <details>
   <summary>Searching</summary>
@@ -157,7 +156,6 @@ Overview of UX design decisions, including examples of websites I have viewed as
   </table>
 
 </details>
-&nbsp;
 
 <details>
   <summary>Users</summary>
@@ -202,7 +200,6 @@ Overview of UX design decisions, including examples of websites I have viewed as
   </table>
 
 </details>
-&nbsp;
 
 <details>
   <summary>Administration</summary>
@@ -241,7 +238,6 @@ Overview of UX design decisions, including examples of websites I have viewed as
   </table>
 
 </details>
-&nbsp;
 
 <details>
   <summary>Purchasing and Checkout</summary>
@@ -298,7 +294,6 @@ Overview of UX design decisions, including examples of websites I have viewed as
   </table>
 
 </details>
-&nbsp;
 
 <details>
   <summary>General</summary>
