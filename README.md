@@ -2,6 +2,8 @@
 
 ## **Project overview**
 
+Immortal Fitness Collective is an online fitness platform, designed to promote fitness within their community via paid subscription to online fitness plans, educational blog posts and selling of fitness apparel, equipment and accessories.
+
 ## **Deployed site**
 
 ## **Table of Contents**
@@ -52,6 +54,8 @@
 Overview of UX design decisions, including examples of websites I have viewed as part of research and inspiration.
 
 ### **User Stories**
+
+Th
 
 &nbsp;
 
