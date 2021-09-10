@@ -419,22 +419,37 @@ All inputs will prefill with customer information if user already logged in.
 </details>
 
 <details>
-<summary>Purchase Confirmation:</summary>
+<summary>Purchase Confirmation / Error:</summary>
+
+- _Purchase Confirmation / Error Message_: Message confirming successful or unsuccessful completion of purchase.
+- _Purchase Summary_: Summary of purchase information, including delivery address.
 
 </details>
 
 <details>
-<summary>Sign Up:</summary>
+<summary>Programme Sign Up:</summary>
 
-</details>
-
-<details>
-<summary>Contact Us:</summary>
+- _Programme Image_: Provides users a visual of the product.
+- _Product Title_: Provides users with the name of the product.
+- _Rating_: Allows users to see how highly other users have rated the recipe.
+- _Description & Details_: Description of product, including any relevant details.
+- _Size Picker_: Allows users to choose product size if applicable.
+- _Colour Picker_: Allows users to choose product colour if applicable.
+- _Add to Cart_: Button allowing customers to add to cart.
+- _Product Price_: Overview of product price showing ex VAT, VAT and Total values.
+- _Rate & Review_: Input area, allowing users to submit a rating and review for items they have purchased.
+- _Historic Reviews_: List of reviews submitted by users for the product.
 
 </details>
 
 <details>
 <summary>User Login / Registration:</summary>
+
+- _Username Input_: Text input box, allowing users to enter their username.
+- _Password Input_: Text input box, allowing users to enter their password.
+- _Password Confirmation (Registration)_ : Text input box, must match password input, to ensure user does not incorrectly type password while registering.
+- _Forgot Password_: Link allowing users to request forgotten password e-mail.
+- _Submit / Cancel_: Buttons allowing users to submit entered information, or cancel and restart.
 
 </details>
 
