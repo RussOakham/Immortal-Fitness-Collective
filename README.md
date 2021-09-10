@@ -4,7 +4,15 @@
 
 Immortal Fitness Collective is an online fitness platform, designed to promote fitness within their community via paid subscription to online fitness plans, educational blog posts and selling of fitness apparel, equipment and accessories.
 
+The site is created to engage users who have an interest in improving their personal fitness, with focus on two core fitness programming areas - improved general fitness (everyday fitess) and elite fitness for athletes (competitor fitness).
+
+I have used HTML, CSS, JavaScript and Python (Django and Flask) to build the site, ensuring it is fully responsive for user interaction on their chosen devices.
+
 ## **Deployed site**
+
+The live website can be found at teh following link; [PLACEHOLDER]
+
+[PLACEHOLDER IMAGE]
 
 ## **Table of Contents**
 
@@ -55,7 +63,43 @@ Overview of UX design decisions, including examples of websites I have viewed as
 
 ### **User Stories**
 
-Th
+<details>
+  <summary>Browsing</summary>
+
+  <table>
+    <tr>
+      <th>Story ID</th>
+      <th>User Type</th>
+      <th>Goal</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td>US001</td>
+      <td>Generic User</td>
+      <td>Easily understand purpose and layout of site</td>
+      <td>Intuitive navigation, without need for additional instruction</td>
+    </tr>
+    <tr>
+      <td>US002</td>
+      <td>Generic User</td>
+      <td>Site is responsive across all devices</td>
+      <td>Able to view site across all devices easily and without compromise</td>
+    </tr>
+    <tr>
+      <td>US003</td>
+      <td>Generic User</td>
+      <td>Navigation easily accessible at all times</td>
+      <td>Quickly and easily navigate across all site pages</td>
+    </tr>
+  </table>
+
+</details>
+&nbsp;
+
+Generic User <br>
+New User <br>
+Registered User <br>
+Admin <br>
 
 &nbsp;
 
