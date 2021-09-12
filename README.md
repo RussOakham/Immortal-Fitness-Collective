@@ -450,7 +450,7 @@ Inputs are pre-populated with historic workout information.
 
 At this point I began creating wireframes, using the above structure considerations. I used [Balsamiq](https://balsamiq.com/) these below;
 
-- [Wireframes PDF](markdown-resources\wireframes\Immortal-Fitness-Collective.pdf)
+- [Wireframes PDF](markdown-resources/wireframes/Immortal-Fitness-Collective.pdf)
 
 ### **Surface**
 
@@ -458,7 +458,7 @@ This is the sensory design section of a website, or how it looks, feels and soun
 
 #### **Colour & Styling**
 
-Upon deciding the brand the website as 'Immortal Fitness Collective' I found [this](markdown-resources\img\immortal-fc-logo.png) in Canva.
+Upon deciding the brand the website as 'Immortal Fitness Collective' I found [this](markdown-resources/img/immortal-fc-logo.png) in Canva.
 
 I decided to style the logo with the following three colours, to envoke the related emotions;
 
@@ -471,7 +471,7 @@ These colours also serve to provide a light and clean aesthetic, which fits desi
 <details>
 <summary>Colour Palette</summary>
 
-![IFC Colour Palette](markdown-resources\img\immortal-fitness-collective-colour-palette.png)
+![IFC Colour Palette](markdown-resources/img/immortal-fitness-collective-colour-palette.png)
 
 </details>
 
