@@ -2,7 +2,7 @@
 
 ## **Project overview**
 
-Immortal Fitness Collective is an online fitness platform, designed to promote fitness within their community via paid subscription to online fitness plans, educational blog posts and selling of fitness apparel, equipment and accessories.
+Immortal Fitness Collective is an online fitness platform, designed to promote fitness within their community via paid subscription to online fitness plans and selling of fitness apparel, equipment and accessories.
 
 The site is created to engage users who have an interest in improving their personal fitness, with focus on two core fitness programming areas - improved general fitness (everyday fitess) and elite fitness for athletes (competitor fitness).
 
@@ -97,12 +97,6 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <td>Easily access my purchased fitness programme and purchase history</td>
       <td>Quickly and conventiently access product information</td>
     </tr>
-    <tr>
-      <td>US105</td>
-      <td>Generic User</td>
-      <td>Easily access recent and historical blog posts</td>
-      <td>Review content conveniently and time efficiently</td>
-    </tr>
   </table>
 
 </details>
@@ -146,12 +140,6 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <td>Generic User</td>
       <td>Search and filter products by brand</td>
       <td>Find only the products from specific brands</td>
-    </tr>
-    <tr>
-      <td>US207</td>
-      <td>Generic User</td>
-      <td>Search historic blog content by keyword</td>
-      <td>Find blog posts easily that fit my search criteria</td>
     </tr>
   </table>
 
@@ -214,23 +202,17 @@ Overview of UX design decisions, including examples of websites I have viewed as
     <tr>
       <td>US401</td>
       <td>Admin</td>
-      <td>Add, Edit and Delete Blog Content to the site</td>
-      <td>Easily and time efficeintly manage site content, ensuring strong brand promotion</td>
-    </tr>
-    <tr>
-      <td>US402</td>
-      <td>Admin</td>
       <td>Add, Edit and Delete fitness programming for subscription members</td>
       <td>Easily and time efficeintly manage subscribed content, ensuring high quality product delivery and brand promotion</td>
     </tr>
     <tr>
-      <td>US403</td>
+      <td>US402</td>
       <td>Admin</td>
       <td>Add, Edit and Delete fitness products within site shop</td>
       <td>Manage store content to ensure it is up-to-date and accurate</td>
     </tr>
     <tr>
-      <td>US404</td>
+      <td>US403</td>
       <td>Admin</td>
       <td>Manage access to Subscribed content</td>
       <td>Ensure only users with active subscriptions can access paid-for content</td>
@@ -349,20 +331,6 @@ Overview of site and page structure, explaining functionality and purpose.
 </details>
 
 <details>
-<summary>Blog:</summary>
-
-- _Blog Post Summaries_: Card format summaries of blog posts, including title, image, description, date posted and author.
-
-</details>
-
-<details>
-<summary>Blog Post Detail:</summary>
-
-- _Blog Post Detail_: Full blog article, showing blog title, image, date posted, author and full content.
-
-</details>
-
-<details>
 <summary>Programming:</summary>
 
 - _Programming Banner_: Promote 'Immortal Fitness Collective' Brand awareness.
@@ -455,31 +423,9 @@ All inputs will prefill with customer information if user already logged in.
 </details>
 
 <details>
-<summary>Add Blog Post:</summary>
-
-- _Input areas for below blog post data points_:
-- Blog Title - Text
-- Image - File upload and preview
-- Blog Content - Text
-
-</details>
-
-<details>
-<summary>Edit Post Detail:</summary>
-
-Inputs are pre-populated with historic blog information.
-
-- _Input areas for below blog post data points_:
-- Blog Title - Text
-- Image - File upload and preview
-- Blog Content - Text
-
-</details>
-
-<details>
 <summary>Add Programming:</summary>
 
-- _Input areas for below blog post data points_:
+- _Input areas for below workout data points_:
 - Workout Title - Text
 - Date - Date Picket
 - Workout - Text
@@ -489,9 +435,9 @@ Inputs are pre-populated with historic blog information.
 <details>
 <summary>Edit Programming:</summary>
 
-Inputs are pre-populated with historic blog information.
+Inputs are pre-populated with historic workout information.
 
-- _Input areas for below blog post data points_:
+- _Input areas for below workout data points_:
 - Workout Title - Text
 - Date - Date Picket
 - Workout - Text
@@ -503,6 +449,8 @@ Inputs are pre-populated with historic blog information.
 ### **Skeleton**
 
 At this point I began creating wireframes, using the above structure considerations. I used [Balsamiq](https://balsamiq.com/) these below;
+
+- [Wireframes PDF](markdown-resources\wireframes\Immortal-Fitness-Collective.pdf)
 
 ### **Surface**
 
