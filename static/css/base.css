@@ -15,11 +15,11 @@ html {
 
 body {
   box-sizing: border-box;
-  background: url("/media/crossfit-banner-large-compressed.jpg");
+  /* background: url("/media/crossfit-banner-large-compressed.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
   height: calc(100vh - 16.4rem); /* 164px = nav height */
   font-family: "Poppins", sans-serif;
 }
@@ -33,12 +33,32 @@ h6 {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
-.logo-font {
+/* ---- Navigation Styling ----- */
+.navigation {
+  background-color: #53565a;
+}
+
+.logo-font,
+.logo-font:hover {
   text-transform: uppercase;
+  color: #fff;
+}
+
+.logo-font:hover {
+  transform: translateY(-3px);
+  transition: all 0.2s;
 }
 
 .main-logo-link {
   width: fit-content;
+}
+
+.main-logo-link__img {
+  height: 5rem;
+}
+
+.navbar__responsive .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* ----------------  MEDIA QUERIES------------ */
