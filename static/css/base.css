@@ -1,6 +1,8 @@
 /* ----------------  Variables   ------------ */
 :root {
   --gunmetal-grey: #53565a;
+  --gunmetal-grey-light: #6b6f75;
+  --gunmetal-grey-dark: #3b3d3f;
   --white: #fff;
   --gutter-horizontal: 6rem;
 }
@@ -8,6 +10,7 @@
 /* ----------------  General Styles   ------------ */
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
 
 *,
 *::after,
@@ -24,13 +27,15 @@ html {
 
 body {
   box-sizing: border-box;
-  /* background: url("/media/crossfit-banner-large-compressed.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover; */
-  height: calc(100vh - 16.4rem); /* 164px = nav height */
+}
+
+/* ----------------  Typography   ------------ */
+
+body {
   font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--gunmetal-grey-dark);
 }
 
 h1,
@@ -39,7 +44,39 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif !important;
+}
+
+.logo-font,
+.logo-font:hover {
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.logo-font:hover {
+  transform: translateY(-3px);
+  transition: all 0.2s;
+}
+
+.heading-primary {
+  color: var(--white);
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 2.5rem;
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
 }
 
 /* ----------------  Custom Grid Parameters   ------------ */
@@ -90,6 +127,15 @@ h6 {
   );
 }
 
+/* ----------------  Helpers   ------------ */
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* ----------------  Navigation   ------------ */
 .navigation {
   background-color: var(--gunmetal-grey);
@@ -100,17 +146,6 @@ h6 {
 
 .dropdown-item {
   font-weight: 500;
-}
-
-.logo-font,
-.logo-font:hover {
-  text-transform: uppercase;
-  color: var(--white);
-}
-
-.logo-font:hover {
-  transform: translateY(-3px);
-  transition: all 0.2s;
 }
 
 .main-logo-link {
@@ -130,8 +165,25 @@ h6 {
   padding-top: 5rem;
 }
 
-.hero-banner__home {
-  /* margin-top: 16.4rem; */
+.hero-banner {
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 55vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 55vh, 0 100%);
+}
+
+.hero-banner--home {
+  height: 65vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(107, 111, 117, 0.3),
+      rgba(59, 61, 63, 0.3)
+    ),
+    url("../../media/crossfit-banner-large-compressed.jpg");
+}
+
+.hero-banner__text-box {
 }
 
 /* ----------------  MEDIA QUERIES   ------------ */
