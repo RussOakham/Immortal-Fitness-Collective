@@ -483,7 +483,7 @@ I wanted the language to reflect a semiserious but fun atmosphere, reflecting a 
 
 Similarly, I wanted to use fonts that reinforce the identity of the site, while remaining easy to read. To achieve this I used the following two Google Fonts;
 
-- IBM Plex Sans - A typeface designed for IBM to capture the relationship between humankind and machine. This relates well to IFCs brand, who wish to capture the relationship being mind (spirit) and body (machine).
+- Roboto Mono - A monospaced addition to the Roboto type family, optimised for readability on screen of of all sizes and device types.
 - Poppins - A geometric sans serif, designed for to be monolinear and highly legible.
 - Sans-serif - Web safe font, used if primary two fonts fail to load.
 
