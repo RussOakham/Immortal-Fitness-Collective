@@ -59,7 +59,7 @@ h6 {
 }
 
 .logo-font:hover {
-  transform: translateY(-3px);
+  transform: translateY(-0.3rem);
   transition: all 0.2s;
 }
 
@@ -89,7 +89,7 @@ h6 {
 
 /* ----------------  Custom Grid Parameters   ------------ */
 .row {
-  max-width: 114rem;
+  max-width: 140rem;
   margin: 0 auto;
 }
 
@@ -137,6 +137,68 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* ----------------  Buttons  ------------ */
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-weight: 700;
+
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: var(--box-shadow);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+  transform: translateY(-0.1rem);
+  box-shadow: var(--box-shadow);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn--animated {
+  animation: moveInButton 0.5s ease-out 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.btn--white {
+  background-color: var(--white);
+  color: var(--colour-primary-dark);
+}
+
+.btn--white::after {
+  background-color: var(--white);
 }
 
 /* ----------------  Navigation   ------------ */
