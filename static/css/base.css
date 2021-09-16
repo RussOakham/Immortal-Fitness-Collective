@@ -1,9 +1,9 @@
 /* ----------------  Variables   ------------ */
 :root {
-  --gunmetal-grey: #53565a;
-  --gunmetal-grey-light: #6b6f75;
-  --gunmetal-grey-dark: #3b3d3f;
-  --trophy-yellow: #ffdd88;
+  --colour-primary: #53565a; /* Gunmetal-grey */
+  --colour-primary-light: #6b6f75; /* Gunmetal-grey light */
+  --colour-primary-dark: #3b3d3f; /* Gunmetal-grey dark */
+  --colour-secondary: #ffdd88; /* trophy yellow */
   --white: #fff;
   --gutter-horizontal: 6rem;
   --text-shadow: 0 1rem 3rem rgb(0 0 0 / 70%);
@@ -38,7 +38,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: var(--gunmetal-grey-dark);
+  color: var(--colour-primary-dark);
 }
 
 h1,
@@ -81,7 +81,7 @@ h6 {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
-  color: var(--trophy-yellow);
+  color: var(--colour-secondary);
   text-shadow: var(--text-shadow);
 }
 
@@ -144,7 +144,7 @@ h6 {
 
 /* ----------------  Navigation   ------------ */
 .navigation {
-  background-color: var(--gunmetal-grey);
+  background-color: var(--colour-primary);
   min-height: 5rem;
   max-height: 10rem;
   font-size: 1.3rem;
