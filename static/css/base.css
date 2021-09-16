@@ -3,14 +3,16 @@
   --gunmetal-grey: #53565a;
   --gunmetal-grey-light: #6b6f75;
   --gunmetal-grey-dark: #3b3d3f;
+  --trophy-yellow: #ffdd88;
   --white: #fff;
   --gutter-horizontal: 6rem;
+  --text-shadow: 0 1rem 3rem rgb(0 0 0 / 70%);
 }
 
 /* ----------------  General Styles   ------------ */
 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?&family=Roboto+Mono:wght@300;400;500;600;700&display=swap");
 
 *,
 *::after,
@@ -44,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "IBM Plex Sans", sans-serif !important;
+  font-family: "Roboto Mono", monospace;
 }
 
 .logo-font,
@@ -68,8 +70,9 @@ h6 {
 .heading-primary--main {
   display: block;
   font-size: 6rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 2.5rem;
+  text-shadow: var(--text-shadow);
 }
 
 .heading-primary--sub {
@@ -77,6 +80,8 @@ h6 {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
+  color: var(--trophy-yellow);
+  text-shadow: var(--text-shadow);
 }
 
 /* ----------------  Custom Grid Parameters   ------------ */
@@ -177,8 +182,8 @@ h6 {
   height: 65vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba(107, 111, 117, 0.3),
-      rgba(59, 61, 63, 0.3)
+      rgba(107, 111, 117, 0.5),
+      rgba(59, 61, 63, 0.5)
     ),
     url("../../media/crossfit-banner-large-compressed.jpg");
 }
