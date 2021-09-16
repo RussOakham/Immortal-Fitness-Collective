@@ -98,38 +98,33 @@ h6 {
 }
 
 .row .col-1-of-2 {
-  width: calc((100% - #{var(--gutter-horizontal)}) / 2);
+  width: calc((100% - var(--gutter-horizontal)) / 2);
 }
 
 .row .col-1-of-3 {
-  width: calc((100% - 2 * (#{var(--gutter-horizontal)})) / 3);
+  width: calc((100% - 2 * var(--gutter-horizontal)) / 3);
 }
 
 .row .col-2-of-3 {
   width: calc(
-    2 * (100% - 2 * (#{var(--gutter-horizontal)})) / 3 + #{var(
-        --gutter-horizontal
-      )}
+    2 * (100% - 2 * var(--gutter-horizontal)) / 3 + var(--gutter-horizontal)
   );
 }
 
 .row .col-1-of-4 {
-  width: calc((100% - 3 * (#{var(--gutter-horizontal)})) / 4);
+  width: calc((100% - 3 * (var(--gutter-horizontal))) / 4);
 }
 
 .row .col-2-of-4 {
   width: calc(
-    2 * (100% - 3 * (#{var(--gutter-horizontal)})) / 4 + #{var(
-        --gutter-horizontal
-      )}
+    2 * (100% - 3 * (var(--gutter-horizontal))) / 4 + var(--gutter-horizontal)
   );
 }
 
 .row .col-3-of-4 {
   width: calc(
-    3 * ((100% - 3 * #{var(--gutter-horizontal)}) / 4) + 2 * #{var(
-        --gutter-horizontal
-      )}
+    3 * ((100% - 3 * var(--gutter-horizontal)) / 4) + 2 *
+      var(--gutter-horizontal)
   );
 }
 
@@ -188,9 +183,6 @@ h6 {
       rgba(59, 61, 63, 0.5)
     ),
     url("../../media/crossfit-banner-large-compressed.jpg");
-}
-
-.hero-banner__text-box {
 }
 
 /* ----------------  MEDIA QUERIES   ------------ */
