@@ -4,10 +4,20 @@
   --colour-primary-light: #6b6f75; /* Gunmetal-grey light */
   --colour-primary-dark: #3b3d3f; /* Gunmetal-grey dark */
   --colour-secondary: #ffdd88; /* trophy yellow */
-  --white: #fff;
+  --colour-grey-light-1: #f7f7f7; /* light grey / off white */
+  --colour-grey-light-2: #e6e6e6; /* light grey / off white */
+  --colour-green-light: #7ed56f; /* light green */
+  --colour-green-dark: #28b485; /* dark green */
+  --colour-black: #000; /* black */
+  --colour-white: #fff; /* white */
+  --colour-text-body: #1c1d1d; /* off black */
+  --colour-orange: #ff4f33; /* Orange */
   --gutter-horizontal: 6rem;
+  --gutter-vertical: 8rem;
+  --gutter-vertical-small: 6rem;
   --text-shadow: 0 1rem 3rem rgb(0 0 0 / 70%);
   --box-shadow: 0 1rem 5rem rgb(0 0 0 / 70%);
+  --default-font-size: 1.6rem;
 }
 
 /* This is a branch test note */
@@ -28,10 +38,14 @@
 html {
   height: 100%;
   font-size: 62.5%; /* 1rem = 10px, 10px/16px = 62.5% */
+  font-smooth: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   box-sizing: border-box;
+  background-color: var(--colour-grey-light-1);
 }
 
 /* ----------------  Typography   ------------ */
@@ -40,7 +54,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: var(--colour-primary-dark);
+  color: var(--colour-text-body);
 }
 
 h1,
@@ -55,7 +69,7 @@ h6 {
 .logo-font,
 .logo-font:hover {
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--colour-white);
 }
 
 .logo-font:hover {
@@ -64,7 +78,7 @@ h6 {
 }
 
 .heading-primary {
-  color: var(--white);
+  color: var(--colour-white);
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
@@ -87,6 +101,31 @@ h6 {
   text-shadow: var(--text-shadow);
 }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+}
+
+.heading-secondary:hover {
+  text-shadow: var(--text-shadow);
+}
+
+.paragraph {
+  font-size: var(--default-font-size);
+}
+
+.paragraph:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.font-white {
+  color: var(--colour-white);
+}
+
 /* ----------------  Custom Grid Parameters   ------------ */
 .row {
   max-width: 140rem;
@@ -97,6 +136,10 @@ h6 {
   content: "";
   display: table;
   clear: both;
+}
+
+.row [class^="col-"]:not(:last-child) {
+  margin-right: var(--gutter-horizontal);
 }
 
 .row .col-1-of-2 {
@@ -139,6 +182,14 @@ h6 {
   transform: translate(-50%, -50%);
 }
 
+.margin-bottom-med {
+  margin-bottom: 4rem;
+}
+
+.margin-bottom-big {
+  margin-bottom: 6rem;
+}
+
 /* ----------------  Buttons  ------------ */
 
 .btn,
@@ -160,6 +211,7 @@ h6 {
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: var(--box-shadow);
+  background-color: var(--colour-secondary);
 }
 
 .btn:hover::after {
@@ -193,19 +245,45 @@ h6 {
 }
 
 .btn--white {
-  background-color: var(--white);
+  background-color: var(--colour-white);
   color: var(--colour-primary-dark);
 }
 
 .btn--white::after {
-  background-color: var(--white);
+  background-color: var(--colour-white);
+}
+
+.btn-text,
+.btn-text:link,
+.btn-text:visited {
+  font-size: var(--default-font-size);
+  display: inline-block;
+  text-decoration: none;
+  color: var(--colour-text-body);
+  border-bottom: 1px solid var(--colour-secondary);
+  padding: 3px 6px;
+  transition: all 0.2s;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.btn-text:hover {
+  background-color: var(--colour-orange);
+  border-bottom: 1px solid var(--colour-orange);
+  color: var(--colour-white);
+  box-shadow: var(--box-shadow);
+  transform: translateY(-2px);
+}
+
+.btn-text:active {
+  box-shadow: var(--box-shadow);
+  transform: translateY(0);
 }
 
 /* ----------------  Navigation   ------------ */
 .navigation {
   background-color: var(--colour-primary);
   min-height: 5rem;
-  max-height: 10rem;
   font-size: 1.3rem;
   box-shadow: var(--box-shadow);
 }
@@ -249,12 +327,123 @@ h6 {
     url("../../media/crossfit-banner-large-compressed.jpg");
 }
 
+/* ----------------  Home Page - About Us   ------------ */
+.section-about-us {
+  padding: 5rem 0;
+}
+
+/* ----------------  Home Page - Programmes   ------------ */
+.section-programmes {
+  padding: 18rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(107, 111, 117, 0.5),
+      rgba(59, 61, 63, 0.5)
+    ),
+    url("../../media/gym-weights-landscape-min-compressed.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  -webkit-clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.programme-card {
+  height: 50rem;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  background-color: var(--colour-white);
+  position: relative;
+}
+
+.programme-card__picture {
+  background-size: cover;
+  height: 20rem;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.programme-card__picture--1 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(91, 154, 80),
+      rgb(32, 119, 90)
+    ),
+    url("../../media/everyday-fitness-min-compress.jpg");
+}
+
+.programme-card__picture--2 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(158, 121, 43),
+      rgb(255, 0, 0)
+    ),
+    url("../../media/competitor-programme-min-compress.jpg");
+}
+
+.programme-card__heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--colour-white);
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  text-align: right;
+  width: 75%;
+  text-transform: uppercase;
+}
+
+.programme-card__heading-span {
+  padding: 1rem 1.5rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.programme-card__heading-span--1 {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(91, 154, 80, 0.85),
+    rgba(32, 119, 90, 0.85)
+  );
+}
+
+.programme-card__heading-span--2 {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(158, 121, 43, 0.85),
+    rgba(255, 0, 0, 0.85)
+  );
+}
+
+.programme-card__details {
+  padding: 3rem;
+}
+
+.programme-card__details ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.programme-card__details li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.programme-card__details li:not(:last-child) {
+  border-bottom: 1px solid var(--colour-grey-light-2);
+}
+
 /* ----------------  MEDIA QUERIES   ------------ */
 
 /* General Styling */
 @media (max-width: 993px) {
   .row {
-    max-width: 50rem;
+    max-width: 72rem;
   }
 }
 
