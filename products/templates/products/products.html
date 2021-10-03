@@ -19,7 +19,81 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            {{ products }}
+            <div class="text-center margin-bottom-med">
+                <h2 class="heading-secondary">
+                    Join our community and improve your fitness
+                </h2>
+                <hr class="w-50">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="product-container">
+            <div class="row"></div>
+            <div class="row">
+                {% for product in products %}
+                <div class="col-1-of-4">
+                    <div class="product-card h-100">
+                        {% if product.image %}
+                        <a href="">
+                            <img class="product-card__image" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="product-card__image" src="{{ MEDIA_URL }}noimage.eps" alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="product-card-content">
+                            <h3 class="product-card-content__name text-center">
+                                {{ product.name }}
+                            </h3>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="product-card-footer__price">
+                                        £{{ product.price }}
+                                    </p>
+                                    {% if product.rating %}
+                                    <p class="product-card-footer__rating">
+                                        [star] {{ product.rating }}
+                                    </p>
+                                    {% else %}
+                                    <p class="product-card-footer__rating">
+                                        No Rating
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none">
+                    <hr>
+                </div>
+                {% endif %}
+
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-lg-none">
+                    <hr>
+                </div>
+                {% endif %}
+
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-lg-block d-xl-none">
+                    <hr>
+                </div>
+                {% endif %}
+
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-xl-block">
+                    <hr>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
