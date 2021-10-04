@@ -19,11 +19,11 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="text-center margin-bottom-med">
-                <h2 class="heading-secondary">
+            <div class="text-center margin-bottom-med margin-top-med">
+                <h1 class="heading-secondary">
                     Join our community and improve your fitness
-                </h2>
-                <hr class="w-50">
+                </h1>
+                <hr class="w-50 hr-center">
             </div>
         </div>
     </div>
@@ -35,12 +35,13 @@
                 <div class="col-1-of-4">
                     <div class="product-card h-100">
                         {% if product.image %}
-                        <a href="">
+                        <a href="{% url 'product_detail' product.id %}">
                             <img class="product-card__image" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>
                         {% else %}
-                        <a href="">
-                            <img class="product-card__image" src="{{ MEDIA_URL }}noimage.eps" alt="{{ product.name }}">
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="product-card__image" src="{% static 'media/noimg.jpg' %}"
+                                alt="{{ product.name }}">
                         </a>
                         {% endif %}
                         <div class="product-card-content">
@@ -56,11 +57,11 @@
                                     </p>
                                     {% if product.rating %}
                                     <p class="product-card-footer__rating">
-                                        [star] {{ product.rating }}
+                                        <i class="icon-basic-star product-card-footer__icon"></i> {{ product.rating }}
                                     </p>
                                     {% else %}
                                     <p class="product-card-footer__rating">
-                                        No Rating
+                                        <i class="icon-basic-star product-card-footer__icon"></i> No Rating
                                     </p>
                                     {% endif %}
                                 </div>
