@@ -67,7 +67,7 @@ h6 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: var(--default-font-size);
 }
 
 .logo-font,
