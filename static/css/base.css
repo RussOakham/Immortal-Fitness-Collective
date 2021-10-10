@@ -67,7 +67,7 @@ h6 {
 }
 
 p {
-  font-size: var(--default-font-size);
+  font-size: 1rem;
 }
 
 .logo-font,
@@ -290,7 +290,7 @@ p {
 
 /* ----------------  Home Page - Hero Banner   ------------ */
 .header-container {
-  padding-top: 7rem;
+  padding-top: 5rem;
 }
 
 .hero-banner {
@@ -526,6 +526,34 @@ p {
 }
 
 /* ----------------  MEDIA QUERIES   ------------ */
+
+/* Responsive Font Sizes */
+@media (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+}
+/* 1 rem = 8px */
+
+@media (min-width: 577px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+/* 1 rem = 9px */
+
+@media (min-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media (min-width: 1700px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* 1 rem = 12px */
 
 /* Fixed topnav only on medium and up */
 @media (min-width: 992px) {
