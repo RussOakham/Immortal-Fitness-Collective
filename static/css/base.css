@@ -66,6 +66,10 @@ h6 {
   font-family: "Roboto Mono", monospace;
 }
 
+p {
+  font-size: var(--default-font-size);
+}
+
 .logo-font,
 .logo-font:hover {
   text-transform: uppercase;
@@ -134,20 +138,35 @@ h6 {
   transform: translate(-50%, -50%);
 }
 
+.vert-center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .margin-bottom-sm {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .margin-bottom-med {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .margin-bottom-big {
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
+}
+
+.margin-top-sm {
+  margin-top: 1.5rem;
 }
 
 .margin-top-med {
-  margin-top: 6rem;
+  margin-top: 2rem;
+}
+
+.margin-top-big {
+  margin-top: 4rem;
 }
 
 .hr-center {
@@ -271,7 +290,7 @@ h6 {
 
 /* ----------------  Home Page - Hero Banner   ------------ */
 .header-container {
-  padding-top: 5rem;
+  padding-top: 7rem;
 }
 
 .hero-banner {
@@ -429,6 +448,12 @@ h6 {
   overflow: hidden;
 }
 
+.product-card__image::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .product-card-content {
   padding: 1rem;
   flex: 1 1 auto;
@@ -462,8 +487,42 @@ h6 {
   margin-bottom: 0.5rem;
   display: inline-block;
   background-image: linear-gradient(to right, yellow, gold);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+/* ----------------  Product Detail Page   ------------ */
+.product-detail__image {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.product-detail__image::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.product-detail__content {
+  padding: 0 2rem;
+}
+
+.product-detail__name {
+  text-align: center;
+  width: 100%;
+}
+
+.product-detail__price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.product-detail__rating {
+  font-size: 1.25rem;
 }
 
 /* ----------------  MEDIA QUERIES   ------------ */
@@ -479,14 +538,56 @@ h6 {
   }
 
   .header-container {
-    padding-top: 10rem;
+    padding-top: 10.7rem;
   }
 }
 
 @media (min-width: 768px) {
+  .margin-bottom-sm {
+    margin-bottom: 2rem;
+  }
+
+  .margin-bottom-med {
+    margin-bottom: 4rem;
+  }
+
+  .margin-bottom-big {
+    margin-bottom: 6rem;
+  }
+
+  .margin-top-sm {
+    margin-top: 2rem;
+  }
+
+  .margin-top-med {
+    margin-top: 4rem;
+  }
+
+  .margin-top-big {
+    margin-top: 6rem;
+  }
+
   .section-programmes {
     padding: 18rem 0;
     -webkit-clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
     clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+  }
+
+  .product-detail__image {
+    margin-bottom: 0;
+  }
+
+  .product-detail__name {
+    text-align: left;
+  }
+}
+
+@media (min-width: 576px) {
+  .product-detail__image {
+    padding: 0;
+  }
+
+  .product-detail__content {
+    padding: 0;
   }
 }

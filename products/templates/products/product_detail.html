@@ -17,12 +17,12 @@
 
 <div class="container">
   <div class="row margin-top-med">
-    <div class="col-12 col-sm-6">
-      <div class="product-detail">
+    <div class="col-12 col-md-6">
+      <div class="product-detail_image-container">
         {% if product.image %}
         <a href="{{ product.image.url }}" target="_blank">
           <img
-            class="product-detail__image"
+            class="product-detail__image img-fluid"
             src="{{ product.image.url }}"
             alt="{{ product.name }}"
           />
@@ -38,26 +38,28 @@
         {% endif %}
       </div>
     </div>
-    <div class="col-12 col-sm-6">
-      <div class="product-detail">
-        <h1 class="product-detail__name heading-secondary">
-          {{ product.name }}
-        </h1>
-        <p class="product-detail__price">£{{ product.price }}</p>
-        {% if product.rating %}
-        <p class="product-detail__rating">
-          <i class="fas fa-star product-card-footer__icon"></i> 
-          {{ product.rating }}
-        </p>
-        {% else %}
-        <p class="product-detail__rating">
-          <i class="fas fa-star product-card-footer__icon"></i> No Rating
-        </p>
-        {% endif %}
-        <p class="product-detail__description">{{ product.description }}</p>
+    <div class="col-12 col-md-6">
+      <div class="product-detail__content-container vert-center">
+        <div class="product-detail__content">
+          <h1 class="product-detail__name heading-secondary margin-bottom-med">
+            {{ product.name }}
+          </h1>
+          <p class="product-detail__price">£{{ product.price }}</p>
+          {% if product.rating %}
+          <p class="product-detail__rating">
+            <i class="fas fa-star product-card-footer__icon"></i>
+            {{ product.rating }}
+          </p>
+          {% else %}
+          <p class="product-detail__rating">
+            <i class="fas fa-star product-card-footer__icon"></i> No Rating
+          </p>
+          {% endif %}
+          <p class="product-detail__description">{{ product.description }}</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-{% endblock %}
+  {% endblock %}
+</div>
