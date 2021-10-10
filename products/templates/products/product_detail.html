@@ -1,59 +1,63 @@
-{% extends "base.html" %}
-{% load static %}]
-
-{% block page_header %}
+{% extends "base.html" %} {% load static %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+  crossorigin="anonymous"
+/>
+{% endblock %} {% block page_header %}
 
 <div class="container header-container">
-    <div class="row">
-        <div class="col">
-
-        </div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
 
-{% endblock %}
-
-
-{% block content %}
+{% endblock %} {% block content %}
 
 <div class="container">
-    <div class="row margin-top-med">
-        <div class="col-1-of-2">
-            <div class="product-detail">
-                {% if product.image %}
-                <a href="{{ product.image.url }}" target="_blank">
-                    <img class="product-detail__image" src="{{ product.image.url }}" alt="{{ product.name }}">
-                </a>
-                {% else %}
-                <a href="">
-                    <img class="product-detail__image" src="{% static 'media/noimg.jpg' %}" alt="{{ product.name }}">
-                </a>
-                {% endif %}
-            </div>
-        </div>
-        <div class="col-1-of-2">
-            <div class="product-detail">
-                <h1 class="product-detail__name heading-secondary">
-                    {{ product.name }}
-                </h1>
-                <p class="product-detail__price">
-                    £{{ product.price }}
-                </p>
-                {% if product.rating %}
-                <p class="product-detail__rating">
-                    <i class="icon-basic-star product-card-footer__icon"></i> {{ product.rating }}
-                </p>
-                {% else %}
-                <p class="product-detail__rating">
-                    <i class="icon-basic-star product-card-footer__icon"></i> No Rating
-                </p>
-                {% endif %}
-                <p class="product-detail__description">
-                    {{ product.description }}
-                </p>
-            </div>
-        </div>
+  <div class="row margin-top-med">
+    <div class="col-12 col-sm-6">
+      <div class="product-detail">
+        {% if product.image %}
+        <a href="{{ product.image.url }}" target="_blank">
+          <img
+            class="product-detail__image"
+            src="{{ product.image.url }}"
+            alt="{{ product.name }}"
+          />
+        </a>
+        {% else %}
+        <a href="">
+          <img
+            class="product-detail__image"
+            src="{% static 'media/noimg.jpg' %}"
+            alt="{{ product.name }}"
+          />
+        </a>
+        {% endif %}
+      </div>
     </div>
+    <div class="col-12 col-sm-6">
+      <div class="product-detail">
+        <h1 class="product-detail__name heading-secondary">
+          {{ product.name }}
+        </h1>
+        <p class="product-detail__price">£{{ product.price }}</p>
+        {% if product.rating %}
+        <p class="product-detail__rating">
+          <i class="fas fa-star product-card-footer__icon"></i> 
+          {{ product.rating }}
+        </p>
+        {% else %}
+        <p class="product-detail__rating">
+          <i class="fas fa-star product-card-footer__icon"></i> No Rating
+        </p>
+        {% endif %}
+        <p class="product-detail__description">{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

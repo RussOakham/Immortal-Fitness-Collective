@@ -1,102 +1,84 @@
-{% extends "base.html" %}
-{% load static %}]
-
-{% block page_header %}
+{% extends "base.html" %} {% load static %}] {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+  crossorigin="anonymous"
+/>
+{% endblock %} {% block page_header %}
 
 <div class="container header-container">
-    <div class="row">
-        <div class="col">
-
-        </div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
 
-{% endblock %}
-
-
-{% block content %}
+{% endblock %} {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="text-center margin-bottom-med margin-top-med">
-                <h1 class="heading-secondary">
-                    Join our community and improve your fitness
-                </h1>
-                <hr class="w-50 hr-center">
-            </div>
-        </div>
+  <div class="row">
+    <div class="col">
+      <div class="text-center margin-bottom-med margin-top-med">
+        <h1 class="heading-secondary">
+          Join our community and improve your fitness
+        </h1>
+        <hr class="w-50 hr-center" />
+      </div>
     </div>
-    <div class="row">
-        <div class="product-container">
-            <div class="row"></div>
-            <div class="row">
-                {% for product in products %}
-                <div class="col-1-of-4">
-                    <div class="product-card h-100">
-                        {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img class="product-card__image" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img class="product-card__image" src="{% static 'media/noimg.jpg' %}"
-                                alt="{{ product.name }}">
-                        </a>
-                        {% endif %}
-                        <div class="product-card-content">
-                            <h3 class="product-card-content__name text-center">
-                                {{ product.name }}
-                            </h3>
-                        </div>
-                        <div class="product-card-footer">
-                            <div class="row">
-                                <div class="col">
-                                    <p class="product-card-footer__price">
-                                        £{{ product.price }}
-                                    </p>
-                                    {% if product.rating %}
-                                    <p class="product-card-footer__rating">
-                                        <i class="icon-basic-star product-card-footer__icon"></i> {{ product.rating }}
-                                    </p>
-                                    {% else %}
-                                    <p class="product-card-footer__rating">
-                                        <i class="icon-basic-star product-card-footer__icon"></i> No Rating
-                                    </p>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {% if forloop.counter|divisibleby:1 %}
-                <div class="col-12 d-sm-none">
-                    <hr>
-                </div>
-                {% endif %}
-
-                {% if forloop.counter|divisibleby:2 %}
-                <div class="col-12 d-none d-sm-block d-lg-none">
-                    <hr>
-                </div>
-                {% endif %}
-
-                {% if forloop.counter|divisibleby:3 %}
-                <div class="col-12 d-none d-lg-block d-xl-none">
-                    <hr>
-                </div>
-                {% endif %}
-
-                {% if forloop.counter|divisibleby:4 %}
-                <div class="col-12 d-none d-xl-block">
-                    <hr>
-                </div>
-                {% endif %}
-                {% endfor %}
+  </div>
+  <div class="row">
+    <div class="product-container">
+      <div class="row"></div>
+      <div class="row">
+        {% for product in products %}
+        <div class="col-12 col-md-4 col-lg-3 margin-bottom-sm">
+          <div class="product-card h-100">
+            {% if product.image %}
+            <a href="{% url 'product_detail' product.id %}">
+              <img
+                class="product-card__image"
+                src="{{ product.image.url }}"
+                alt="{{ product.name }}"
+              />
+            </a>
+            {% else %}
+            <a href="{% url 'product_detail' product.id %}">
+              <img
+                class="product-card__image"
+                src="{% static 'media/noimg.jpg' %}"
+                alt="{{ product.name }}"
+              />
+            </a>
+            {% endif %}
+            <div class="product-card-content">
+              <h3 class="product-card-content__name text-center">
+                {{ product.name }}
+              </h3>
             </div>
+            <div class="product-card-footer">
+              <div class="row">
+                <div class="col">
+                  <p class="product-card-footer__price">£{{ product.price }}</p>
+                  {% if product.rating %}
+                  <p class="product-card-footer__rating">
+                    <i class="fas fa-star product-card-footer__icon"></i>
+                    {{product.rating }}
+                  </p>
+                  {% else %}
+                  <p class="product-card-footer__rating">
+                    <i class="fas fa-star product-card-footer__icon"></i> No
+                    Rating
+                  </p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
 </div>
 
 {% endblock %}
