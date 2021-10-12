@@ -272,6 +272,10 @@ p {
   box-shadow: var(--box-shadow);
 }
 
+.top-nav-link {
+  font-size: 1.3rem;
+}
+
 .dropdown-item {
   font-weight: 500;
 }
