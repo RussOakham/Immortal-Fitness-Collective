@@ -496,6 +496,18 @@ p {
   color: transparent;
 }
 
+.btt-button {
+  height: 4.2rem;
+  width: 4.2rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.btt-link {
+  cursor: pointer;
+}
+
 /* ----------------  Product Detail Page   ------------ */
 .product-detail__image {
   max-width: 100%;
