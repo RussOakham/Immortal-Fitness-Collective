@@ -45,7 +45,16 @@
             {{ product.name }}
           </h1>
           <p class="product-detail__price">£{{ product.price }}</p>
-          {% if product.rating %}
+          {% if product.category %}
+          <p class="product-card-footer__rating">
+            <a
+              class="product-detail__category text-muted"
+              href="{% url 'products' %}?category={{ product.category.name }}"
+            >
+              <i class="fas fa-tag"></i> {{ product.category.friendly_name }}
+            </a>
+          </p>
+          {% endif %} {% if product.rating %}
           <p class="product-detail__rating">
             <i class="fas fa-star product-card-footer__icon"></i>
             {{ product.rating }}
