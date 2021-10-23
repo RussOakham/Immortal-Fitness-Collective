@@ -73,7 +73,7 @@
           >
             {% csrf_token %}
             <div class="product-detail__form-selectors">
-              {% with product.has_sizes as size %} {% if size %}
+              {% if product.has_sizes %}
               <div class="product-detail__form-size margin-bottom-sm">
                 <p><strong>Size</strong></p>
                 <select
@@ -86,6 +86,24 @@
                   <option value="m">M</option>
                   <option value="l">L</option>
                   <option value="xl">XL</option>
+                </select>
+              </div>
+              {% endif %}
+              {% if product.shoe_sizes %}
+              <div class="product-detail__form-size margin-bottom-sm">
+                <p><strong>Size</strong></p>
+                <select
+                  name="product_size"
+                  id="id_product_size"
+                  class="form-control w-50"
+                >
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
                 </select>
               </div>
               {% endif %}
@@ -131,7 +149,6 @@
               name="redirect_url"
               value="{{ request.path }}"
             />
-            {% endwith %}
           </form>
         </div>
       </div>
