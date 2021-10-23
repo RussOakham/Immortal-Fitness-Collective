@@ -156,6 +156,10 @@ p {
   border-right: none;
 }
 
+.w-10 {
+  width: 10% !important;
+}
+
 .margin-bottom-sm {
   margin-bottom: 1.5rem;
 }
@@ -555,6 +559,12 @@ p {
 }
 
 .product-detail__form-submit {
+  margin-left: 1rem;
+}
+
+/* ----------------  Shopping Bag Page   ------------ */
+
+.shopping-bag__checkout-button {
   margin-left: 1rem;
 }
 
