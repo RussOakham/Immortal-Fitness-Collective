@@ -31,20 +31,20 @@
         {% if bag_items %}
 
         <div class="table-responsive rounded">
-          <table class="table table-borderless">
+          <table class="table table-sm table-borderless">
             <thead class="font-black">
               <tr>
-                <th class="col w-25">Product Info</th>
-                <th class="col">Name</th>
-                <th class="col text-center">Price</th>
-                <th class="col text-center">Qty</th>
-                <th class="col text-center">Subtotal</th>
+                <th scope="col">Product Info</th>
+                <th scope="col">Name</th>
+                <th scope="col text-center">Price</th>
+                <th scope="col text-center">Qty</th>
+                <th scope="col text-center">Subtotal</th>
               </tr>
             </thead>
 
             {% for item in bag_items %}
             <tr>
-              <td class="py-3">
+              <td class="py-3 w-25">
                 <img
                   src="{{ item.product.image.url }}"
                   alt="{{ item.product.name }}"
@@ -53,7 +53,15 @@
               </td>
               <td class="py-3">
                 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                <p class="my-0">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% elif item.product.shoe_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                <p class="my-0">
+                  Size: {% if item.product.has_sizes %}
+                  {{ item.size|upper }}
+                  {% elif item.product.shoe_sizes %}
+                  {{ item.size|upper }}
+                  {% else%}
+                  N/A
+                  {% endif %}
+                </p>
                 <p class="my-0 small text-muted">
                   SKU: {{ item.product.sku|upper }}
                 </p>
@@ -61,8 +69,60 @@
               <td class="py-3">
                 <p class="my-0 text-center">{{ item.product.price }}</p>
               </td>
-              <td class="py-3">
-                <p class="my-0 text-center">{{ item.quantity }}</p>
+              <td class="py-3 w-25">
+                <form class="form update-form" action="" method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <div class="input-group shopping-bag__quantity-input">
+                      <div class="input-group-prepend">
+                        <button
+                          class="
+                            btn btn--black
+                            product-detail__decrement
+                            decrement-qty
+                          "
+                          data-item_id="{{ item.item_id }}"
+                          id="decrement-qty_{{ item.item_id }}"
+                        >
+                          &minus;
+                        </button>
+                      </div>
+                      <input
+                        type="number"
+                        name="quantity"
+                        class="
+                          form-control
+                          from-control-sm
+                          product-detail__form-control
+                          qty_input
+                        "
+                        value="{{ item.quantity }}"
+                        min="1"
+                        max="99"
+                        data_item_id="{{ item.item_id }}"
+                        id="id_qty_{{ item.item_id }}"
+                      />
+                      <div class="input-group-append">
+                        <button
+                          class="
+                            btn btn--black
+                            product-detail__increment
+                            increment-qty
+                          "
+                          data-item_id="{{ item.item_id }}"
+                          id="increment-qty_{{ item.item_id }}"
+                        >
+                          &plus;
+                        </button>
+                      </div>
+                      {% if item.product.has_sizes %}
+                        <input type="hidden" name="product_size" value="{{ item.size }}">
+                      {% elif item.product.shoe_sizes %}
+                        <input type="hidden" name="product_size" value="{{ item.size }}">
+                      {% endif %}
+                    </div>
+                  </div>
+                </form>
               </td>
               <td class="py-3">
                 <p class="my-0 text-center">{{ item.product.price }}</p>
@@ -87,19 +147,18 @@
             </tr>
 
             <tr>
-                <td colspan="5" class="text-center pt-5">
-                    <a href="{% url 'products' %}" class="btn-text">
-                        <span class="text-uppercase">Keep Shopping &rarr;</span>
-                    </a>
-                    <a href="" class="btn-text shopping-bag__checkout-button">
-                        <span class="text-uppercase">Secure Checkout</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
-                    </a>
-                </td>
+              <td colspan="5" class="text-center pt-5">
+                <a href="{% url 'products' %}" class="btn-text">
+                  <span class="text-uppercase">Keep Shopping &rarr;</span>
+                </a>
+                <a href="" class="btn-text shopping-bag__checkout-button">
+                  <span class="text-uppercase">Secure Checkout</span>
+                  <span class="icon">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </a>
+              </td>
             </tr>
-
           </table>
         </div>
         {% else %}

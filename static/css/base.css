@@ -589,6 +589,10 @@ p {
   margin-left: 1rem;
 }
 
+.shopping-bag__quantity-input {
+  flex-wrap: nowrap;
+}
+
 /* ----------------  MEDIA QUERIES   ------------ */
 
 /* Responsive Font Sizes */
