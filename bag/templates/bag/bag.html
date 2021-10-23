@@ -54,13 +54,9 @@
               <td class="py-3">
                 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                 <p class="my-0">
-                  Size: {% if item.product.has_sizes %}
-                  {{ item.size|upper }}
-                  {% elif item.product.shoe_sizes %}
-                  {{ item.size|upper }}
-                  {% else%}
-                  N/A
-                  {% endif %}
+                  Size: {% if item.product.has_sizes %} {{ item.size|upper }} {%
+                  elif item.product.shoe_sizes %} {{ item.size|upper }} {%
+                  else%} N/A {% endif %}
                 </p>
                 <p class="my-0 small text-muted">
                   SKU: {{ item.product.sku|upper }}
@@ -70,7 +66,11 @@
                 <p class="my-0 text-center">{{ item.product.price }}</p>
               </td>
               <td class="py-3 w-25">
-                <form class="form update-form" action="" method="POST">
+                <form
+                  class="form shopping-bag__update-form"
+                  action=""
+                  method="POST"
+                >
                   {% csrf_token %}
                   <div class="form-group">
                     <div class="input-group shopping-bag__quantity-input">
@@ -116,13 +116,30 @@
                         </button>
                       </div>
                       {% if item.product.has_sizes %}
-                        <input type="hidden" name="product_size" value="{{ item.size }}">
+                      <input
+                        type="hidden"
+                        name="product_size"
+                        value="{{ item.size }}"
+                      />
                       {% elif item.product.shoe_sizes %}
-                        <input type="hidden" name="product_size" value="{{ item.size }}">
+                      <input
+                        type="hidden"
+                        name="product_size"
+                        value="{{ item.size }}"
+                      />
                       {% endif %}
                     </div>
                   </div>
                 </form>
+                <a class="shopping-bag__update-link text-info"
+                  ><small>Update</small></a
+                >
+                <a
+                  class="shopping-bag__remove-item text-danger float-right"
+                  id="remove_{{ item.item_id }}"
+                  data-size="{{ item.size }}"
+                  ><small>Remove</small></a
+                >
               </td>
               <td class="py-3">
                 <p class="my-0 text-center">{{ item.product.price }}</p>
@@ -174,4 +191,27 @@
   </div>
 </section>
 
+{% endblock %} {% block postloadjs %} {{ block.super }} 
+{% include 'products/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+  // Update quantity on click
+  $(".shopping-bag__update-link").click(function (e) {
+    var form = $(this).prev(".shopping-bag__update-form");
+    form.submit();
+  });
+
+  // Remove item and reloac on click
+  $(".shopping-bag__remove-item").click(function (e) {
+    var csrftoken = "{{ csrf_token }}";
+    var itemId = $(this).attr("id").split("remove_")[1];
+    var size = $(this).data("size");
+    var url = `/bag/remove/${itemId}`;
+    var data = { csrfmiddlewaretoken: csrftoken, size: size };
+
+    $.post(url, data).done(function () {
+      location.reload();
+    });
+  });
+</script>
 {% endblock %}

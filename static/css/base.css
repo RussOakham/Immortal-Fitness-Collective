@@ -593,6 +593,11 @@ p {
   flex-wrap: nowrap;
 }
 
+.shopping-bag__update-link,
+.shopping-bag__remove-item {
+  cursor: pointer;
+}
+
 /* ----------------  MEDIA QUERIES   ------------ */
 
 /* Responsive Font Sizes */
