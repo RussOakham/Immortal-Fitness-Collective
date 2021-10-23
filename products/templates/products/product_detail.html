@@ -88,8 +88,7 @@
                   <option value="xl">XL</option>
                 </select>
               </div>
-              {% endif %}
-              {% if product.shoe_sizes %}
+              {% endif %} {% if product.shoe_sizes %}
               <div class="product-detail__form-size margin-bottom-sm">
                 <p><strong>Size</strong></p>
                 <select
@@ -111,16 +110,34 @@
                 <p><strong>Quantity</strong></p>
                 <div class="form-group w-50 margin-bottom-sm">
                   <div class="input-group">
+                    <div class="input-group-prepend">
+                      <button
+                        class="btn btn--black product-detail__decrement decrement-qty"
+                        data-item_id="{{ product.id }}"
+                        id="decrement-qty_{{ product.id }}"
+                      >
+                        &minus;
+                      </button>
+                    </div>
                     <input
                       type="number"
                       name="quantity"
-                      class="form-control product-detail__form-control"
+                      class="form-control product-detail__form-control qty_input"
                       value="1"
                       min="1"
                       max="99"
                       data_item_id="{{ product.id }}"
                       id="id_qty_{{ product.id }}"
                     />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn--black product-detail__increment increment-qty"
+                        data-item_id="{{ product.id }}"
+                        id="increment-qty_{{ product.id }}"
+                      >
+                        &plus;
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -140,6 +157,7 @@
                     text-center
                     product-detail__form-submit
                   "
+                  id="id_qty_{{ product.id }}"
                   value="Add to Bag &plus;"
                 />
               </div>
@@ -154,6 +172,11 @@
       </div>
     </div>
   </div>
-
-  {% endblock %}
 </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+{% endblock %}

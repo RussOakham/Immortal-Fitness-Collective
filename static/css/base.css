@@ -11,7 +11,7 @@
   --colour-black: #000; /* black */
   --colour-white: #fff; /* white */
   --colour-text-body: #1c1d1d; /* off black */
-  --colour-orange: #ff4f33; /* Orange */
+  --colour-gold: #ffd700; /* Gold */
   --gutter-horizontal: 6rem;
   --gutter-vertical: 8rem;
   --gutter-vertical-small: 6rem;
@@ -191,9 +191,9 @@ p {
 
 /* ----------------  Buttons  ------------ */
 
-.btn,
-.btn:link,
-.btn:visited {
+.cta-btn,
+.cta-btn:link,
+.cta-btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -207,25 +207,26 @@ p {
   cursor: pointer;
 }
 
-.btn:hover {
+.cta-btn:hover {
+  color: var(--colour-black);
   transform: translateY(-0.3rem);
   box-shadow: var(--box-shadow);
-  background-color: var(--colour-secondary);
+  background-color: var(--colour-gold);
 }
 
-.btn:hover::after {
+.cta-btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
 
-.btn:active,
-.btn:focus {
+.cta-btn:active,
+.cta-btn:focus {
   outline: none;
   transform: translateY(-0.1rem);
   box-shadow: var(--box-shadow);
 }
 
-.btn::after {
+.cta-btn::after {
   content: "";
   display: inline-block;
   height: 100%;
@@ -252,6 +253,15 @@ p {
   background-color: var(--colour-white);
 }
 
+.btn--black {
+  background-color: var(--colour-black);
+  color: var(--colour-white);
+}
+
+.btn--black::after {
+  background-color: var(--colour-black);
+}
+
 .btn-text,
 .btn-text:link,
 .btn-text:visited {
@@ -260,25 +270,36 @@ p {
   text-decoration: none;
   color: var(--colour-text-body);
   background-color: transparent;
-  border-bottom: 1px solid var(--colour-secondary);
+  border-bottom: 1px solid var(--colour-gold);
   padding: 3px 6px;
   transition: all 0.2s;
-  border-radius: 5px;
   font-weight: 600;
 }
 
 .btn-text:hover {
-  background-color: var(--colour-orange);
-  border-bottom: 1px solid var(--colour-orange);
-  color: var(--colour-white);
+  background-color: var(--colour-gold);
+  border-bottom: 1px solid var(--colour-gold);
   box-shadow: var(--box-shadow);
   transform: translateY(-2px);
+  border-radius: 0.5rem;
 }
 
 .btn-text:active {
   box-shadow: var(--box-shadow);
   transform: translateY(0);
   border: none;
+}
+
+.product-detail__increment:hover,
+.product-detail__decrement:hover {
+  color: var(--colour-gold);
+}
+
+.product-detail__increment:active,
+.product-detail__decrement:active {
+  transform: scale(0.95);
+  border: none;
+  color: var(--colour-gold);
 }
 
 /* ----------------  Navigation   ------------ */
