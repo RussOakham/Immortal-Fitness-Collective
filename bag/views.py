@@ -1,3 +1,4 @@
+""" required imports for module functionality """
 from django.shortcuts import redirect, render
 
 

@@ -554,6 +554,10 @@ p {
   font-size: 1.25rem;
 }
 
+.product-detail__form-submit {
+  margin-left: 1rem;
+}
+
 /* ----------------  MEDIA QUERIES   ------------ */
 
 /* Responsive Font Sizes */
