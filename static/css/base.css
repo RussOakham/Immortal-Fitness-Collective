@@ -129,6 +129,10 @@ p {
   color: var(--colour-white);
 }
 
+.font-black {
+  color: var(--colour-black);
+}
+
 /* ----------------  Helpers   ------------ */
 
 .abs-center {

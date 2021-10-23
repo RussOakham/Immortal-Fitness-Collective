@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% load static %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+  crossorigin="anonymous"
+/>
+{% endblock %} {% block page_header %}
+
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+
+{% endblock %} {% block content %}
+
+<section class="bag-section">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="heading-primary font-black margin-top-big text-center">
+          Shopping Bag
+        </h1>
+        <hr />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        {% if bag_items %}
+        <div class="table-responsive rounded"></div>
+        {% else %}
+        <div class="text-center margin-top-med">
+          <p>Your bag is empty!</p>
+          <a href="{% url 'products' %}" class="btn btn-outline-black">
+            <i class="fas fa-chevron-left"></i>
+            <span class="text-uppercase">Keep Shopping</span>
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
