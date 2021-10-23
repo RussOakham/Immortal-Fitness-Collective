@@ -4,6 +4,7 @@ from django.conf import settings
 from immortal_fitness_collective.settings import FREE_DELIVERY_THRESHOLD
 
 def bag_contents(request):
+    """ Context to allow shopping bag contents to be accessed site wide """
 
     bag_items = []
     total = 0
@@ -11,7 +12,7 @@ def bag_contents(request):
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE.DELIVERY.THRESHOLD - total
+        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         delivery = 0
         free_delivery_delta = 0

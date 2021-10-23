@@ -33,10 +33,7 @@
         {% else %}
         <div class="text-center margin-top-med">
           <p>Your bag is empty!</p>
-          <a href="{% url 'products' %}" class="btn btn-outline-black">
-            <i class="fas fa-chevron-left"></i>
-            <span class="text-uppercase">Keep Shopping</span>
-          </a>
+          <a href="{% url 'products' %}" class="btn-text">Keep Shopping &rarr;</a>
         </div>
         {% endif %}
       </div>
