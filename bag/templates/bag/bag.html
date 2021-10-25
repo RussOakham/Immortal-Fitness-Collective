@@ -1,4 +1,8 @@
-{% extends "base.html" %} {% load static %} {% block extra_css %}
+{% extends "base.html" %} 
+{% load static %} 
+{% load bag_tools %}
+
+{% block extra_css %}
 <link
   rel="stylesheet"
   href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -33,7 +37,7 @@
         <div class="table-responsive rounded">
           <table class="table table-sm table-borderless">
             <thead class="font-black">
-              <tr>
+              <tr class="text-center">
                 <th scope="col">Product Info</th>
                 <th scope="col">Name</th>
                 <th scope="col text-center">Price</th>
@@ -54,9 +58,9 @@
               <td class="py-3">
                 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                 <p class="my-0">
-                  Size: {% if item.product.has_sizes %} {{ item.size|upper }} {%
-                  elif item.product.shoe_sizes %} {{ item.size|upper }} {%
-                  else%} N/A {% endif %}
+                  Size: {% if item.product.has_sizes %} {{ item.size|upper }} 
+                  {% elif item.product.shoe_sizes %} {{ item.size|upper }} 
+                  {% else%} N/A {% endif %}
                 </p>
                 <p class="my-0 small text-muted">
                   SKU: {{ item.product.sku|upper }}
@@ -68,7 +72,7 @@
               <td class="py-3 w-25">
                 <form
                   class="form shopping-bag__update-form"
-                  action=""
+                  action="{% url 'edit_bag' item.item_id %}"
                   method="POST"
                 >
                   {% csrf_token %}
@@ -137,12 +141,12 @@
                 <a
                   class="shopping-bag__remove-item text-danger float-right"
                   id="remove_{{ item.item_id }}"
-                  data-size="{{ item.size }}"
+                  data-product_size="{{ item.size }}"
                   ><small>Remove</small></a
                 >
               </td>
               <td class="py-3">
-                <p class="my-0 text-center">{{ item.product.price }}</p>
+                <p class="my-0 text-center">{{ item.product.price | calc_subtotal:item.quantity }}</p>
               </td>
             </tr>
             {% endfor %}
@@ -205,9 +209,9 @@
   $(".shopping-bag__remove-item").click(function (e) {
     var csrftoken = "{{ csrf_token }}";
     var itemId = $(this).attr("id").split("remove_")[1];
-    var size = $(this).data("size");
-    var url = `/bag/remove/${itemId}`;
-    var data = { csrfmiddlewaretoken: csrftoken, size: size };
+    var size = $(this).data("product_size");
+    var url = `/bag/remove/${itemId}/`;
+    var data = { csrfmiddlewaretoken: csrftoken, 'product_size': size };
 
     $.post(url, data).done(function () {
       location.reload();
