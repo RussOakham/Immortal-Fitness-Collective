@@ -9,7 +9,9 @@
   integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
   crossorigin="anonymous"
 />
-{% endblock %} {% block page_header %}
+{% endblock %} 
+
+{% block page_header %}
 
 <div class="container header-container">
   <div class="row">
@@ -17,7 +19,9 @@
   </div>
 </div>
 
-{% endblock %} {% block content %}
+{% endblock %} 
+
+{% block content %}
 
 <section class="bag-section">
   <div class="container">
@@ -58,9 +62,13 @@
               <td class="py-3">
                 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                 <p class="my-0">
-                  Size: {% if item.product.has_sizes %} {{ item.size|upper }} 
-                  {% elif item.product.shoe_sizes %} {{ item.size|upper }} 
-                  {% else%} N/A {% endif %}
+                  Size: {% if item.product.has_sizes %} 
+                  {{ item.size|upper }} 
+                  {% elif item.product.shoe_sizes %} 
+                  {{ item.size|upper }} 
+                  {% else%}
+                   N/A 
+                  {% endif %}
                 </p>
                 <p class="my-0 small text-muted">
                   SKU: {{ item.product.sku|upper }}
@@ -172,7 +180,7 @@
                 <a href="{% url 'products' %}" class="btn-text">
                   <span class="text-uppercase">Keep Shopping &rarr;</span>
                 </a>
-                <a href="" class="btn-text shopping-bag__checkout-button">
+                <a href="{% url 'checkout' %}" class="btn-text shopping-bag__checkout-button">
                   <span class="text-uppercase">Secure Checkout</span>
                   <span class="icon">
                     <i class="fas fa-lock"></i>
@@ -195,7 +203,12 @@
   </div>
 </section>
 
-{% endblock %} {% block postloadjs %} {{ block.super }} 
+{% endblock %}
+
+{% block postloadjs %} 
+
+{{ block.super }} 
+
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
@@ -218,4 +231,5 @@
     });
   });
 </script>
+
 {% endblock %}
