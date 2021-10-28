@@ -1,3 +1,5 @@
+@import '../../../../static/css/base.css';
+
 .checkout__fieldset-label {
     position: relative;
     right: .5rem;
