@@ -10,13 +10,14 @@
   --colour-green-dark: #28b485; /* dark green */
   --colour-black: #000; /* black */
   --colour-white: #fff; /* white */
+  --colour-red: #dc3545; /* Red */
   --colour-text-body: #1c1d1d; /* off black */
   --colour-gold: #ffd700; /* Gold */
   --gutter-horizontal: 6rem;
   --gutter-vertical: 8rem;
   --gutter-vertical-small: 6rem;
   --text-shadow: 0 1rem 3rem rgb(0 0 0 / 70%);
-  --box-shadow: 0 1rem 5rem rgb(0 0 0 / 70%);
+  --box-shadow: 0 1rem 1rem rgb(0 0 0 / 30%);
   --default-font-size: 1.6rem;
 }
 
