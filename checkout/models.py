@@ -62,7 +62,7 @@ class Order(models.Model):
         return self.order_number
 
 
-class OrderLineTime(models.Model):
+class OrderLineItem(models.Model):
     """ Class to identify product information and calculate line item total """
 
     order = models.ForeignKey(Order, null=False, blank=False,

@@ -1,12 +1,12 @@
 """ required imports for module functionality """
 from django.contrib import admin
-from .models import Order, OrderLineTime
+from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
     """ Allow add and edit of line itmes in admin order model """
 
-    model = OrderLineTime
+    model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 class OrderAdmin(admin.ModelAdmin):
