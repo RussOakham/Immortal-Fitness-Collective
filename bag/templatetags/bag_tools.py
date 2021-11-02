@@ -1,3 +1,4 @@
+""" required imports for model functionality """
 from django import template
 
 
