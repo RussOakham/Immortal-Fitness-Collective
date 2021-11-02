@@ -172,7 +172,7 @@
             <!-- Stripe Card Element -->
             <div class="mb-3" id="checkout__card-element"></div>
             <!-- Used to display payment form errors -->
-            <div class="mb-3 text-danger" id="card-errors"></div>
+            <div class="mb-3 text-danger" id="checkout__card-errors"></div>
 
             <div class="submit-button checkout__submit-button text-right mt-5 mb-2">
                 <a href="{% url 'view_bag' %}" class="btn btn-text rounded-0">
@@ -197,7 +197,16 @@
   </div>
 </section>
 
+<div id="checkout__loading-overlay">
+  <h2 class="logo-font checkout__loading-overlay-spinner vert-center">
+    <span class="icon">
+      <i class="fas fa-3x fa-sync alt fa-spin"></i>
+    </span>
+  </h2>
+</div>
+
 {% endblock %}
+
 
 {% block postloadjs %} 
 

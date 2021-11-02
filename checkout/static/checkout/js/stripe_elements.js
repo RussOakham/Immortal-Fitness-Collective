@@ -26,7 +26,7 @@ card.mount("#checkout__card-element");
 
 // Handle realtime validation errors on the card element
 card.addEventListener("change", function (event) {
-  var errorDiv = document.getElementById("card-errors");
+  var errorDiv = document.getElementById("checkout__card-errors");
   if (event.error) {
     var html = `
             <span class="icon">
@@ -42,12 +42,14 @@ card.addEventListener("change", function (event) {
 
 // Handle form submit
 
-var form = document.getElementById("payment-form");
+var form = document.getElementById("checkout__payment-form");
 
 form.addEventListener("submit", function (ev) {
   ev.preventDefault();
   card.update({ disabled: true });
   $("#submit-button").attr("disabled", true);
+  $("#checkout__payment-form").fadeToggle(100);
+  $("#checkout__loading-overlay").fadeToggle(100);
   stripe
     .confirmCardPayment(clientSecret, {
       payment_method: {
@@ -57,7 +59,7 @@ form.addEventListener("submit", function (ev) {
     .then(function (result) {
       if (result.error) {
         // Show error to customer
-        var errorDiv = document.getElementById("card-errors");
+        var errorDiv = document.getElementById("checkout__card-errors");
         var html = `
             <span class="icon">
                 <i class="fas fa-times"></i>
@@ -65,11 +67,13 @@ form.addEventListener("submit", function (ev) {
             <span>${result.error.message}</span>
         `;
         $(errorDiv).html(html);
+        $("#checkout__payment-form").fadeToggle(100);
+        $("#checkout__loading-overlay").fadeToggle(100);
         card.update({ disable: false });
         $("#submit-button").attr("disabled", false);
       } else {
         // Payment has been processed!
-        if (result.paymentItentn.status === "succeded") {
+        if (result.paymentIntent.status === "succeeded") {
           form.submit();
         }
       }

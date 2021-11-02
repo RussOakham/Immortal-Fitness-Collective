@@ -36,3 +36,19 @@
 .stripe-style-input::placeholder {
     color: #aab7c4;
 }
+
+#checkout__loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(249, 249, 249, 0.411);
+    z-index: 9999;
+}
+
+.checkout__loading-overlay-spinner {
+    color: var(--colour-green-dark);
+    margin: 0;
+}
