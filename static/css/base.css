@@ -362,6 +362,69 @@ p {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+/* ----------------  AllAuth Template formatting   ------------ */
+
+.allauth.form-inner-content p {
+  margin-top: 1.5rem;
+  color: #6c757d;
+}
+
+.allauth-form-inner-content input {
+  border-color: #000;
+  border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+  display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+  color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+  display: inline-block;
+  font-weight: 400;
+  color: var(--colour-white);
+  text-align: center;
+  vertical-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: var(--colour-black);
+  border: 1px solid var(--colour-black);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0;
+
+  transition: color .15s ease-in-out, 
+              background-color .15s ease-in-out,
+              border-color .15s ease-in-out,
+              box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {
+  color: var(--colour-white);
+  background-color: #222;
+  border-color: #222;
+}
+
+.allauth-form-inner-content a {
+  color: #17a2b8;
+}
+
+#div_id_remember label {
+  margin-left: 0.5rem;
+}
+
+.allauth-form-inner-content input[type='checkbox'] {
+  top: -0.1rem;
+}
+
 /* ----------------  Toasts   ------------ */
 
 .message-container {
