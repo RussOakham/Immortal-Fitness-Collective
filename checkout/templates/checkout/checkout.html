@@ -173,24 +173,25 @@
             <div class="mb-3" id="checkout__card-element"></div>
             <!-- Used to display payment form errors -->
             <div class="mb-3 text-danger" id="checkout__card-errors"></div>
-
-            <div class="submit-button checkout__submit-button text-right mt-5 mb-2">
-                <a href="{% url 'view_bag' %}" class="btn btn-text rounded-0">
-                    <span>&larr; Adjust Bag</span>
-                </a>
-                <button id="submit-button" class="btn btn-text btn-black rounded-0">
-                    <span class="icon">
-                        <i class="fas fa-lock"></i>
-                    </span>
-                    <span>Complete Order</span>
-                </button>
-                <p class="small text-danger my-0">
-                    <span>
-                        Your Card will be charged <strong>£{{ grand_total | floatformat:2 }}</strong>
-                    </span>
-                </p>
-            </div>
+            <input type="hidden" value="{{ client_secret }}" name="client_secret">
           </fieldset>
+
+          <div class="submit-button checkout__submit-button text-right mt-5 mb-2">
+              <a href="{% url 'view_bag' %}" class="btn btn-text rounded-0">
+                  <span>&larr; Adjust Bag</span>
+              </a>
+              <button id="submit-button" class="btn btn-text btn-black rounded-0">
+                  <span class="icon">
+                      <i class="fas fa-lock"></i>
+                  </span>
+                  <span>Complete Order</span>
+              </button>
+              <p class="small text-danger my-0">
+                  <span>
+                      Your Card will be charged <strong>£{{ grand_total | floatformat:2 }}</strong>
+                  </span>
+              </p>
+          </div>
         </form>
       </div>
     </div>

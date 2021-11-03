@@ -1,7 +1,11 @@
 """ required imports for module functionality """
+import json
+from django.http.response import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
+from django.views.decorators.http import require_POST
+
 import stripe
 
 from bag.contexts import bag_contents
@@ -11,6 +15,25 @@ from .models import Order, OrderLineItem
 
 
 # Create your views here.
+@require_POST
+def cache_checkout_data(request):
+    """ A view to save checkout information """
+
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata = {
+            'bag': json.dumps(request.session.get('bag', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be processed \
+            right now. Please try again late.')
+        return HttpResponse(content=e, status=400)
+
+
 def checkout(request):
     """ A view to return the checkout page """
 
@@ -34,6 +57,10 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -102,7 +129,7 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
-            emailt will be sent to {order.email}.')
+             will be sent to {order.email}.')
 
     if 'bag' in request.session:
         del request.session['bag']

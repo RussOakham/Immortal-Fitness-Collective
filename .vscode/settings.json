@@ -1,7 +1,6 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
-  "html.format.templating": true,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
