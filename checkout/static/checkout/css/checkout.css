@@ -11,6 +11,16 @@
     border: 1px solid var(--colour-black);
 }
 
+select,
+select option {
+    color: var(--colour-black);
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
 .StripeElement,
 .stripe-style-input {
     height: 4rem;

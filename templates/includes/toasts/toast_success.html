@@ -44,11 +44,13 @@
                                 Spend <strong>£{{ free_delivery_delta }}</strong> more for free delivery!
                             </p>
                         {% endif %}
-                        <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">
+                        <a href="{% url 'view_bag' %}" class="btn btn-cart btn-black btn-block rounded-0">
                             <span class="text-uppercase">
-                                Go To Secure Checkout <strong><i class="icon-basic-lock"></i></strong>
+                                Review your Bag Now!
+                            </span> 
+                            <span class="icon">
+                                <i class="fa-solid fa-cart-shopping"></i>
                             </span>
-
                         </a>
                     </div>
                 </div>

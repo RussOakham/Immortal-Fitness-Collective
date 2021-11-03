@@ -311,6 +311,17 @@ p {
   border: none;
 }
 
+.btn-cart,
+.btn-cart:link,
+.btn-cart:visited {
+  background-color: transparent;
+  transition: all 0.2s;
+}
+
+.btn-cart:hover {
+  transform: translateY(-2px);
+}
+
 .product-detail__increment:hover,
 .product-detail__decrement:hover {
   color: var(--colour-gold);
@@ -611,6 +622,14 @@ p {
 
 .product-card-footer__rating {
   font-size: 1.5rem;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+  width: 1rem;
 }
 
 .product-card-footer__icon {
