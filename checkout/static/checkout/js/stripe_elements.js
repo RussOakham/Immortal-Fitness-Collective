@@ -5,7 +5,7 @@
 
 var stripePublicKey = $("#id_stripe_public_key").text().slice(1, -1);
 var clientSecret = $("#id_client_secret").text().slice(1, -1);
-var stripe = Stripe(stripePublicKey);
+var stripe = Stripe(stripePublicKey, { locale: 'en-gb'});
 var elements = stripe.elements();
 
 var style = {
@@ -52,7 +52,7 @@ form.addEventListener("submit", function (ev) {
   $("#checkout__loading-overlay").fadeToggle(100);
 
   var saveInfo = Boolean($("#id-save-info").attr("checked"));
-  var csrfToken = $('input[name="csrfmiddlewaretoken"]').var();
+  var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
   var postData = {
     csrfmiddlewaretoken: csrfToken,
     client_secret: clientSecret,
@@ -67,28 +67,28 @@ form.addEventListener("submit", function (ev) {
           payment_method: {
             card: card,
             billing_details: {
-              name: $trim(form.full_name.value),
-              phone: $trim(form.phone_number.value),
-              email: $trim(form.email.value),
+              name: $.trim(form.full_name.value),
+              phone: $.trim(form.phone_number.value),
+              email: $.trim(form.email.value),
               address: {
-                line1: $trim(form.street_address1.value),
-                line2: $trim(form.street_address2.value),
-                city: $trim(form.town_or_city.value),
-                county: $trim(form.county.value),
-                country: $trim(form.country.value),
+                line1: $.trim(form.street_address1.value),
+                line2: $.trim(form.street_address2.value),
+                city: $.trim(form.town_or_city.value),
+                country: $.trim(form.country.value),
+                state: $.trim(form.county.value),
               },
             },
           },
-          shipping_details: {
-            name: $trim(form.full_name.value),
-            phone: $trim(form.phone_number.value),
+          shipping: {
+            name: $.trim(form.full_name.value),
+            phone: $.trim(form.phone_number.value),
             address: {
-              line1: $trim(form.street_address1.value),
-              line2: $trim(form.street_address2.value),
-              city: $trim(form.town_or_city.value),
-              county: $trim(form.county.value),
-              postal_code: $trim(form.postcode.value),
-              country: $trim(form.country.value),
+              line1: $.trim(form.street_address1.value),
+              line2: $.trim(form.street_address2.value),
+              city: $.trim(form.town_or_city.value),
+              country: $.trim(form.country.value),
+              postal_code: $.trim(form.postcode.value),
+              state: $.trim(form.county.value),
             },
           },
         })
@@ -105,7 +105,7 @@ form.addEventListener("submit", function (ev) {
             $(errorDiv).html(html);
             $("#checkout__payment-form").fadeToggle(100);
             $("#checkout__loading-overlay").fadeToggle(100);
-            card.update({ disable: false });
+            card.update({ disabled: false });
             $("#submit-button").attr("disabled", false);
           } else {
             // Payment has been processed!
