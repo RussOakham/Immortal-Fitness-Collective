@@ -1,0 +1,21 @@
+.profile__order-history {
+    max-height: 41.6rem;
+    overflow-y: auto;
+}
+
+#profile__update-form .form-control {
+    color: var(--colour-black);
+}
+
+#profile__update-form input::placeholder {
+    color: #aab7c4;
+}
+
+#id_default_country,
+#id_default_country option:not(first-child) {
+    color: var(--colour-black);
+}
+
+#id_default_country option:first-child {
+    color: #aab7c4;
+}

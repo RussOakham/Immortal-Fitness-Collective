@@ -202,9 +202,15 @@
 
     <div class="row justify-center">
       <div class="col-12 col-lg-7 text-right">
+        {% if from_profile %}
+          <a href="{% url 'profile' %}" class="btn btn-text margin-top-sm">
+              <span class="text-uppercase">Back to Profile! &rarr;</span>
+          </a>
+        {% else %}
           <a href="{% url 'products' %}" class="btn btn-text margin-top-sm">
               <span class="text-uppercase">Check out our other products! &rarr;</span>
           </a>
+        {% endif %}
       </div>
     </div>
   </div>
