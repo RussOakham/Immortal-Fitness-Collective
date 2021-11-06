@@ -147,7 +147,7 @@ p {
 }
 
 .font-small {
-  font-size: var(--small-font-size);
+  font-size: var(--small-font-size) !important;
 }
 
 /* ----------------  Helpers   ------------ */
@@ -295,6 +295,14 @@ p {
   padding: 3px 6px;
   transition: all 0.2s;
   font-weight: 600;
+}
+
+.btn-danger {
+  border-bottom: 1px solid var(--colour-red) !important;
+}
+
+.btn-danger:hover {
+  background-color: var(--colour-red) !important;
 }
 
 .btn-text:hover {

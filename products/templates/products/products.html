@@ -126,6 +126,12 @@
                     Rating
                   </p>
                   {% endif %}
+                  {% if request.user.is_superuser %}
+                    <div class="ml-3">
+                      <a href="{% url 'edit_product' product.id %}" class="btn-text font-small">Edit</a>
+                      <a href="{% url 'delete_product' product.id %}" class="btn-text btn-danger font-small">Delete</a>
+                    </div>
+                  {% endif %}
                 </div>
               </div>
             </div>
