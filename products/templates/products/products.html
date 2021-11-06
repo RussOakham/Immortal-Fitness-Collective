@@ -92,7 +92,7 @@
             <a href="{% url 'product_detail' product.id %}">
               <img
                 class="product-card__image"
-                src="{% static 'media/noimg.jpg' %}"
+                src="{{ MEDIA_URL }}no-image-available.png"
                 alt="{{ product.name }}"
               />
             </a>
