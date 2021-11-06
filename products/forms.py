@@ -1,5 +1,6 @@
 """ required imports for module functionality """
 from django import forms
+from .widgets import CustomClearableFileInput
 from .models import Product, Category
 
 
@@ -10,6 +11,9 @@ class ProductForm(forms.ModelForm):
         """ Retrieve all fields from Product Model """
         model = Product
         fields = '__all__'
+
+    image = forms.ImageField(
+        label='Image', required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         """ Override init to retrieve fields by friendly name """
