@@ -8,14 +8,14 @@ class ProductForm(forms.ModelForm):
 
     class Meta:
         """ Retrieve all fields from Product Model """
-        model = Product,
+        model = Product
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
         """ Override init to retrieve fields by friendly name """
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
-        friendly_name = [(c.it, c.get_friendly_name()) for c in categories]
+        friendly_name = [(c.id, c.get_friendly_name()) for c in categories]
 
         self.fields['category'].choices = friendly_name
         for field_name, field in self.fields.items():
