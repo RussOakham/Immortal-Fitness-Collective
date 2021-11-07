@@ -18,16 +18,14 @@ class StripeWH_Handler:
         self.request = request
 
     def _send_confirmation_email(self, order):
-        """ Send use a confirmation email """
+        """ Send user a confirmation email """
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
-            {'order':order}
-        )
+            {'order': order})
         body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.txt',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
-        )
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         send_mail(
             subject,
@@ -41,7 +39,8 @@ class StripeWH_Handler:
         Handle a generic/unknown/unexpected webhook event
         """
         return HttpResponse(
-            content=f'Unhandled Webhook received: {event["type"]}', status=200)
+            content=f'Webhook received: {event["type"]}',
+            status=200)
 
     def handle_payment_intent_succeeded(self, event):
         """
@@ -155,7 +154,8 @@ class StripeWH_Handler:
 
     def handle_payment_intent_payment_failed(self, event):
         """
-        Handle a payment_intent.failed webhook from Stripe
+        Handle a payment_intent.payment_failed webhook from Stripe
         """
         return HttpResponse(
-            content=f'Webhook received: {event["type"]}', status=200)
+            content=f'Webhook received: {event["type"]}',
+            status=200)

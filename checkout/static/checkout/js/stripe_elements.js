@@ -29,7 +29,7 @@ card.addEventListener("change", function (event) {
   var errorDiv = document.getElementById("checkout__card-errors");
   if (event.error) {
     var html = `
-            <span class="icon">
+            <span class="icon" role="alert">
                 <i class="fas fa-times"></i>
             </span>
             <span>${event.error.message}</span>
@@ -97,11 +97,10 @@ form.addEventListener("submit", function (ev) {
             // Show error to customer
             var errorDiv = document.getElementById("checkout__card-errors");
             var html = `
-            <span class="icon">
-                <i class="fas fa-times"></i>
-            </span>
-            <span>${result.error.message}</span>
-        `;
+                    <span class="icon" role="alert">
+                    <i class="fas fa-times"></i>
+                    </span>
+                    <span>${result.error.message}</span>`;
             $(errorDiv).html(html);
             $("#checkout__payment-form").fadeToggle(100);
             $("#checkout__loading-overlay").fadeToggle(100);
@@ -116,7 +115,7 @@ form.addEventListener("submit", function (ev) {
         });
     })
     .fail(function () {
-      // reload page, error will be visible on website
+      // reload the page, error will be in django messages
       location.reload();
     });
 });
