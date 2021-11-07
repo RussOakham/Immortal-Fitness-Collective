@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+from pathlib import Path
 import dj_database_url
 
-from pathlib import Path
 
 if os.path.exists('env.py'):
     import env
@@ -181,6 +181,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+    # Cache Control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000'
+    }
+
     # S3 Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'immortal-fitness-collective'
     AWS_S3_REGION_NAME = 'eu-west-2'
