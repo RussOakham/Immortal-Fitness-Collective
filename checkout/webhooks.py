@@ -19,7 +19,7 @@ def webhook(request):
 
     # Get webhook data and verify signature
     payload = request.body
-    sig_header = request.META('HTTP_STRIPE_SIGNATURE')
+    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
 
     try:
@@ -44,7 +44,7 @@ def webhook(request):
         'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
     }
 
-    #Get the webhook type from stripe
+    # Get the webhook type from stripe
     event_type = event['type']
 
     # If there's a handler for it, get it from the event map
