@@ -1,0 +1,1 @@
+web: gunicorn immortal_fitness_collective.wsgi:application
