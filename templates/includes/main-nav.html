@@ -50,7 +50,8 @@
                 <a href="{% url 'products' %}?category=drinkware" class="dropdown-item">Drinkware</a>
                 <a href="{% url 'products' %}?category=patches" class="dropdown-item">Patches</a>
                 <a href="{% url 'products' %}?category=caps_beanies" class="dropdown-item">Caps &amp; Beanies</a>
-                <a href="{% url 'products' %}?category=drinkware,patches,caps_beanies" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?category=other" class="dropdown-item">Other</a>
+                <a href="{% url 'products' %}?category=drinkware,patches,caps_beanies,other" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
@@ -62,7 +63,6 @@
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
                 <a href="{% url 'products' %}?category=skipping_ropes" class="dropdown-item">Skipping Ropes</a>
                 <a href="{% url 'products' %}?category=bells" class="dropdown-item">Bells</a>
-                <a href="{% url 'products' %}?category=straps" class="dropdown-item">Straps</a>
                 <a href="{% url 'products' %}?category=skipping_ropes,bells,straps" class="dropdown-item">All Equipment</a>
             </div>
         </li>
