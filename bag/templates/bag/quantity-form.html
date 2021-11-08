@@ -1,0 +1,56 @@
+<form
+  class="form shopping-bag__update-form"
+  action="{% url 'edit_bag' item.item_id %}"
+  method="POST"
+>
+  {% csrf_token %}
+  <div class="form-group">
+    <div class="input-group shopping-bag__quantity-input">
+      <div class="input-group-prepend">
+        <button
+          class="btn btn--black product-detail__decrement decrement-qty"
+          data-item_id="{{ item.item_id }}"
+          id="decrement-qty_{{ item.item_id }}"
+        >
+          &minus;
+        </button>
+      </div>
+      <input
+        type="number"
+        name="quantity"
+        class="
+          form-control
+          from-control-sm
+          product-detail__form-control
+          qty_input
+        "
+        value="{{ item.quantity }}"
+        min="1"
+        max="99"
+        data_item_id="{{ item.item_id }}"
+        id="id_qty_{{ item.item_id }}"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn--black product-detail__increment increment-qty"
+          data-item_id="{{ item.item_id }}"
+          id="increment-qty_{{ item.item_id }}"
+        >
+          &plus;
+        </button>
+      </div>
+      {% if item.product.has_sizes %}
+      <input type="hidden" name="product_size" value="{{ item.size }}" />
+      {% elif item.product.shoe_sizes %}
+      <input type="hidden" name="product_size" value="{{ item.size }}" />
+      {% endif %}
+    </div>
+  </div>
+</form>
+<a class="shopping-bag__update-link text-info"><small>Update</small></a>
+<a
+  class="shopping-bag__remove-item text-danger float-right"
+  id="remove_{{ item.item_id }}"
+  data-product_size="{{ item.size }}"
+  ><small>Remove</small></a
+>
