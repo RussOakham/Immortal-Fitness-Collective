@@ -645,7 +645,7 @@ p {
   border-bottom: 1px solid var(--colour-grey-light-2);
 }
 
-/* ----------------  Product Catelogue Pages   ------------ */
+/* ----------------  Product Catalogue Pages   ------------ */
 .product-card {
   position: relative;
   display: -ms-flexbox;
@@ -661,6 +661,11 @@ p {
   border: 2px solid rgba(128, 128, 128, 0.16);
   border-radius: 1rem;
   box-shadow: 0 1px 4px rgb(128 128 128 / 11%);
+}
+
+.product-catalogue__home-link, 
+.category-badge {
+  color: var(--colour-black);
 }
 
 .product-card__image {
@@ -733,6 +738,7 @@ p {
 
 .btt-link {
   cursor: pointer;
+  color: var(--colour-black);
 }
 
 /* ----------------  Product Detail Page   ------------ */
@@ -847,7 +853,8 @@ p {
 
 /* Fixed topnav only on medium and up */
 @media (min-width: 576px) {
-  .message-container {
+  .message-container,
+  .btt-button {
     right: calc((100vw - 540px) / 2);
   }
 
@@ -885,7 +892,8 @@ p {
     margin-top: 6rem;
   }
 
-  .message-container {
+  .message-container,
+  .btt-button {
     right: calc((100vw - 720px) / 2);
   }
 
@@ -913,7 +921,8 @@ p {
     z-index: 1050;
   }
 
-  .message-container {
+  .message-container,
+  .btt-button {
     right: calc((100vw - 960px) / 2);
   }
 
@@ -940,7 +949,8 @@ p {
 }
 
 @media (min-width: 1200px) {
-  .message-container {
+  .message-container,
+  .btt-button {
     right: calc((100vw - 1140px) / 2);
   }
 }
