@@ -448,7 +448,7 @@ p {
 .message-container {
   position: fixed;
   top: 72px;
-  right: calc((100vw - 114rem) / 2);
+  right: calc((100vw - 1140px) / 2);
   z-index: 9999;
 }
 
