@@ -291,6 +291,9 @@ p {
   text-decoration: none;
   color: var(--colour-text-body);
   background-color: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
   border-bottom: 1px solid var(--colour-gold);
   padding: 3px 6px;
   transition: all 0.2s;
@@ -352,6 +355,12 @@ p {
   transform: scale(0.95);
   border: none;
   color: var(--colour-gold);
+}
+
+/* ----------------  Customer Reviews   ------------ */
+
+.customer-review-form {
+  padding: 2rem 0;
 }
 
 /* ----------------  Navigation   ------------ */

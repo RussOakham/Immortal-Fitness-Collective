@@ -5,7 +5,7 @@ from django.db.models.fields import TextField
 from django.utils import translation
 
 class Category(models.Model):
-    """ enable categorisation grouping of product catalogue """
+    """ enable category grouping of product catalogue """
 
     class Meta:
         """ set correct grammar of category plural """
@@ -61,8 +61,7 @@ class ProductReview(models.Model):
         User, null=True, blank=True, on_delete=models.CASCADE)
     title = models.CharField(
         max_length=254, null=True, blank=True, default='')
-    review = models.CharField(
-        max_length=2000, null=True, blank=True, default='')
+    review = models.TextField()
     rating = models.IntegerField(choices=RATING_OPTIONS, default=3)
     review_date = models.DateTimeField(auto_now_add=True)
     verified_purchase = models.BooleanField(default=False)
