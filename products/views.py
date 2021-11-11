@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from profiles.models import UserProfile
 from checkout.models import OrderLineItem
-from .models import Product, Category
+from .models import Product, Category, ProductReview
 from .forms import ProductForm, ReviewForm
 
 # Create your views here.
@@ -161,7 +161,7 @@ def add_review(request, product_id):
         profile = get_object_or_404(UserProfile, user_id=request.user)
     else:
         profile = None
-    
+
     if request.user.is_authenticated:
         if request.method == 'POST':
             form = ReviewForm(request.POST)
@@ -174,7 +174,7 @@ def add_review(request, product_id):
                     order__user_profile=profile).filter(
                         product=product).exists():
                     review.verified_purchase = True
-                
+       
                 review.save()
                 messages.info(request, 'Thankyou for your review!')
 
@@ -190,3 +190,34 @@ def add_review(request, product_id):
     }
 
     return render(request, context)
+
+
+@login_required
+def edit_review(request, review_id):
+    """ Edit a existing review """
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.info(request, 'Review updated!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(
+                request, "Failed to update review, please ensure form is valid")
+
+    else:
+        form = ReviewForm(instance=review)
+
+    messages.info(request, f'You are editing your review of {product}.')
+    template = 'products/product_detail.html'
+    context = {
+        'form': form,
+        'review': review,
+        'product': product,
+        'edit': True,
+    }
+
+    return render(request, template, context)

@@ -188,16 +188,37 @@
   <div class="container">
     <div class="row margin-top-med margin-bottom-sm justify-center">
       <div class="col-12 col-lg-8">
-        <h3 class="heading-tertiary">Leave a review</h3>
-        <form action="{% url 'add_review' product.id %}" class="form" method="POST">
-          {% csrf_token %}
-          {{ form | crispy }}
-          <div class="text-center">
-            <button class="btn-text" type="submit">
-              Submit Review
-            </button>
-          </div>
-        </form>
+        {% if edit %}
+
+          <h3 class="heading-tertiary">Edit Your Review</h3>
+          <form action="{% url 'edit_review' review.id %}" class="form" method="POST">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div class="text-center">
+              <a href="{% url 'product_detail' product.id %}" class="btn-text btn-danger">
+                Cancel
+              </a>
+              <button class="btn-text" type="submit">
+                Update Review
+              </button>
+            </div>
+          </form>
+
+
+        {% else %}
+
+          <h3 class="heading-tertiary">Leave a review</h3>
+          <form action="{% url 'add_review' product.id %}" class="form" method="POST">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div class="text-center">
+              <button class="btn-text" type="submit">
+                Submit Review
+              </button>
+            </div>
+          </form>
+
+        {% endif %}
       </div>
     </div>
   </div>
