@@ -1,6 +1,8 @@
 """ required imports for module functionality """
 from django.db import models
-
+from django.contrib.auth.models import User
+from django.db.models.fields import TextField
+from django.utils import translation
 
 class Category(models.Model):
     """ enable categorisation grouping of product catalogue """
@@ -36,3 +38,34 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductReview(models.Model):
+    """ A Model to review products """
+
+    class Meta:
+        """ Order dates in reverse """
+        ordering = ['-review_date']
+
+    RATING_OPTIONS = (
+        (5, '5'),
+        (4, '4'),
+        (3, '3'),
+        (2, '2'),
+        (1, '2'),
+    )
+
+    product = models.ForeignKey(
+        Product, null=True, blank=True, on_delete=models.SET_NULL, related_name='reviews')
+    user = models.ForeignKey(
+        User, null=True, blank=True, on_delete=models.CASCADE)
+    title = models.CharField(
+        max_length=254, null=True, blank=True, default='')
+    review = models.CharField(
+        max_length=2000, null=True, blank=True, default='')
+    rating = models.IntegerField(choices=RATING_OPTIONS, default=3)
+    review_date = models.DateTimeField(auto_now_add=True)
+    verified_purchase = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
