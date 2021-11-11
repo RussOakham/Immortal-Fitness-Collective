@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from profiles.models import UserProfile
+from checkout.models import OrderLineItem
 from .models import Product, Category
 from .forms import ProductForm, ReviewForm
 
@@ -148,3 +150,43 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_review(request, product_id):
+    """ Add a product review """
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.user.is_authenticated:
+        profile = get_object_or_404(UserProfile, user_id=request.user)
+    else:
+        profile = None
+    
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.product = product
+                review.user = request.user
+                # Verify user has purchased product
+                if OrderLineItem.objects.filter(
+                    order__user_profile=profile).filter(
+                        product=product).exists():
+                    review.verified_purchase = True
+                
+                review.save()
+                messages.info(request, 'Thankyou for your review!')
+
+                return redirect(reverse('product_detail', args=[product.id]))
+
+            else:
+                messages.error(
+                    request, 'Failed to add review - please ensure form is valid')
+
+    context = {
+        'form': form,
+        'profile': profile,
+    }
+
+    return render(request, context)

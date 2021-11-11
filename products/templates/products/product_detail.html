@@ -189,7 +189,7 @@
     <div class="row margin-top-med margin-bottom-sm justify-center">
       <div class="col-12 col-lg-8">
         <h3 class="heading-tertiary">Leave a review</h3>
-        <form action="" class="form" method="POST">
+        <form action="{% url 'add_review' product.id %}" class="form" method="POST">
           {% csrf_token %}
           {{ form | crispy }}
           <div class="text-center">

@@ -46,13 +46,14 @@ class ProductReview(models.Model):
     class Meta:
         """ Order dates in reverse """
         ordering = ['-review_date']
+        verbose_name_plural = 'Product Reviews'
 
     RATING_OPTIONS = (
         (5, '5'),
         (4, '4'),
         (3, '3'),
         (2, '2'),
-        (1, '2'),
+        (1, '1'),
     )
 
     product = models.ForeignKey(
