@@ -1,5 +1,6 @@
 """ required imports for module functionality """
 from django.db import models
+from django.db.models import Avg
 from django.contrib.auth.models import User
 from django.db.models.fields import TextField
 from django.utils import translation
@@ -31,10 +32,16 @@ class Product(models.Model):
     description = models.TextField()
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     shoe_sizes = models.BooleanField(default=False, null=True, blank=True)
-    rating = models.DecimalField(max_digits=6, decimal_places=2)
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def calculate_avg_rating(self):
+        """ Calculate product average rating """
+        
+        self.rating = self.reviews.all().aggregate(Avg("rating"))['rating__avg']
+        self.save()
 
     def __str__(self):
         return self.name

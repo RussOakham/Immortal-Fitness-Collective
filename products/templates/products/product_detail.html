@@ -232,6 +232,14 @@
               <p class="card-text review-card__text">
                 {{ review.review }}
               </p>
+              {% if request.user == review.user or is_superuser %}
+                <a
+                    href="{% url 'delete_review' review.id %}"
+                    class="btn-text text-center btn-danger float-left"
+                  >
+                    <span class="text-uppercase font-small">Delete Review</span>
+                </a>
+              {% endif %}
               <p class="font-small float-right">
                 <strong>{{ review.user }}</strong>
                 {% if review.verified_purchase %}
