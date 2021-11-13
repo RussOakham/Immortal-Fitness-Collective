@@ -204,7 +204,47 @@
 </section>
 
 <section class="customer-review-summary">
-  
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12 text-center">
+        <h2 class="heading-secondary">Reviews</h2>
+      </div>
+
+      <div class="col-12">
+        {% for review in product.reviews.all %}
+          <div class="card review-card margin-bottom-sm w-100">
+            <div class="card-header review-card__header">
+              <h6 class="heading-tertiary review-card__heading float-left">
+                {{ review.title }}
+              </h6>
+              <p class="float-right">
+                {{ review.review_date | date:"d/m/Y" }}
+              </p>
+            </div>
+
+            <div class="card-body review-card__body">
+              <div class="card-title review-card__title">
+                <div class="review-card__title-stars">
+                  {{ review.rating }}
+                </div>
+              </div>
+              <p class="card-text review-card__text">
+                {{ review.review }}
+              </p>
+              <p class="font-small float-right">
+                <strong>{{ review.user }}</strong>
+                {% if review.verified_purchase %}
+                  <i class="fas fa-check-circle verified-purchase"
+                  title="Purchase Verified"></i>
+                {% endif %}
+              </p>
+            </div>
+          </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </section>
 
 {% endblock %}

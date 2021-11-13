@@ -359,8 +359,27 @@ p {
 
 /* ----------------  Customer Reviews   ------------ */
 
-.customer-review-form {
+.customer-review-form,
+.customer-review-summary {
   padding: 2rem 0;
+}
+
+.review-card__header {
+  background-color: rgba(0,0,0,.1);
+}
+
+.review-card__header h6,
+.review-card__header p {
+  margin-bottom: 0;
+}
+
+.review-card__heading {
+  font-size: var(--default-font-size);
+  line-height: 1.7;
+}
+
+.verified-purchase {
+  color: var(--colour-green-light);
 }
 
 /* ----------------  Navigation   ------------ */

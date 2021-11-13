@@ -174,7 +174,7 @@ def add_review(request, product_id):
                     order__user_profile=profile).filter(
                         product=product).exists():
                     review.verified_purchase = True
-       
+
                 review.save()
                 messages.info(request, 'Thankyou for your review!')
 
