@@ -191,3 +191,18 @@ def add_review(request, product_id):
 
     return render(request, context)
 
+
+@login_required
+def delete_review(request, review_id):
+    """
+    Allows superusers to delete their reviews.
+    """
+
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
+    reviewer = review.user
+    review.delete()
+    messages.info(
+        request, f'Successfully deleted {reviewer} review of {product}')
+
+    return redirect(reverse('product_detail', args=[product.id]))
