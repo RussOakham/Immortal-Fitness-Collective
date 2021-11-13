@@ -787,6 +787,11 @@ p {
 }
 
 /* ----------------  Product Detail Page   ------------ */
+.product-detail_image-container {
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
 .product-detail__image {
   max-width: 100%;
   height: auto;
