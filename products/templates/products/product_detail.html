@@ -224,7 +224,9 @@
 
             <div class="card-body review-card__body">
               <div class="card-title review-card__title">
-                <div class="review-card__title-stars">
+                <div 
+                  class="review-card__title-stars" 
+                  data-val="{{ review.rating }}">
                   {{ review.rating }}
                 </div>
               </div>
@@ -251,5 +253,9 @@
 
 {% block postloadjs %}
 {{ block.super }}
+<script 
+  type="text/javascript" 
+  src="{% static 'products\js\rating_stars.js' %}">
+</script>
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
