@@ -364,6 +364,16 @@ p {
   padding: 2rem 0;
 }
 
+.review-card {
+  transform: scale(1.0);
+  transition: all 0.2s;
+}
+
+.review-card:hover {
+  transform: scale(1.02);
+  transition: all 0.2s;
+}
+
 .review-card__header {
   background-color: rgba(0,0,0,.1);
 }
@@ -376,6 +386,12 @@ p {
 .review-card__heading {
   font-size: var(--default-font-size);
   line-height: 1.7;
+}
+
+.review-card__title-stars {
+  color: var(--colour-gold);
+  font-size: var(--default-font-size);
+  text-shadow: 0 .1rem 0 var(--colour-primary-light);
 }
 
 .verified-purchase {
