@@ -1,5 +1,7 @@
 """ required imports for module functionality """
 from django.db import models
+from django.shortcuts import get_object_or_404
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -46,3 +48,10 @@ class Workout(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        category = self.category.friendly_name
+        if not self.slug:
+            slug_str = category + "-" + self.title
+            self.slug = slugify(slug_str, allow_unicode=True)
+        super(Workout, self).save(*args, **kwargs)

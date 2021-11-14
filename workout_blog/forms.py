@@ -9,7 +9,7 @@ class WorkoutForm(forms.ModelForm):
     class Meta:
         """ Retrieve fields for form """
         model = Workout
-        exclude = ('author', 'upload_date',)
+        exclude = ('author', 'upload_date', 'slug',)
 
     def __init__(self, *args, **kwargs):
         """ Override init to retrieve fields by friendly_name """
