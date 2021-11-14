@@ -1,6 +1,5 @@
 """ required imports for module functionality """
 from django.db import models
-from django.shortcuts import get_object_or_404
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 
@@ -28,15 +27,15 @@ class Workout(models.Model):
     """ set property characteristics for workout blog posts """
 
     category = models.ForeignKey(WorkoutProgramme, null=True, blank=True, on_delete=models.SET_NULL)
-    title = models.CharField(max_length=100, null=True, blank=True)
+    title = models.CharField(max_length=100, null=True, blank=False)
     workout_date = models.DateField()
     slug = models.SlugField(max_length=100, unique=True)
     weightlifting_title = models.CharField(max_length=100, null=True, blank=True)
-    weightlifting_workout = models.TextField()
+    weightlifting_workout = models.TextField(blank=True)
     metcon_title = models.CharField(max_length=100, null=True, blank=True)
-    metcon_workout = models.TextField()
+    metcon_workout = models.TextField(blank=True)
     skills_title = models.CharField(max_length=100, null=True, blank=True)
-    skills_workout = models.TextField()
+    skills_workout = models.TextField(blank=True)
     upload_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
         User, null=True, blank=True, on_delete=models.CASCADE
