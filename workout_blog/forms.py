@@ -1,5 +1,6 @@
 """ required imports for module functionality """
 from django import forms
+from bootstrap_datepicker_plus import DatePickerInput
 from .models import Workout, WorkoutProgramme
 
 
@@ -10,6 +11,9 @@ class WorkoutForm(forms.ModelForm):
         """ Retrieve fields for form """
         model = Workout
         exclude = ('author', 'upload_date', 'slug',)
+        widgets = {
+            'workout_date': DatePickerInput(format='%d/%m/%Y'),
+        }
 
     def __init__(self, *args, **kwargs):
         """ Override init to retrieve fields by friendly_name """

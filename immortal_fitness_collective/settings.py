@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     # Other
     'crispy_forms',
     'storages',
+    'bootstrap_datepicker_plus',
 ]
 
 MIDDLEWARE = [
