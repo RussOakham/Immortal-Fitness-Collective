@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load static %} 
+
+{% block page_header %}
+
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+
+{% endblock %} 
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+              <div class="col text-center margin-bottom-med margin-top-med">
+                  <h1 class="heading-primary font-black margin-top-big text-center">
+                    Workout Management
+                </h1>
+                <h5 class="text-muted text-center">Add a Workout</h5>
+                <hr />
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="workout-section">
+  <div class="container">
+    <div class="row justify-center">
+        <div class="col-12 col-md-6">
+            <form 
+                action="{% url 'add_workout' %}"
+                method="POST"
+                class="form mb-2"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    {{ field | as_crispy_field }}
+                {% endfor %}
+
+                <div class="text-right">
+                    <a href="{% url 'home' %}" class="btn btn-text">Cancel</a>
+                    <button class="btn btn-text" type="submit" aria-label="Add Workout">Add Workout</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

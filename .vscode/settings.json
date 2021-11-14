@@ -9,5 +9,10 @@
   },
   "emmet.includeLanguages": {
     "django-html": "html"
-  }
+  },
+  "cSpell.words": [
+    "allauth",
+    "crossfit",
+    "metcon"
+  ]
 }
