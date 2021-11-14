@@ -28,19 +28,54 @@
 </section>
 
 <section class="workout-section">
-  <div class="row justify-center">
-    <div class="col-12 workout-main">
-      <h2 class="heading-secondary">
-        Workout Title - Workout Date
-      </h2>
+  <div class="container">
+    <div class="row justify-center">
+      {% for workout in workouts %}
+        <div class="card w-100">
+          <div class="card-header">
+            <div class="heading-tertiary font-small text-muted float-left">{{ workout.category.friendly_name }}</div>
+            <div class="heading-tertiary font-small text-muted float-right">Date: {{ workout.workout_date }}</div>
+          </div>
+          <div class="card-body workout-card__main">
+            <div class="text-center margin-bottom-sm">
+              <h2 class="heading-secondary card-title">
+                {{ workout.title }}
+              </h2>
+            </div>
 
-      <div class="col-12">
-        Workout Content
-      </div>
+            {% if workout.weightlifting_title %}
+              <h5 class="heading-tertiary">{{ workout.weightlifting_title }}</h5>
+              <p class="card-text">
+                {{ workout.weightlifting_workout | linebreaks }}
+              </p>
+            {% endif %}
 
-      <div class="font-small float-right">
-        Posted By: Author / Date
-      </div>
+            <hr class="w-50 center-self">
+
+            {% if workout.metcon_title %}
+              <h5 class="heading-tertiary">{{ workout.metcon_title }}</h5>
+              <p class="card-text">
+                {{ workout.metcon_workout | linebreaks }}
+              </p>
+            {% endif %}
+
+            <hr class="w-50 center-self">
+
+            {% if workout.skills_title %}
+              <h5 class="heading-tertiary">{{ workout.skills_title }}</h5>
+              <p class="card-text">
+                {{ workout.skills_workout | linebreaks }}
+              </p>
+            {% endif %}
+            
+          </div>
+          <div class="card-footer text-muted">
+            <div class="font-small float-right text-muted">
+              Posted By: {{ workout.author }} - {{ workout.upload_date | date:"d/m/Y" }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </section>

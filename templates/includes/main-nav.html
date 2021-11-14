@@ -15,8 +15,8 @@
                 Programming
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="programming-link">
-                <a href="" class="dropdown-item">Everday Athlete</a>
-                <a href="" class="dropdown-item">Competitor</a>
+                <a href="{% url 'all_workouts' %}?category=everyday_athlete_programme" class="dropdown-item">Everyday Athlete</a>
+                <a href="{% url 'all_workouts' %}?category=competitor_programme" class="dropdown-item">Competitor</a>
             </div>
         </li>
 

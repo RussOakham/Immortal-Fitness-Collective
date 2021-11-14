@@ -18,8 +18,8 @@
   --gutter-vertical-small: 6rem;
   --text-shadow: 0 1rem 3rem rgb(0 0 0 / 70%);
   --box-shadow: 0 1rem 1rem rgb(0 0 0 / 30%);
-  --default-font-size: 1.6rem;
-  --small-font-size: 1.2rem;
+  --default-font-size: 1.5rem;
+  --small-font-size: 1rem;
 }
 
 /* This is a branch test note */
@@ -120,7 +120,7 @@ p {
 }
 
 .heading-tertiary {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -168,6 +168,11 @@ p {
 
 .justify-center {
   justify-content: center;
+}
+
+.center-self {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .border-none {
@@ -869,6 +874,12 @@ p {
 .shopping-bag__update-link,
 .shopping-bag__remove-item {
   cursor: pointer;
+}
+
+/* ----------------  Workout Blog   ------------ */
+
+.workout-card__main {
+  padding: 1.25rem 2.5rem;
 }
 
 /* ----------------  MEDIA QUERIES   ------------ */

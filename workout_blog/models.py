@@ -1,8 +1,6 @@
 """ required imports for module functionality """
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.fields import NullBooleanField
-from django.db.models.fields.files import ImageField
 
 # Create your models here.
 
@@ -29,16 +27,21 @@ class Workout(models.Model):
 
     category = models.ForeignKey(WorkoutProgramme, null=True, blank=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=100, null=True, blank=True)
-    slug = models.SlugField(max_length=100, unique=True)
-    workout = models.TextField()
     workout_date = models.DateField()
-    image = models.ImageField(null=True, blank=True)
+    slug = models.SlugField(max_length=100, unique=True)
+    weightlifting_title = models.CharField(max_length=100, null=True, blank=True)
+    weightlifting_workout = models.TextField()
+    metcon_title = models.CharField(max_length=100, null=True, blank=True)
+    metcon_workout = models.TextField()
+    skills_title = models.CharField(max_length=100, null=True, blank=True)
+    skills_workout = models.TextField()
     upload_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
         User, null=True, blank=True, on_delete=models.CASCADE
     )
 
     class Meta:
+        """ Order by workout date in reverse """
         ordering = ['-workout_date']
 
     def __str__(self):
