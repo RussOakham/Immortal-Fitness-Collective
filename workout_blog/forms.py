@@ -9,7 +9,6 @@ class WorkoutForm(forms.ModelForm):
     class Meta:
         """ Retrieve fields for form """
         model = Workout
-        fields = '__all__'
         exclude = ('author', 'upload_date',)
 
     def __init__(self, *args, **kwargs):

@@ -97,3 +97,18 @@ def edit_workout(request, slug):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_workout(request, slug):
+    """ Delete an existing workout post """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry only site admins can do that.')
+        return redirect(reverse('home'))
+
+    workout = get_object_or_404(Workout, slug=slug)
+    workout.delete()
+
+    messages.info(request, f'Successfully deleted {workout.title}.')
+    return redirect(reverse('home'))

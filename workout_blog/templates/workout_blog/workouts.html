@@ -41,11 +41,11 @@
           </div>
           <div class="card-body workout-card__main">
             <div class="text-center margin-bottom-sm">
-              <a href="{% url 'workout_detail' workout.slug %}">
-                <h2 class="heading-secondary card-title">
+              <h2 class="heading-secondary card-title">
+                <a href="{% url 'workout_detail' workout.slug %}">
                   {{ workout.title }}
-                </h2>
-              </a>
+                </a>
+              </h2>
             </div>
 
             {% if workout.weightlifting_title %}

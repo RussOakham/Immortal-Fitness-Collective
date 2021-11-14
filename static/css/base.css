@@ -57,6 +57,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   background-color: var(--colour-grey-light-1);
+  color: var(--colour-black);
 }
 
 h1,
@@ -89,6 +90,11 @@ p {
   backface-visibility: hidden;
 }
 
+.heading-primary a {
+  color: var(--colour-white);
+  text-decoration: none;
+}
+
 .heading-primary--main {
   display: block;
   font-size: 6rem;
@@ -104,6 +110,11 @@ p {
   letter-spacing: 1.75rem;
   color: var(--colour-secondary);
   text-shadow: var(--text-shadow);
+}
+
+.heading-primary--sub a {
+  color: var(--colour-secondary);
+  text-decoration: none;
 }
 
 .heading-secondary {
@@ -124,6 +135,12 @@ p {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.1rem;
+}
+
+.heading-secondary a,
+.heading-tertiary a {
+  color: var(--colour-black);
+  text-decoration: none;
 }
 
 .underline {
