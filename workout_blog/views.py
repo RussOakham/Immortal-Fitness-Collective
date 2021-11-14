@@ -68,31 +68,32 @@ def add_workout(request):
     return render(request, template, context)
 
 
-# @login_required
-# def edit_workout(request, slug):
-#     """ Edit a workout """
+@login_required
+def edit_workout(request, slug):
+    """ Edit a workout """
 
-#     if not request.user.is_superuser:
-#         messages.error(request, 'Sorry, only admins can do that!')
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admins can do that!')
+        return redirect(reverse('home'))
 
-#     workout = get_object_or_404(Workout, slug=slug)
-#     if request.method == 'POST':
-#         form = WorkoutForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             messages.success(request, 'Successfully updated workout.')
-#             return redirect(reverse('workout_detail', args=[workout.slug]))
-#         else:
-#             messages.error(request, 'Failed to update workout. Please ensure form is valid.')
+    workout = get_object_or_404(Workout, slug=slug)
+    if request.method == 'POST':
+        form = WorkoutForm(request.POST, instance=workout)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated workout.')
+            return redirect(reverse('workout_detail', args=[workout.slug]))
+        else:
+            messages.error(request, 'Failed to update workout. Please ensure form is valid.')
 
-#     else:
-#         form = WorkoutForm(instance=workout_detail)
-#         messages.info(request, f'You are editing {workout.title}')
+    else:
+        form = WorkoutForm(instance=workout)
+        messages.info(request, f'You are editing {workout.title}')
 
-#     template = 'workout_blog/edit_workout.html'
-#     context = {
-#         'form': form,
-#         'workout': workout,
-#     }
+    template = 'workout_blog/edit_workout.html'
+    context = {
+        'form': form,
+        'workout': workout,
+    }
 
-#     return render(request, template, context)
+    return render(request, template, context)
