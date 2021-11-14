@@ -20,9 +20,7 @@
             <div class="col">
               <div class="col text-center margin-bottom-med margin-top-med">
                   <h1 class="heading-secondary">
-                    {% for c in current_category %}
-                      {{ c.friendly_name }}
-                    {% endfor %}
+                      {{ workout.category.friendly_name }}
                   </h1>
               </div>
             </div>
@@ -33,7 +31,6 @@
 <section class="workout-section">
   <div class="container">
     <div class="row justify-center">
-      {% for workout in workouts %}
         <div class="card w-100">
           <div class="card-header">
             <div class="heading-tertiary font-small text-muted float-left">{{ workout.category.friendly_name }}</div>
@@ -41,11 +38,9 @@
           </div>
           <div class="card-body workout-card__main">
             <div class="text-center margin-bottom-sm">
-              <a href="{% url 'workout_detail' workout.slug %}">
-                <h2 class="heading-secondary card-title">
-                  {{ workout.title }}
-                </h2>
-              </a>
+              <h2 class="heading-secondary card-title">
+                {{ workout.title }}
+              </h2>
             </div>
 
             {% if workout.weightlifting_title %}
@@ -80,25 +75,9 @@
             </div>
           </div>
         </div>
-      {% endfor %}
     </div>
   </div>
 </section>
 
-
-<div class="btt-button shadow-sm rounded-0 border border-black">
-  <a class="btt-link d-flex h-100">
-    <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-  </a>
-</div>
-
 {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript">
-  $('.btt-link').click(function(e) {
-    window.scrollTo(0,0)
-  })
-</script>
-{% endblock %}
