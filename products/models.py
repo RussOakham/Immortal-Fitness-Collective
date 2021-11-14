@@ -2,8 +2,6 @@
 from django.db import models
 from django.db.models import Avg
 from django.contrib.auth.models import User
-from django.db.models.fields import TextField
-from django.utils import translation
 
 class Category(models.Model):
     """ enable category grouping of product catalogue """
@@ -39,7 +37,7 @@ class Product(models.Model):
 
     def calculate_avg_rating(self):
         """ Calculate product average rating """
-        
+
         self.rating = self.reviews.all().aggregate(Avg("rating"))['rating__avg']
         self.save()
 

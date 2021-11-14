@@ -34,7 +34,7 @@ class ProductReviewAdmin(admin.ModelAdmin):
         'review_date',
         'rating'
     )
-    
+
     ordering = ('review_date',)
 
 
