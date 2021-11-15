@@ -214,6 +214,68 @@
     {% block content %} 
 
     {% endblock %} 
+
+    {% block footer %}
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 footer__logo-box">
+            <picture class="footer">
+              <source srcset="{% static 'media/footer-logo.png' %}"
+                    media="(max-width: 37.5em)">
+              <img srcset="{% static 'media/footer-logo-small.png' %}" alt="Immortal Fitness Collective"
+                    class="footer__logo">
+            </picture>
+          </div>
+          
+          <div class="col-12 col-md-6">
+            <div class="footer__navigation">
+               <ul class="footer__list">
+                  <li class="footer__item">
+                      <a href="{% url 'home' %}" class="footer__link">Home</a>
+                  </li>
+                  <li class="footer__item">
+                      <a href="#" class="footer__link">About Us</a>
+                  </li>
+                  <li class="footer__item">
+                      <a href="{% url 'all_workouts' %}?category=everyday_athlete_programme" class="footer__link">Programmes</a>
+                  </li>
+                  <li class="footer__item">
+                      <a href="{% url 'products' %}" class="footer__link">Shop</a>
+                  </li>
+                  <li class="footer__item">
+                      <a href="{% url 'profile' %}" class="footer__link">Account</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="footer__contact">
+              <ul class="footer__list">
+                <li class="footer__item">
+                    <a href="tel:07500500500" class="footer__link">
+                      Phone: 07500 500500
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="mailto: info@immortalFC.com" class="footer__link">
+                      Email Us!
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="https://www.gov.uk/government/organisations/companies-house" 
+                      class="footer__link">
+                      Company No: 1231231
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    {% endblock %}
     
     {% block postloadjs %} 
       <script type="text/javascript">
