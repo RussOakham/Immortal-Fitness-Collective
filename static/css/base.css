@@ -793,6 +793,19 @@ p {
   border-bottom: 1px solid var(--colour-grey-light-2);
 }
 
+/* ----------------  About Us - Hero Banner   ------------ */
+
+.hero-banner {
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.hero-banner--about-us {
+  height: 25vh;
+  background-image: url("../../media/crossfit-banner-large-compressed.jpg");
+}
+
 /* ----------------  Product Catalogue Pages   ------------ */
 .product-card {
   position: relative;
