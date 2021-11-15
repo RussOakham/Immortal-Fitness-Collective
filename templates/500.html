@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}]
+
+{% block page_header %}
+
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="500-section">
+    <div class="row">
+        <div class="col-12 text-center justify-center">
+            <h1>500!</h1>
+            <h3 class="heading-primary margin-bottom-big">
+                <span>Oops! Something went wrong!</span>
+                <span>Would you like us to take you home?</span>
+            </h3>
+            <a href="{% url 'home' %}" class="btn-text btn--green">
+                Home &#8962;
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}

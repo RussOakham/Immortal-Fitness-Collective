@@ -315,6 +315,15 @@ p {
   background-color: var(--colour-black);
 }
 
+.btn--green {
+  background-color: var(--colour-white);
+  color: var(--colour-black);
+}
+
+.btn--green::after {
+  background-color: var(--colour-green);
+}
+
 .btn-text,
 .btn-text:link,
 .btn-text:visited {
