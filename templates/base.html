@@ -210,17 +210,23 @@
     {% block page_header %} 
     
     {% endblock %} 
-    
-    {% block content %} 
 
-    {% endblock %} 
+    <main class="content-main">
+    
+      {% block content %} 
+
+      
+
+      {% endblock %} 
+
+    </main>
 
     {% block footer %}
     <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-12 footer__logo-box">
-            <picture class="footer">
+            <picture class="footer-picture">
               <source srcset="{% static 'media/footer-logo.png' %}"
                     media="(max-width: 37.5em)">
               <img srcset="{% static 'media/footer-logo-small.png' %}" alt="Immortal Fitness Collective"

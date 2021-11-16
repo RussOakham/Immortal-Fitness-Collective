@@ -40,15 +40,28 @@
   text-rendering: optimizeLegibility;
 }
 
-html {
+html, body {
   height: 100%;
+}
+
+html {
   font-size: 62.5%; /* 1rem = 10px, 10px/16px = 62.5% */
   font-smooth: auto;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   background-color: var(--colour-grey-light-1);
+}
+
+.content-main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
 }
 
 /* ----------------  Typography   ------------ */
@@ -485,6 +498,7 @@ p {
   background-color: var(--colour-primary);
   padding: 2rem 0;
   font-size: 1.4rem;
+  margin-top: 5rem;
 }
 
 .footer__logo-box {
