@@ -13,6 +13,7 @@
   --colour-red: #dc3545; /* Red */
   --colour-text-body: #1c1d1d; /* off black */
   --colour-gold: #ffd700; /* Gold */
+  --colour-purple: #8300e9;
   --gutter-horizontal: 6rem;
   --gutter-vertical: 8rem;
   --gutter-vertical-small: 6rem;
@@ -99,7 +100,7 @@ p {
   display: block;
   font-size: 6rem;
   font-weight: 700;
-  letter-spacing: 2.5rem;
+  letter-spacing: 1rem;
   text-shadow: var(--text-shadow);
 }
 
@@ -135,6 +136,17 @@ p {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.1rem;
+}
+
+.heading-tertiary--main {
+  display: block;
+  text-shadow: var(--text-shadow);
+}
+
+.heading-tertiary--sub {
+  color: var(--colour-purple);
+  text-decoration: none;
+  line-height: 1.6;
 }
 
 .heading-secondary a,
@@ -684,12 +696,12 @@ p {
 
 /* ----------------  Home Page - About Us   ------------ */
 .section-about-us {
-  padding: 5rem 0;
+  padding: 5rem 2rem;
 }
 
 /* ----------------  Home Page - Programmes   ------------ */
 .section-programmes {
-  padding: 10rem 0;
+  padding: 7rem 2rem;
   background-image: linear-gradient(
       to right bottom,
       rgba(107, 111, 117, 0.5),
@@ -703,7 +715,7 @@ p {
 }
 
 .programme-card {
-  height: 50rem;
+  height: 59rem;
   border-radius: 3px;
   overflow: hidden;
   box-shadow: var(--box-shadow);
@@ -793,7 +805,35 @@ p {
   border-bottom: 1px solid var(--colour-grey-light-2);
 }
 
-/* ----------------  About Us - Hero Banner   ------------ */
+.programme-card__icon {
+  font-size: 2rem;
+  margin-right: .5rem;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(91, 154, 80, 0.85),
+    rgba(32, 119, 90, 0.85)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  top: 0.4rem;
+}
+
+.programme-card__icon--competitor {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(158, 121, 43, 0.85),
+    rgba(255, 0, 0, 0.85)
+  );
+}
+
+.section-programme-desc {
+  padding: 5rem 2rem;
+}
+
+/* ----------------  About Us ------------ */
 
 .hero-banner {
   background-size: cover;
@@ -803,7 +843,21 @@ p {
 
 .hero-banner--about-us {
   height: 25vh;
-  background-image: url("../../media/crossfit-banner-large-compressed.jpg");
+  background-image: url("../../media/kettlebells-small.jpg");
+}
+
+.about-us-headline {
+  background-color: var(--colour-black);
+  color: var(--colour-white);
+  border-radius: 5px;
+  margin: 2rem 0;
+  padding: 7rem 4rem;
+}
+
+.team__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 /* ----------------  Product Catalogue Pages   ------------ */
@@ -1033,6 +1087,10 @@ p {
   .btt-button {
     right: calc((100vw - 610px) / 2);
   }
+  
+  .programme-card {
+    height: 55rem;
+  }
 
   .product-detail__image {
     padding: 0;
@@ -1077,9 +1135,17 @@ p {
   }
 
   .section-programmes {
-    padding: 18rem 0;
+    padding: 18rem 2rem;
     -webkit-clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
     clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+  }
+
+  .section-programme-desc {
+    padding-top: 1rem;
+  }
+
+  .programme-card {
+    height: 63rem;
   }
 
   .product-detail__image {
@@ -1144,6 +1210,15 @@ p {
   .navbar-toggler {
     padding: 0.6rem 0.6rem;
     font-size: 1rem;
+  }
+
+  .programme-card {
+    height: 55rem;
+  }
+
+  .about-us-headline {
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
 
   #delivery-banner h4 {

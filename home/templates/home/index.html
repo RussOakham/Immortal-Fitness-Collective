@@ -40,16 +40,13 @@
         </h2>
     </div>
 
-    <div class="row">
+    <div>
         <div class="text-center">
             <p class="paragraph">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis aliquam consequuntur inventore ipsum.
-                Sit, nihil accusamus. Molestias sequi labore numquam aspernatur quaerat itaque quasi, pariatur, nisi
-                alias veniam, minima repellat?
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, quae veritatis culpa tempora in id quo.
+                The Immortal Fitness Collective is a fitness and training brand for people who are chasing improvement and make training a big part of their daily life. Our clothing is here to support your athletic lifestyle and let you train in comfort and freedom whilst always looking and lifting your very best.
             </p>
 
-            <a href="#" class="btn-text">Learn More &rarr;</a>
+            <a href="{% url 'about_us' %}" class="btn-text">Learn More &rarr;</a>
         </div>
     </div>
 </section>
@@ -77,13 +74,25 @@
                     </div>
                     <div class="programme-card__details">
                         <p class="paragraph text-center">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Cardio and Core intensive workouts that don't require prior weightlifting or gymnastic experience. Designed for those who just want to feel fit and healthy.
                         </p>
                         <ul>
-                            <li>Feature 1</li>
-                            <li>Feature 2</li>
-                            <li>Feature 3</li>
-                            <li>Feature 4</li>
+                            <li>
+                                <i class="programme-card__icon icon-basic-calendar"></i>
+                                <span class="programme-card__inline-block">5 Days/Week</span> 
+                            </li>
+                            <li>
+                                <i class="programme-card__icon icon-basic-chronometer"></i>
+                                40-60min training session
+                            </li>
+                            <li>
+                                <i class="programme-card__icon icon-basic-info"></i>
+                                Minimal Equipment
+                                </li>
+                            <li>
+                                <i class="programme-card__icon icon-basic-heart"></i>
+                                Cardio and Conditioning
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -101,13 +110,26 @@
                     </div>
                     <div class="programme-card__details">
                         <p class="paragraph text-center mb-1">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            All inclusive programming for those beginning to take competition seriously or that want to take their strength and conditioning to the next level.
                         </p>
                         <ul>
-                            <li>Feature 1</li>
-                            <li>Feature 2</li>
-                            <li>Feature 3</li>
-                            <li>Feature 4</li>
+                            <li>
+                                <i class="programme-card__icon programme-card__icon--competitor icon-basic-calendar"></i>
+                                <span class="programme-card__inline-block">5 Days/Week</span>
+                            </li>
+                            <li>
+                                <i class="programme-card__icon programme-card__icon--competitor  icon-basic-chronometer"></i>
+                                60-90min training session
+                            </li>
+                            <li>
+                                <i class="programme-card__icon programme-card__icon--competitor icon-basic-info"></i>
+                                Full Gym Equipment Required
+                                </li>
+                            </li>
+                            <li>
+                                <i class="programme-card__icon programme-card__icon--competitor icon-basic-heart"></i>
+                                Strength and Conditioning
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -115,6 +137,34 @@
         </div>
     </div>
 
+</section>
+
+<section class="section-programme-desc container">
+    <div class="text-center margin-bottom-med">
+        <h2 class="heading-secondary">
+            Our Fitness Programmes
+        </h2>
+    </div>
+
+    <div>
+        <div class="text-center">
+            <p class="paragraph">
+                At Immortal Fitness Collective, we believe education should be free. We want you to learn how to train everyday in a way that will support your health, wellness and fitness goals. 
+                <br>
+                Therefore all our programming is free for use by our community
+            </p>
+            
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <a href="{% url 'all_workouts' %}?category=everyday_athlete_programme" class="btn-text">Everyday Athlete &rarr;</a>
+                </div>
+            
+                <div class="col-12 col-md-6">
+                    <a href="{% url 'all_workouts' %}?category=competitor_programme" class="btn-text">Competitors Elite Fitness &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 {% endblock %}
