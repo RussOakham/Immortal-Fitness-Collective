@@ -1058,6 +1058,10 @@ p {
 
 /* ----------------  Workout Blog   ------------ */
 
+.workout-card:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
 .workout-card__main {
   padding: 1.25rem 2.5rem;
 }
