@@ -571,7 +571,7 @@ The product search functionality can be expanded to include additional search cr
 
 Relational databases were used for this project. SQLite was used during development, while Heroku PostgreSQL is used in production. The database can be seen in the below diagram.
 
-
+![Immortal Fitness Collective Relational Database](media\Immortal-Fitness-Collective-dbdiagram.png)
 
 &nbsp;
 
