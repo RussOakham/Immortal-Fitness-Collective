@@ -529,6 +529,11 @@ The site allows normal users to browse daily workouts and follow the free fitnes
 - US302: The site uses django and allauth to ensure secure logins and access restrictions.
   - The site enforces HTTPS to ensure user communications and data are transmitted securely.
   - Passwords are stored in hashed form for additional security.
+  - User accounts store personal user info, such as basic personal details and checkout information.
+- US303: Allauth allows users to request a password reset via 'Forgot Password?' option on login screen.
+- US304: Registered users can leave ratings and reviews of products via form submission on product detail page.
+
+
 
 &nbsp;
 
