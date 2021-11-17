@@ -185,24 +185,26 @@
 </div>
 </section>
 
-<section class="customer-review-form">
-  <div class="container">
-    <div class="row margin-top-med margin-bottom-sm justify-center">
-      <div class="col-12 col-lg-8">
-          <h3 class="heading-tertiary">Leave a review</h3>
-          <form action="{% url 'add_review' product.id %}" class="form" method="POST">
-            {% csrf_token %}
-            {{ form | crispy }}
-            <div class="text-center">
-              <button class="btn-text" type="submit">
-                Submit Review
-              </button>
-            </div>
-          </form>
+{% if user.is_authenticated %}
+  <section class="customer-review-form">
+    <div class="container">
+      <div class="row margin-top-med margin-bottom-sm justify-center">
+        <div class="col-12 col-lg-8">
+            <h3 class="heading-tertiary">Leave a review</h3>
+            <form action="{% url 'add_review' product.id %}" class="form" method="POST">
+              {% csrf_token %}
+              {{ form | crispy }}
+              <div class="text-center">
+                <button class="btn-text" type="submit">
+                  Submit Review
+                </button>
+              </div>
+            </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+{% endif %}
 
 <section class="customer-review-summary">
   <div class="container">

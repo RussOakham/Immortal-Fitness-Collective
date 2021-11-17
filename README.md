@@ -101,7 +101,7 @@ Overview of UX design decisions, including examples of websites I have viewed as
     <tr>
       <td>US104</td>
       <td>Registered User</td>
-      <td>Clearly access my purchased fitness programme and purchase history</td>
+      <td>Clearly access my purchase history</td>
       <td>Quickly and conveniently access product information</td>
     </tr>
   </table>
@@ -125,28 +125,28 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <td>Find products of specific type I want</td>
     </tr>
     <tr>
-      <td>US203</td>
+      <td>US202</td>
       <td>Generic User</td>
       <td>View Product Details</td>
       <td>View product details such as description, size and colour</td>
     </tr>
     <tr>
-      <td>US204</td>
+      <td>US203</td>
       <td>Generic User</td>
       <td>Search products by keyword</td>
       <td>Find products with ease, for example by name or brand</td>
     </tr>
     <tr>
-      <td>US205</td>
+      <td>US204</td>
       <td>Generic User</td>
-      <td>Search and filter products by rating</td>
+      <td>Sort products by rating</td>
       <td>Find only the highest-rated products to choose from</td>
     </tr>
     <tr>
-      <td>US206</td>
+      <td>US205</td>
       <td>Generic User</td>
-      <td>Search and filter products by brand</td>
-      <td>Find only the products from specific brands</td>
+      <td>Sort products by price</td>
+      <td>Find products that fit their personal budget</td>
     </tr>
   </table>
 
@@ -175,7 +175,7 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <td>Access and update personal details, view subscribed programming and review purchase history, keep my account secure</td>
     </tr>
     <tr>
-      <td>US304</td>
+      <td>US303</td>
       <td>Registered User</td>
       <td>Reset Password</td>
       <td>To improve security of my account and recover access if I forget my password</td>
@@ -185,12 +185,6 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <td>Registered User</td>
       <td>Submit ratings and reviews for purchased products and programming</td>
       <td>Share my experience of the products and programming for other users</td>
-    </tr>
-    <tr>
-      <td>US305</td>
-      <td>Registered User</td>
-      <td>Unsubscribe from products</td>
-      <td>Cease subscription when is appropriate to the user</td>
     </tr>
   </table>
 
@@ -509,9 +503,32 @@ Before beginning development, I listed some styling ideas that I felt benefit th
 
 ## 2. **Features**
 
-
+The site allows normal users to browse daily workouts and follow the free fitness programming offered by the organisation. Normal users can both browse products by categories and search for specific products by search term. Normal users create user accounts, save their personal and delivery information and purchase products via stripes secure checkout functionality. E-mail confirmation is provided for key activities such as account creation.
 
 ### **Existing Features**
+
+#### Browsing
+
+- US101: Home Page has clear CTA leading customers to online shop, alongside clear content promoting both fitness programmes and merchanise.
+- US102: Site is responsive for all major device view ports, maintaining all key functionality, whilst displaying content clearly and legibly.
+- US103: Navigation is clearly accessible at all times via the sticky-top navigation bar on all pages and view ports.
+- US104: Purchase History is easily accessible via accessing 'My Account' in top navigation menu.
+
+#### Searching
+
+- US201: Users can access product categories via links in top navigation menu.
+- US202: User can access product details, via clicking on product card on catalogue page.
+- US203: Users can search products by keyword, via use of 'Search' function in top navigation menu.
+- US204: Users can sort products by rating via using the 'Sort By' function on product category page.
+- US205: Users can sort products by price via using the 'Sort By' function on product category page.
+
+#### Users
+
+- US301: Users can register accounts through the sites allauth integration.
+  - The site restricts information shown to users based on whether they are unregistered, registered, staff or admin.
+- US302: The site uses django and allauth to ensure secure logins and access restrictions.
+  - The site enforces HTTPS to ensure user communications and data are transmitted securely.
+  - Passwords are stored in hashed form for additional security.
 
 &nbsp;
 
