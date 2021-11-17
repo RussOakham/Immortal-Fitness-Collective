@@ -2,17 +2,24 @@
 
 ## **Project overview**
 
-Immortal Fitness Collective is an online fitness platform, designed to promote fitness within their community via paid subscription to online fitness plans and selling of fitness apparel, equipment and accessories.
+Immortal Fitness Collective is an online fitness platform, designed to promote fitness within their community via free online fitness plans and selling of fitness apparel, equipment and accessories.
 
-The site is created to engage users who have an interest in improving their personal fitness, with focus on two core fitness programming areas - improved general fitness (everyday fitess) and elite fitness for athletes (competitor fitness).
+The site is created to engage users who have an interest in improving their personal fitness, with focus on two core fitness programming areas - improved general fitness (everyday fitness) and elite fitness for athletes (competitor fitness).
 
 I have used HTML, CSS, JavaScript and Python (Django and Flask) to build the site, ensuring it is fully responsive for user interaction on their chosen devices.
 
 ## **Deployed site**
 
-The live website can be found at teh following link; [PLACEHOLDER]
+The live website can be found at teh following link; [Immortal Fitness Collective](https://immortal-fitness-collective.herokuapp.com/)
 
-[PLACEHOLDER IMAGE]
+![Immortal Fitness Collective](media\ifc-responsive.PNG)
+
+**To open any links in this document in a new tab press `CTRL + Click`.**
+
+The following details should be used when trying to submit an order on the checkout page:
+- Card Number: 4242 4242 4242 4242
+- Expiration Date: Any future date (e.g. 02/24)
+- CVC: Any three digits
 
 ## **Table of Contents**
 
@@ -76,26 +83,26 @@ Overview of UX design decisions, including examples of websites I have viewed as
     <tr>
       <td>US101</td>
       <td>Generic User</td>
-      <td>Easily understand purpose and layout of site</td>
+      <td>Clearly understand purpose and layout of site</td>
       <td>Intuitive navigation, without need for additional instruction</td>
     </tr>
     <tr>
       <td>US102</td>
       <td>Generic User</td>
       <td>Site is responsive across all devices</td>
-      <td>Able to view site across all devices easily and without compromise</td>
+      <td>Able to view site across all devices clearly and without compromise</td>
     </tr>
     <tr>
       <td>US103</td>
       <td>Generic User</td>
-      <td>Navigation easily accessible at all times</td>
-      <td>Quickly and easily navigate across all site pages</td>
+      <td>Navigation clearly accessible at all times</td>
+      <td>Quickly and clearly navigate across all site pages</td>
     </tr>
     <tr>
       <td>US104</td>
       <td>Registered User</td>
-      <td>Easily access my purchased fitness programme and purchase history</td>
-      <td>Quickly and conventiently access product information</td>
+      <td>Clearly access my purchased fitness programme and purchase history</td>
+      <td>Quickly and conveniently access product information</td>
     </tr>
   </table>
 
@@ -127,7 +134,7 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <td>US204</td>
       <td>Generic User</td>
       <td>Search products by keyword</td>
-      <td>Find products easily, for example by name or brand</td>
+      <td>Find products with ease, for example by name or brand</td>
     </tr>
     <tr>
       <td>US205</td>
@@ -203,7 +210,7 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <td>US401</td>
       <td>Admin</td>
       <td>Add, Edit and Delete fitness programming for subscription members</td>
-      <td>Easily and time efficeintly manage subscribed content, ensuring high quality product delivery and brand promotion</td>
+      <td>Easily and time efficiently manage subscribed content, ensuring high quality product delivery and brand promotion</td>
     </tr>
     <tr>
       <td>US402</td>
@@ -241,7 +248,7 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <td>US602</td>
       <td>Generic User</td>
       <td>View basket contents prior to checkout</td>
-      <td>Identify total quantity and cost of items I will recieve</td>
+      <td>Identify total quantity and cost of items I will receive</td>
     </tr>
     <tr>
       <td>US603</td>
@@ -305,7 +312,7 @@ Overview of site and page structure, explaining functionality and purpose.
 <details>
 <summary>Present on all pages</summary>
 
-- _Header/Footer_: For navigation across the site, access their basket and to external resources such as social media pages.
+- _Header/Footer_: For navigation across the site, access to basket and to external resources such as social media pages.
 - _Website Logo_: To identify the 'Immortal Fitness Collective' site branding.
 
 </details>
@@ -314,9 +321,8 @@ Overview of site and page structure, explaining functionality and purpose.
 <summary>Home Page:</summary>
 
 - _Hero Banner_: Promote 'Immortal Fitness Collective' brand awareness and call to action.
-- _Testimonials_: Customer testimonials to build brand confidence.
-- _Programme Overview_: Banner promoting subscription based fitness programmes on offer.
-- _Product Highlight_: Banner highlighting featured products in online shop.
+- _Testimonials_: Customer testimonials to build brand confidence. -- TO DO --
+- _Programme Overview_: Banner promoting free fitness programmes on offer.
 - _Contact Us_: Modal popup to submit contact request form, so users can ask additional questions.
 
 </details>
@@ -333,18 +339,23 @@ Overview of site and page structure, explaining functionality and purpose.
 <details>
 <summary>Programming:</summary>
 
-- _Programming Banner_: Promote 'Immortal Fitness Collective' Brand awareness.
-- _Programme Summaries_: Overview of each fitness programmes package, including suitable fitness goals, time requirement, equipment required and sample workout.
-- _Programme CTA_: Call to action link, directing customer to subscription checkout.
+- _Daily Workout_: Daily view of workouts programmed for the week, with details on exercise standards and time domains.
+- _Pagination_: Page is paginated after 5 workout posts are displayed, to ensure quick page load and efficient user navigation.
 
 </details>
 
 <details>
-<summary>Shop / Product Catelogue:</summary>
+<summary>Workout Detail:</summary>
+
+- _Workout Post_: Detail of each daily workout programmed for the week.
+
+</details>
+
+<details>
+<summary>Shop / Product Catalogue:</summary>
 
 - _Search Bar_: Text input bar, allowing users to search products by keyword, category and minimum rating.
 - _Product Catalogue_: Card format view of products in shop, showing title, image, rating, price and buy now option. Catalogue with update in line with search parameters entered in search bar.
-- _Pagination_: Page is paginated after 20 products are displayed, to ensure quick page load and efficient user navigation.
 
 </details>
 
@@ -356,7 +367,6 @@ Overview of site and page structure, explaining functionality and purpose.
 - _Rating_: Allows users to see how highly other users have rated the recipe.
 - _Description & Details_: Description of product, including any relevant details.
 - _Size Picker_: Allows users to choose product size if applicable.
-- _Colour Picker_: Allows users to choose product colour if applicable.
 - _Add to Cart_: Button allowing customers to add to cart.
 - _Product Price_: Overview of product price showing ex VAT, VAT and Total values.
 - _Rate & Review_: Input area, allowing users to submit a rating and review for items they have purchased.
@@ -377,7 +387,7 @@ Overview of site and page structure, explaining functionality and purpose.
 <details>
 <summary>Checkout:</summary>
 
-All inputs will prefill with customer information if user already logged in.
+All inputs will pre-fill with customer information if user already logged in.
 
 - _Customer Details_: Input for name, email, contact number.
 - _Delivery Address_: Input for delivery address.
@@ -415,32 +425,32 @@ All inputs will prefill with customer information if user already logged in.
 </details>
 
 <details>
-<summary>Members Programming:</summary>
-
-- _Daily Workout_: Daily view of workouts programmed for the week, with details on exercise standards and time domains.
-- _Pagination_: Each page shows one week of programming.
-
-</details>
-
-<details>
-<summary>Add Programming:</summary>
+<summary>Add Workout:</summary>
 
 - _Input areas for below workout data points_:
-- Workout Title - Text
-- Date - Date Picket
-- Workout - Text
+- Date - Date Picker
+- Strength Workout Title - Text
+- Strength Workout - Text
+- Metcon Workout Title - Text
+- Metcon Workout - Text
+- Skills Workout Title - Text
+- Skills Workout - Text
 
 </details>
 
 <details>
-<summary>Edit Programming:</summary>
+<summary>Edit Workout:</summary>
 
 Inputs are pre-populated with historic workout information.
 
 - _Input areas for below workout data points_:
-- Workout Title - Text
-- Date - Date Picket
-- Workout - Text
+- Date - Date Picker
+- Strength Workout Title - Text
+- Strength Workout - Text
+- Metcon Workout Title - Text
+- Metcon Workout - Text
+- Skills Workout Title - Text
+- Skills Workout - Text
 
 </details>
 
@@ -448,7 +458,7 @@ Inputs are pre-populated with historic workout information.
 
 ### **Skeleton**
 
-At this point I began creating wireframes, using the above structure considerations. I used [Balsamiq](https://balsamiq.com/) these below;
+At this point I began creating wire-frames, using the above structure considerations. I used [Balsamiq](https://balsamiq.com/) these below;
 
 - [Wireframes PDF](markdown-resources/wireframes/Immortal-Fitness-Collective.pdf)
 
@@ -498,6 +508,8 @@ Before beginning development, I listed some styling ideas that I felt benefit th
   - Logo: Navigates to the home page on click.
 
 ## 2. **Features**
+
+
 
 ### **Existing Features**
 
