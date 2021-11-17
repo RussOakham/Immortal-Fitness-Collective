@@ -1066,6 +1066,20 @@ p {
   padding: 1.25rem 2.5rem;
 }
 
+.pagination {
+  justify-content: center;
+}
+
+.page-item.active .page-link {
+  background-color: var(--colour-gold);
+  border-color: var(--colour-gold);
+  color: var(--colour-black);
+}
+
+.page-link {
+  color: var(--colour-black);
+}
+
 /* ----------------  MEDIA QUERIES   ------------ */
 
 /* Responsive Font Sizes */
