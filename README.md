@@ -215,8 +215,8 @@ Overview of UX design decisions, including examples of websites I have viewed as
     <tr>
       <td>US403</td>
       <td>Admin</td>
-      <td>Manage access to Subscribed content</td>
-      <td>Ensure only users with active subscriptions can access paid-for content</td>
+      <td>Delete user reviews if they violate site terms</td>
+      <td>Ensure any offensive reviews can be removed for brand and user protection</td>
     </tr>
   </table>
 
@@ -233,43 +233,43 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <th>Reason</th>
     </tr>
     <tr>
-      <td>US601</td>
+      <td>US501</td>
       <td>Generic User</td>
       <td>Easily select type and amount of product to add to basket</td>
       <td>Ensure accuracy of selections</td>
     </tr>
     <tr>
-      <td>US602</td>
+      <td>US502</td>
       <td>Generic User</td>
       <td>View basket contents prior to checkout</td>
       <td>Identify total quantity and cost of items I will receive</td>
     </tr>
     <tr>
-      <td>US603</td>
+      <td>US503</td>
       <td>Generic User</td>
       <td>Adjust quantity and type of individual products in basket</td>
       <td>Ensure final basket is accurate for desires, prior to checkout</td>
     </tr>
     <tr>
-      <td>US604</td>
+      <td>US504</td>
       <td>Generic User</td>
       <td>Easily enter payment details</td>
       <td>Checkout quickly and efficiently, with minimal hassle</td>
     </tr>
     <tr>
-      <td>US605</td>
+      <td>US505</td>
       <td>Generic User</td>
       <td>Receive assurance personal and payment information is safe and secure</td>
       <td>Confidently provide perosonal and payment information needed to make a purchase</td>
     </tr>
     <tr>
-      <td>US606</td>
+      <td>US506</td>
       <td>Generic User</td>
       <td>View order confirmation after checkout</td>
       <td>Review order details, to ensure there are no user or system mistakes in the order</td>
     </tr>
     <tr>
-      <td>US607</td>
+      <td>US507</td>
       <td>Generic User</td>
       <td>Recieve order confirmation from e-mail after checkout</td>
       <td>Keep order confirmation and purchase details for personal record keeping</td>
@@ -289,7 +289,7 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <th>Reason</th>
     </tr>
     <tr>
-      <td>US701</td>
+      <td>US601</td>
       <td>Generic User</td>
       <td>Receive clear feedback for actions on the site</td>
       <td>Know if actions such as product purchase are complete or require further steps</td>
@@ -533,17 +533,45 @@ The site allows normal users to browse daily workouts and follow the free fitnes
 - US303: Allauth allows users to request a password reset via 'Forgot Password?' option on login screen.
 - US304: Registered users can leave ratings and reviews of products via form submission on product detail page.
 
+#### Administration
 
+- US401: Admins are able to add, edit and delete workouts via the 'Workout Management' link in top navigation, 'Edit' and 'Delete' links on Workout Detail Pages.
+- US402: Admins are able to add, edit and delete products via the 'Product Management' link in top navigation, 'Edit' and 'Delete' links on Product Detail Pages.
+- US403: Admins can delete user reviews via 'delete' link on review posts.
+
+#### Purchasing and Checkout
+
+- US501: Users can easily select products to add to basket via product catalogue page and adjust the amount via product detail page.
+- US502: Users can review their basked contents via the 'bag' page, prior to checkout.
+- US503: Users can adjust amount of a product in their basket, via the amount selection input in the 'bag' page.
+- US504: Users can input their payment details via the stripe elements payment integrations on the checkout page.
+- US505: Checkout is supported by secure stripes secure payment platform.
+- US506: After checkout a success page is presented, giving the user details of their order and notification of e-mail confirmation.
+- US507: After checkout an email is generated with the order information.
+
+#### General
+
+- US601: To ensure users receive positive or negative feedback for their actions, confirmation pages and bootstrap toast messages are used extensively throughout the site.
 
 &nbsp;
 
 ### **Features to consider implementing in future**
 
+#### Subscriptions
+
+The site notes Immortal Fitness Collective is planning to expand its offering with a nutrition programme to be launched in future. This could be monetized via integration of [Stripe Billing](https://stripe.com/gb/billing), to allow customer subscriptions.
+
+#### Expanded Search
+
+The product search functionality can be expanded to include additional search criteria such as search by product rating.
+
 &nbsp;
 
 ## 3. **Database Design**
 
-PostgreSQL was the database solution used for the website development, using the below, structured plan.
+Relational databases were used for this project. SQLite was used during development, while Heroku PostgreSQL is used in production. The database can be seen in the below diagram.
+
+
 
 &nbsp;
 
