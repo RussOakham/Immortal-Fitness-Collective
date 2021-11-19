@@ -1090,21 +1090,21 @@ The photos and images used for this site were obtained.
 
 - [**Shutterstock**](https://www.shutterstock.com/): From the following contributors;
   
-    - [Home Hero Banner](media/crossfit-banner-large-compressed.jpg): 
-    - [About Us Banner](media/kettlebells-small.jpg):
-    - [Everyday Fitness Programme](media/everyday-fitness-min-compress.jpg): 
-    - [Competitor Fitness Programme](media/competitor-programme-min-compress.jpg): 
-    - [Programme Background](media/gym-weights-landscape-min-compressed.jpg): 
-    - [Coach 1](media/coach-1.jpg):
-    - [Coach 2](media/coach-2.jpg): 
-    - [Coach 3](media/coach-3.jpg):
-    - [Shoes Product](media/pr-nike-trainers-running.jpg):
-    - [Shoes Product](media/nike-zoom-peg-green.jpeg):
-    - [Shoes Product](media/adidas-ultra-light.jpeg):
-    - [Shoes Product](media/trainers-white.jpeg):
-    - [Skipping Rope](media/skipping-rope.jpeg):
-    - [Dumbbell](media/dumbbell.jpg):
-    - [Kettlebell](media/kettlebell.jpg):
+  - [Home Hero Banner](media/crossfit-banner-large-compressed.jpg): 
+  - [About Us Banner](media/kettlebells-small.jpg):
+  - [Everyday Fitness Programme](media/everyday-fitness-min-compress.jpg): 
+  - [Competitor Fitness Programme](media/competitor-programme-min-compress.jpg): 
+  - [Programme Background](media/gym-weights-landscape-min-compressed.jpg): 
+  - [Coach 1](media/coach-1.jpg):
+  - [Coach 2](media/coach-2.jpg): 
+  - [Coach 3](media/coach-3.jpg):
+  - [Shoes Product](media/pr-nike-trainers-running.jpg):
+  - [Shoes Product](media/nike-zoom-peg-green.jpeg):
+  - [Shoes Product](media/adidas-ultra-light.jpeg):
+  - [Shoes Product](media/trainers-white.jpeg):
+  - [Skipping Rope](media/skipping-rope.jpeg):
+  - [Dumbbell](media/dumbbell.jpg):
+  - [Kettlebell](media/kettlebell.jpg):
 
 
 ### **Acknowledgements**
