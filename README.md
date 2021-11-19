@@ -927,13 +927,145 @@ Within your local IDE commit and push your recent changes. Heroku will automatic
 
 ### Setting up Amazon S3 bucket:
 
-- Create an [Amazon AWS account](https://aws.amazon.com/)
+- Create an [Amazon AWS](https://aws.amazon.com/) account.
+- Select S3 from the service menu and select create new bucket with below settings:
+
+  - Allow public access
+
+- Select 'Properties > Static Website Hosting', using the following settings;
+
+  - Index Document: index.html
+  - Error Document: error.html
+
+- Under 'Permissions > CORS' use:
+
+```json
+[
+    {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+```
+
+#### Create Bucket Policy
+
+- Under 'Permissions > Bucket Policy':
+
+  - Generate Bucket Policy and take note of your `Bucket ARN`.
+  - Select: 'S3 Bucket Policy' as 'Type of Policy'
+  - Under 'Principle' enter '*'
+  - Under 'Amazon Resource Name (ARN)' enter your `Bucket ARN`.
+  - Select 'Add Statement'
+  - Select 'Generate Policy'
+  - Copy 'Policy JSON Document'
+  - Paste policy into 'Edit Bucket Policy'
+  - Save changes
+
+- Under 'Access Control List (ACL)', use the following settings:
+
+  - 'Everyone (public access)', select: 'List'.
+
+### Setting up AWS IAM (Identity and Access Management)
+
+### Create User Group
+
+- Select 'IAM' from AWS services menu
+- From IAM dashboard, select 'User Groups'
+
+  - Choose 'Create new group' and provide appropriate name, e.g. 'manage-IFC'
+  - Click through until you can select 'Create Group'
+
+#### Select Policy
+
+- Under 'Access Management' menu, select 'Policies'.
+- Choose 'Select Policy'
+- Under 'JSON' tab, select 'import managed policy'.
+- Select: 'AmazonS3FullAccess'
+- In the JSON text, updated 'Resource' key with below;
+
+ ```console
+  "Resource": [
+			      "<S3 Bucket ARN>",
+			      "<S3 Bucket ARN>/*"
+              ]
+ ```
+
+  Using your S3 `Bucket ARN` from 'Create Bucket Policy' step
+
+- Click 'Next Step' and 'Review Policy'
+- Name your policy accordingly, e.g. 'IFC-Policy'
+- Select: 'Create Policy'
+
+
+#### Set Policy to User Group
+
+- Under 'Access Management' menu, select 'User Groups'
+- Select the User Group you created earlier
+- Under 'Permissions > Add Permissions', choose 'Attach Policies' and select the policy you just created.
+- Select: 'Add permissions'
+
+#### Create User
+
+- Under 'Access Management' menu, select 'Users'
+- Choose an appropriate user name, e.g. 'IFC-staticfiles-user'
+- Under 'Access Type' select 'Programmatic access'
+- Select Next
+- Add the created user the the User Group created earlier.
+- Select Next and 'Create User'
+
+Download the `CSV` file containing your access key and secret access key. Keep this safe as you will be unable to download it again.
+
+### Connecting Django to S3
+
+#### Install required packages
+
+- Install boto3 and django-storages, using the following code in your local IDE command line;
+
+```python
+pip install boto3
+pip install django-storages
+pip freeze > requirements.txt
+```
+
+#### Heroku Config Vars
+
+- Add the access keys from the AWS `.csv` file to your Heroku Config Vars in settings, under;
+
+```console
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+```
+
+#### Re-Enable CollectStatic in Heroku
+
+- Under the Heroku config vars, remove the `DISABLE_COLLECTSTATIC` config variable created earlier. This will allow Heroku to again collect static files.
+
+#### Upload Media files to S3 Bucket
+
+- In your AWS account, under S3 Bucket services, select your created bucket. At the same level as the `static` folder, create a new folder called `media`.
+- Upload all required media files to this folder, using 'publicly accessible' under 'Permissions'
 
 ## 7. **Credits**
 
 ### **Design and research**
 
 The following are websites and articles that I used for reference and inspiration:
+
+- [Mayhem Nation Athlete](https://www.mayhemnation.com/)
+- [Chalk Performance Training](https://www.gymryan.com/)
+- [Bulldog Gear](https://bulldoggear.com/)
+- [Nike](https://www.nike.com/gb/)
+- [Heavy Rep Gear](https://heavyrepgear.com/)
+- [12 Acres Beer](https://farrelleoin93-12-acres.herokuapp.com/beers/)
 
 ### **Technical**
 
@@ -943,20 +1075,37 @@ The following are websites and articles that I used for reference and inspiratio
 - [w3Schools](https://www.w3schools.com/) - For checking proper syntax of HTML and CSS elements.
 - [Autoprefixer](https://autoprefixer.github.io/) - For generating CSS browser prefixes.
 - [Stackoverflow](https://stackoverflow.com/) - For researching and troubleshooting JavaScript and Python code issues.
-- [Miguel Grinberg](https://blog.miguelgrinberg.com/index) - For researching and troubleshooting Python functionality and code issues.
-- [MongoDB Documentation](https://docs.mongodb.com/) - For researching and troubleshooting database code commands and issues.
+- [Django Documentation](https://docs.djangoproject.com/en/3.2/) - For research proper implementation of django functionality.
 
 ### **Content**
 
 All text content on the site was written originally by myself, with the below notes;
+
+- Home Page and About Page: Text inspired by content on [Mayhem Nation Athlete](https://www.mayhemnation.com/), [Chalk Performance Training](https://www.gymryan.com/) and [Heavy Rep Gear](https://heavyrepgear.com/) websites.
+- Product Descriptions: Text inspired by content on [Bulldog Gear](https://bulldoggear.com/) and [Nike](https://www.nike.com/gb/) websites.
 
 ### **Media**
 
 The photos and images used for this site were obtained.
 
 - [**Shutterstock**](https://www.shutterstock.com/): From the following contributors;
+  
+    - [Home Hero Banner](media/crossfit-banner-large-compressed.jpg): 
+    - [About Us Banner](media/kettlebells-small.jpg):
+    - [Everyday Fitness Programme](media/everyday-fitness-min-compress.jpg): 
+    - [Competitor Fitness Programme](media/competitor-programme-min-compress.jpg): 
+    - [Programme Background](media/gym-weights-landscape-min-compressed.jpg): 
+    - [Coach 1](media/coach-1.jpg):
+    - [Coach 2](media/coach-2.jpg): 
+    - [Coach 3](media/coach-3.jpg):
+    - [Shoes Product](media/pr-nike-trainers-running.jpg):
+    - [Shoes Product](media/nike-zoom-peg-green.jpeg):
+    - [Shoes Product](media/adidas-ultra-light.jpeg):
+    - [Shoes Product](media/trainers-white.jpeg):
+    - [Skipping Rope](media/skipping-rope.jpeg):
+    - [Dumbbell](media/dumbbell.jpg):
+    - [Kettlebell](media/kettlebell.jpg):
 
-#### 404 Error Page
 
 ### **Acknowledgements**
 
