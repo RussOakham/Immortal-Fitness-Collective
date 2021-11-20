@@ -1,7 +1,6 @@
 """ required imports for module functionality """
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render, reverse
-from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 

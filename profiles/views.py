@@ -11,7 +11,7 @@ from .forms import UserProfileForm
 @login_required
 def profile(request):
     """ Display users profile """
-    profile = get_object_or_404(UserProfile, user=request.user)
+    userprofile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -23,7 +23,7 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
 
-    orders = profile.orders.all()
+    orders = userprofile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
