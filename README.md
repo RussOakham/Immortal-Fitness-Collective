@@ -1090,21 +1090,18 @@ The photos and images used for this site were obtained.
 
 - [**Shutterstock**](https://www.shutterstock.com/): From the following contributors;
   
-  - [Home Hero Banner](media/crossfit-banner-large-compressed.jpg): 
-  - [About Us Banner](media/kettlebells-small.jpg):
-  - [Everyday Fitness Programme](media/everyday-fitness-min-compress.jpg): 
-  - [Competitor Fitness Programme](media/competitor-programme-min-compress.jpg): 
-  - [Programme Background](media/gym-weights-landscape-min-compressed.jpg): 
-  - [Coach 1](media/coach-1.jpg):
-  - [Coach 2](media/coach-2.jpg): 
-  - [Coach 3](media/coach-3.jpg):
-  - [Shoes Product](media/pr-nike-trainers-running.jpg):
-  - [Shoes Product](media/nike-zoom-peg-green.jpeg):
-  - [Shoes Product](media/adidas-ultra-light.jpeg):
-  - [Shoes Product](media/trainers-white.jpeg):
-  - [Skipping Rope](media/skipping-rope.jpeg):
-  - [Dumbbell](media/dumbbell.jpg):
-  - [Kettlebell](media/kettlebell.jpg):
+  - [Home Hero Banner](media/crossfit-banner-large-compressed.jpg): [Arsenii Palivoda](https://www.shutterstock.com/g/Watchwater)
+  - [About Us Banner](media/kettlebells-small.jpg): [Arsenii Palivoda](https://www.shutterstock.com/g/Watchwater)
+  - [Everyday Fitness Programme](media/everyday-fitness-min-compress.jpg): [vhpicstock](https://www.shutterstock.com/g/vhpicstock654)
+  - [Competitor Fitness Programme](media/competitor-programme-min-compress.jpg): [LStockStudio](https://www.shutterstock.com/g/luminaimages)
+  - [Programme Background](media/gym-weights-landscape-min-compressed.jpg): [Lyashenko Egor](https://www.shutterstock.com/g/lyashenko_egor)
+  - [Coach 1](media/coach-1.jpg): [Mix Tape](https://www.shutterstock.com/g/Mix+Tape)
+  - [Coach 2](media/coach-2.jpg): [antoniodiaz](https://www.shutterstock.com/g/antoniodiaz)
+  - [Coach 3](media/coach-3.jpg): [Daniel Krason](https://www.shutterstock.com/g/danielkrason)
+  - [Skipping Rope](media/skipping-rope.jpeg): [Pixabay](https://pixabay.com/photos/sport-fitness-workout-gym-crossfit-1283791/)
+  - [Dumbbell](media/dumbbell.jpg): [Marcel Huebner](https://www.shutterstock.com/g/MarcelHuebner)
+  - [Kettlebell](media/kettlebell.jpg): [Lipskiy](https://www.shutterstock.com/g/unclepodger)
+  - [No image](media/no-image-available.png): [Adobe Stock](https://stock.adobe.com/uk/search/images?k=no+image+available&asset_id=308681935)
 
 
 ### **Acknowledgements**
