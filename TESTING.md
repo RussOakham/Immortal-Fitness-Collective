@@ -24,7 +24,7 @@ I validated the HTML with [W3 Validation Service](https://validator.w3.org/). Th
 
 ![Base & Home](media/HTML-Home.PNG)
 
-The dalidator shows an error for duplicate 'user-options' id, I've chosen to disregard this as one id is used on desktop, while the other is mobile. Both are required for bootstrap navigation dropdown to function properly.
+The validator shows an error for duplicate 'user-options' id, I've chosen to disregard this as one id is used on desktop, while the other is mobile. Both are required for bootstrap navigation dropdown to function properly.
 
 The warning for 'type' javascript I have also chosen to disregard, as although unnecessary, it is useful for other developers to quickly see script code language.
 
@@ -88,9 +88,31 @@ I validated the CSS with the [W3 Validation Service](https://jigsaw.w3.org/css-v
 
 ### JavaScript
 
+I validated the JavaScript with [JSHint](https://jshint.com/).
+
+<details>
+<summary>countryfield.js</summary>
+
+![script.js](media/JS-countryfield.PNG)
+</details>
+
+<details>
+<summary>ratingstars.js</summary>
+
+![script.js](media/JS-ratingstars.PNG)
+</details>
+
+<details>
+<summary>Stripe.js</summary>
+
+JSHint incorrectly identifies 'Stripe' as an undefined variable, however this is a variable used by Stripe and identified within their own scripts.
+
+![script.js](media/stripe.PNG)
+</details>
+
 ### Python
 
-I validated the Python code was PEP 8 compliaint via the [Pylint Validation Tool](https://www.pylint.org/) and [pycodestyle Validator](https://pypi.org/project/pycodestyle/) within GitPod, which found several simple errors I corrected.
+I validated the Python code was PEP 8 compliant via the [Pylint Validation Tool](https://www.pylint.org/) and [pycodestyle Validator](https://pypi.org/project/pycodestyle/) within GitPod, which found several simple errors I corrected.
 
 ### Google Lighthouse Audit
 
@@ -110,7 +132,7 @@ To test the responsiveness of the site I used [Chrome DevTools](https://develope
 
 ### Browser Compatibility
 
-![Browser Campatibility Testing]()
+![Browser Compatibility Testing]()
 
 Additionally, the site does not load properly while using Internet Explorer, due to compatibility issues.
 
