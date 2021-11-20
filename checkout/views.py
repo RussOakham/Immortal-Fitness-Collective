@@ -92,9 +92,9 @@ def checkout(request):
 
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
-        else:
-            messages.error(request, 'These wan an error with your form. \
-                Please double check your information.')
+
+        messages.error(request, 'These was an error with your form. \
+            Please double check your information.')
 
     else:
         bag = request.session.get('bag', {})
@@ -170,7 +170,7 @@ def checkout_success(request, order_number):
                 'default_country': order.country,
             }
             user_profile_form = UserProfileForm(profile_data, instance=profile)
-            if user_profile_form.is_valid:
+            if user_profile_form.is_valid():
                 user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \

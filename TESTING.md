@@ -112,7 +112,66 @@ JSHint incorrectly identifies 'Stripe' as an undefined variable, however this is
 
 ### Python
 
-I validated the Python code was PEP 8 compliant via the [Pylint Validation Tool](https://www.pylint.org/) and [pycodestyle Validator](https://pypi.org/project/pycodestyle/) within GitPod, which found several simple errors I corrected.
+I validated the Python code was PEP 8 compliant via the [Pylint Validation Tool](https://www.pylint.org/) and [pycodestyle Validator](https://pypi.org/project/pycodestyle/), which found several simple errors I corrected.
+
+All apps now received a score of over 9/10, any errors that do remain are either false-positives or superficial.
+
+<details>
+<summary>Home</summary>
+
+![Home App](media/Python-home.PNG)
+</details>
+
+<details>
+<summary>Immortal Fitness Collective</summary>
+
+![IFC App](media/immortal_fitness_collective.PNG)
+</details>
+
+<details>
+<summary>Bag</summary>
+
+![Bag App](media/bag.PNG)
+</details>
+
+<details>
+<summary>Checkout</summary>
+
+![Checkout App](media/Python-checkout.PNG)
+</details>
+
+<details>
+<summary>Products</summary>
+
+![Products App](media/Python-products.PNG)
+</details>
+
+<details>
+<summary>Profiles</summary>
+
+![Profiles App](media/Python-profiles.PNG)
+</details>
+
+<details>
+<summary>Workout Blog</summary>
+
+![Workout Blog App](media/Python-workout_blog.PNG)
+</details>
+
+#### .pylintrc
+
+After the above corrections, Pylint was still displaying a handful of warnings, however, these were false-positive results for the following reasons:
+
+- invalid-name & unused-argument: 'e' is an accepted variable, used to capture errors in error handling functionality.
+- 'env' is the local file used to configure the development environment, as it is not pushed to live via .gitignore, pylint incorrectly believes the function is not used.
+
+To clean up these false positives, I created a .pylintrc file and added the below rules to allow for these warning instances.
+
+<details>
+<summary>.pylintrc</summary>
+
+![Pylintrc App](media/Python-pylintrc.PNG)
+</details>
 
 ### Google Lighthouse Audit
 

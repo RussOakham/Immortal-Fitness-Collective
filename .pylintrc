@@ -1,0 +1,14 @@
+[MASTER]
+ignore=migrations
+
+[MESSAGES CONTROL]
+disable=
+    import-outside-toplevel,
+    unused-import,
+    no-member,
+    missing-module-docstring,
+    invalid-name,
+    too-few-public-methods,
+    broad-except,
+    unused-argument,
+    unused-variable,
