@@ -19,6 +19,49 @@
 
 I validated the HTML with [W3 Validation Service](https://validator.w3.org/). The results can be seen below;
 
+<details>
+<summary>base.html & home.html</summary>
+
+![Base & Home](media/HTML-Home.PNG)
+
+The dalidator shows an error for duplicate 'user-options' id, I've chosen to disregard this as one id is used on desktop, while the other is mobile. Both are required for bootstrap navigation dropdown to function properly.
+
+The warning for 'type' javascript I have also chosen to disregard, as although unnecessary, it is useful for other developers to quickly see script code language.
+
+I have filtered these errors and warnings for all other results.
+
+</details>
+
+<details>
+<summary>about-us.html</summary>
+
+![Base & Home](media/HTML-AboutUs.PNG)
+
+</details>
+
+<details>
+<summary>Programme.html</summary>
+
+![About Us](media/HTML-AProgramme.PNG)
+
+</details>
+
+<details>
+<summary>Products.html</summary>
+
+![Products](media/HTML-Products.PNG)
+
+</details>
+
+<details>
+<summary>about-us.html</summary>
+
+![Product Detail](media/HTML-ProductDetail.PNG)
+
+The validator shows an error for 'data_item_id' attribute not being allowed on form input, however I have disregarded this, as it's used for django to identify the product being adjusted in the bag.
+
+</details>
+
 ### W3 CSS
 
 I validated the CSS with the [W3 Validation Service](https://jigsaw.w3.org/css-validator/) and it found no errors.
