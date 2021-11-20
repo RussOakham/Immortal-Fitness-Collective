@@ -28,19 +28,41 @@ select option[value=""] {
     border: 1px solid transparent;
     border-radius: 0;
     background-color: var(--colour-white);
-    box-shadow: 0 1px 3px 0 var(--colour-grey-light-2);
+    -webkit-box-shadow: 0 1px 3px 0 var(--colour-grey-light-2);
+            box-shadow: 0 1px 3px 0 var(--colour-grey-light-2);
     -webkit-transition: box-shadow 150ms ease;
+    -webkit-transition: -webkit-box-shadow 150ms ease;
+    transition: -webkit-box-shadow 150ms ease;
+    -o-transition: box-shadow 150ms ease;
     transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease, -webkit-box-shadow 150ms ease;
 }
 
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-    box-shadow: 0 1px 3px 0 var(--colour-primary-light);
+    -webkit-box-shadow: 0 1px 3px 0 var(--colour-primary-light);
+            box-shadow: 0 1px 3px 0 var(--colour-primary-light);
 }
 
 .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
+}
+
+.stripe-style-input::-webkit-input-placeholder {
+    color: #aab7c4;
+}
+
+.stripe-style-input::-moz-placeholder {
+    color: #aab7c4;
+}
+
+.stripe-style-input:-ms-input-placeholder {
+    color: #aab7c4;
+}
+
+.stripe-style-input::-ms-input-placeholder {
+    color: #aab7c4;
 }
 
 .stripe-style-input::placeholder {
