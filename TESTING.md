@@ -66,6 +66,26 @@ The validator shows an error for 'data_item_id' attribute not being allowed on f
 
 I validated the CSS with the [W3 Validation Service](https://jigsaw.w3.org/css-validator/) and it found no errors.
 
+<details>
+<summary>Base</summary>
+
+![About Us](media/CSS-Base.PNG)
+
+</details>
+
+<details>
+<summary>Profiles</summary>
+
+![About Us](media/CSS-Profiles.PNG)
+
+</details>
+<details>
+<summary>Checkout</summary>
+
+![About Us](media/CSS-Checkout.PNG)
+
+</details>
+
 ### JavaScript
 
 ### Python
