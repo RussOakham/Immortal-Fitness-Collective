@@ -722,6 +722,13 @@ Data is pre-filled with exisiting workout information on page load.
 
 </details>
 
+<details>
+<summary>Toast Messaging:</summary>
+
+* **Bootstrap Toasts**: Toast 'pop-up' messages are used throughout the site to provide user feedback for their interactions, informing them of success, failure and additional information as is suitable.
+
+</details>
+
 &nbsp;
 
 ### **Features to consider implementing in future**

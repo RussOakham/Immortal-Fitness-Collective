@@ -357,6 +357,18 @@ In order for the form to render with the added widget, the jinja formatting for 
 
 </detail>
 
+### Deployed site returning 500 error when new models added:
+
+After I'd deployed the site to Heroku, I added some additional functionality, which required new models and new migrations (e.g. ProductReview). Due to the new migrations required, Herokue would fail the site build process and the deployed site would return 500 errors for a number of pages. 
+
+After researching the issue, I found [this](https://help.heroku.com/GDQ74SU2/django-migrations) Heroku help article, detailing the need to add the following migrate command to the Procfile - which will force migrations to be made during Heroku's automatic site build and deployment process.
+
+```python
+release: python manage.py migrate
+```
+
+Upon implementing this, the site build completed and site functionality returned to normal.
+
 ## Issues still to overcome
 
 ### Improved slug generation for workout posts:
