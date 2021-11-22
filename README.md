@@ -508,51 +508,171 @@ The site allows normal users to browse daily workouts and follow the free fitnes
 
 ### **Existing Features**
 
-#### Browsing
+<details>
+<summary>The Header:</summary>
 
-- US101: Home Page has clear CTA leading customers to online shop, alongside clear content promoting both fitness programmes and merchanise.
-- US102: Site is responsive for all major device view ports, maintaining all key functionality, whilst displaying content clearly and legibly.
-- US103: Navigation is clearly accessible at all times via the sticky-top navigation bar on all pages and view ports.
-- US104: Purchase History is easily accessible via accessing 'My Account' in top navigation menu.
+* **Website Logo**: Builds brand awareness amongst users.
+* **Navigation Bar**: Allows users to navigate the site easily and intuitively, as well as login/register their account and search for products
+</details>
 
-#### Searching
+<details>
+<summary>The Footer:</summary>
 
-- US201: Users can access product categories via links in top navigation menu.
-- US202: User can access product details, via clicking on product card on catalogue page.
-- US203: Users can search products by keyword, via use of 'Search' function in top navigation menu.
-- US204: Users can sort products by rating via using the 'Sort By' function on product category page.
-- US205: Users can sort products by price via using the 'Sort By' function on product category page.
+* **Website Logo**: Builds brand awareness amongst users.
+* **Navigation**: Allows users a second option for navigating to key site pages.
+* **Business Contact Links**: Links to company contact details, including telephone, address and business registration.
 
-#### Users
+Both the Header and Footer are present and consistent on all website pages.
+</details>
 
-- US301: Users can register accounts through the sites allauth integration.
-  - The site restricts information shown to users based on whether they are unregistered, registered, staff or admin.
-- US302: The site uses django and allauth to ensure secure logins and access restrictions.
-  - The site enforces HTTPS to ensure user communications and data are transmitted securely.
-  - Passwords are stored in hashed form for additional security.
-  - User accounts store personal user info, such as basic personal details and checkout information.
-- US303: Allauth allows users to request a password reset via 'Forgot Password?' option on login screen.
-- US304: Registered users can leave ratings and reviews of products via form submission on product detail page.
+<details>
+<summary>Home page:</summary>
 
-#### Administration
+* **Image Banner**: Visually pleasing design, allowing users to immediately identify the site brand, includes CTA button to navigate customers to online shop.
+* **Company Summary**: Short summary of company purpose, with cta encouraging customers to learn more.
+* **Programme Summary**: Visually pleasing summary of the free fitness programmes currently offered, with CTA section encouraging customers to navigate to programming pages.
 
-- US401: Admins are able to add, edit and delete workouts via the 'Workout Management' link in top navigation, 'Edit' and 'Delete' links on Workout Detail Pages.
-- US402: Admins are able to add, edit and delete products via the 'Product Management' link in top navigation, 'Edit' and 'Delete' links on Product Detail Pages.
-- US403: Admins can delete user reviews via 'delete' link on review posts.
+</details>
 
-#### Purchasing and Checkout
+<details>
+<summary>About Us page:</summary>
 
-- US501: Users can easily select products to add to basket via product catalogue page and adjust the amount via product detail page.
-- US502: Users can review their basked contents via the 'bag' page, prior to checkout.
-- US503: Users can adjust amount of a product in their basket, via the amount selection input in the 'bag' page.
-- US504: Users can input their payment details via the stripe elements payment integrations on the checkout page.
-- US505: Checkout is supported by secure stripes secure payment platform.
-- US506: After checkout a success page is presented, giving the user details of their order and notification of e-mail confirmation.
-- US507: After checkout an email is generated with the order information.
+* **Company Mission Statement**: Summary explaining company mission statement, values and identity.
+* **Meet the team**: Profiles of all key staff members, providing photos and short biography.
 
-#### General
+</details>
 
-- US601: To ensure users receive positive or negative feedback for their actions, confirmation pages and bootstrap toast messages are used extensively throughout the site.
+<details>
+<summary>Programming pages:</summary>
+
+* **Latest Workouts**: Details of latest programmed workouts..
+* **URL Filtering**: The navigation menu has links to both the fitness programmes on offer, clicking on each will automatically display workouts filtered by the programme you have selected.
+* **Back to top button**: Button situated in bottom right of screen, allowing users to instantly relocate their view to the top of the page.
+
+</details>
+
+<details>
+<summary>Product pages:</summary>
+
+* **Product Cards**: List of products for chosen category/search criteria, showing key information such as visual image, name, rating and price.
+* **Sort By**: Sort functionality, allowing users to order by price, rating name or category.
+* **Category Badges**: When a category filter is in use, badges for all categories selected will appear under the H1. Clicking these badges will refine the category filter further.
+* **Products Home Link**: To the top-left of the products page is a 'Products Home' link, which allows users to easily revert their view back to non-filtered 'all' products view.
+* **Back to top button**: Button situated in bottom right of screen, allowing users to instantly relocate their view to the top of the page.
+
+</details>
+
+<details>
+<summary>Product Detail page:</summary>
+
+Detailed information on selected product and shopping options:
+
+* **Product Image**: Detailed picture of image.
+* **Product Name**: Full Product Name
+* **Product Price**: Product Sales Price
+* **Category**: Product Category
+* **Rating**: Avg. rating of all product reviews.
+* **Product Description**: Detailed description of product
+* **Size Selector**: Drop down size selector if product has sizing options.
+* **Quantity Selector**: Drop down quantity selector, allowing users to add multiple items to basket.
+* **Keep Shopping/Add to Bag Buttons**: Buttons allowing users to add item to bag and also to navigate back to 'all' products page to continue shopping.
+* **Leave a Review**: Logged in users are able to view and submit a form, allowing them to review and rate products.
+* **Reviews**: List display of all reviews for the product, left by users.
+* **Edit/Delete Product Button**: Product Edit and Delete buttons are also rendered for superadmins, allowing quick access to product admin pages.
+
+</details>
+
+<details>
+<summary>Product Management Page:</summary>
+
+* **Input areas for below product data points**:
+    * _Category_ - Drop down menu
+    * _SKU_ - Text
+    * _Name_ - Text
+    * _Description_ - Text
+    * _Has Sizes_ - Drop down menu
+    * _Has Shoe Sizes_ - Drop down menu
+    * _Rating_ - Numeric
+    * _Price_ - Numeric
+    * _image url_ - Text
+    * _select image_ - file upload
+
+</details>
+
+<details>
+<summary>Edit Product Page:</summary>
+
+* **Input areas for below product data points**:
+    * _Category_ - Drop down menu
+    * _SKU_ - Text
+    * _Name_ - Text
+    * _Description_ - Text
+    * _Has Sizes_ - Drop down menu
+    * _Has Shoe Sizes_ - Drop down menu
+    * _Rating_ - Numeric
+    * _Price_ - Numeric
+    * _image url_ - Text
+    * _select image_ - file upload
+
+Data is pre-filled with exisiting product information on page load.
+
+</details>
+
+<details>
+<summary>Workout Management Page:</summary>
+
+* **Input areas for below workout data points**:
+    * _Category_ - Drop down menu
+    * _Title_ - Text
+    * _Workout Date_ - Date picker
+    * _Weightlifting Title_ - Text
+    * _Weightlifting Description_ - Text
+    * _Weightlifting Title_ - Text
+    * _Weightlifting Description_ - Text
+    * _Weightlifting Title_ - Text
+    * _Weightlifting Description_ - Text
+
+</details>
+
+<details>
+<summary>Edit Workout Page:</summary>
+
+* **Input areas for below workout data points**:
+    * _Category_ - Drop down menu
+    * _Title_ - Text
+    * _Workout Date_ - Date picker
+    * _Weightlifting Title_ - Text
+    * _Weightlifting Description_ - Text
+    * _Weightlifting Title_ - Text
+    * _Weightlifting Description_ - Text
+    * _Weightlifting Title_ - Text
+    * _Weightlifting Description_ - Text
+
+Data is pre-filled with exisiting workout information on page load.
+
+</details>
+
+<details>
+<summary>Login / Registration page:</summary>
+
+* **Username Input**: Input area for users to enter their profile username.
+* **Password**: Input area for users to enter their profile password.
+* **Confirm Password** (Registration page): Input area for users to confirm password, must match password input for successful registration.
+* **Cancel**: Cancellation button, clearing input text allowing users to refill entries.
+* **Login/Registration Button**: Button allowing users to login to their account or register for a new account.
+* **Remember Me Checkbox**: Checkbox, enabling users to allow site to remember login credentials.
+* **Forgot Password?**: Option allowing users to receive a new password to their registered e-mail in the event they forger their current password.
+
+</details>
+
+<details>
+<summary>User Profile page:</summary>
+
+* **Default Delivery Information**: Form prefilled with users current delivery information, users can updated their information here.
+* **Order History**: Summary view of historic orders showing key order information and allowing users to view copy of order confirmation pages.
+
+</details>
+
 
 &nbsp;
 
