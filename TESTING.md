@@ -305,7 +305,7 @@ Create signals which call the 'calculate_avg_rating' function, when the ProductR
 
 </detail>
 
-### Pagination - Workout Programming
+### Pagination - Workout Programming:
 
 To ensure the future proofing of the site, it is important that the programming pages, showing daily workouts are paginated. Without pagination, these pages would quickly grow to be extremely long and have a negative effect on user experience.
 
@@ -324,7 +324,7 @@ One small issue I encountered, was the pagination causing the programme category
 
 </detail>
 
-#### Datepicker use for choosing programmed workout date.
+#### Datepicker use for choosing programmed workout date:
 
 To ensure a positive user experience, I felt it was important to include a visual datepicker for date selection on the 'Workout Management' and 'Edit Workout' pages. Used a datepicker would also ensure the correct date format is input, avoiding unnecessary form validation errors.
 
@@ -357,6 +357,19 @@ In order for the form to render with the added widget, the jinja formatting for 
 
 </detail>
 
-#### Unique slug creation for programmed workouts.
-
 ## Issues still to overcome
+
+### Improved slug generation for workout posts:
+
+Currently the url-slug generated when workouts are posted is a combination of the category friendly name and the title.
+
+![Workout Blog Slug](media/workout-blog-slug.PNG)
+
+Site admins only plan to post one workout per day, so this is currently not an issue. However, there is still danger of human error causing a non-unique slug error. Adding a randomly generated ID to the slug would reduce this risk and be an improvement in future.
+
+### Restrict reviews to verified purchasers:
+
+Currently anyone with a registered profile can leave a review for a product, even if they have not purchased it yet - however, customers who have purchased the product are marked as 'verified purchaser' when leaving a review. An improvement would be to restrict users to only be able to leave a review after they have purchased the product.
+
+This could be managed via implementing signals to mark a user as a verified purchaser of a product on successful purchase completion.
+
