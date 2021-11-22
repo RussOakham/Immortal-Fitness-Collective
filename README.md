@@ -673,6 +673,34 @@ Data is pre-filled with exisiting workout information on page load.
 
 </details>
 
+<details>
+<summary>Bag page:</summary>
+
+* **Items in bag summary**: Summary view of all items added to bag, allowing users to update item quantities and remove items.
+* **Bag Value Summary**: Summary showing monetary value of bag, including delivery charge.
+* **Keep Shopping/Secure Checkout Buttons**: Buttons allowing users to proceed to secure checkout and also to navigate back to 'all' products page to continue shopping.
+
+</details>
+
+<details>
+<summary>Secure Checkout page:</summary>
+
+* **Customer Details**: Form inputs for customer to input name and e-mail address.
+* **Delivery Details**: Form inputs for customer to input delivery information.
+* **Save Delivery Info Checkbox**: Checkbox allowing customers to save delivery information to their profile.
+* **Payment Details**: Form input for customers to input card payment information, using stripe secure payment integration.
+* **Order Summary**: Summary view of all items in order, allowing customers to easily check accuracy.
+* **Adjust Bag/Complete Order Buttons**: Buttons allowing users to proceed with payment or to navigate back to 'bag' page to adjust their order.
+
+</details>
+
+<details>
+<summary>Order Confirmation page:</summary>
+
+* **Order Summary**: Summary view of all items in order, allowing customers to easily check accuracy.
+* **Back to Profile Buttons**: Buttons allowing users to navigate back to 'profile' page.
+
+</details>
 
 &nbsp;
 
@@ -976,7 +1004,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
 
   Via Heroku dashboard config_vars menu:
   
-  ![Config-Vars](media/heroku-config-vars.PNG)
+  ![Config-Vars](media/heroku-config-vars.png)
 
 - Add hostname of your Heroku app to settings.py
 
