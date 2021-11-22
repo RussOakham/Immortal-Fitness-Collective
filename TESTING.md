@@ -162,6 +162,9 @@ All apps now received a score of over 9/10, any errors that do remain are either
 
 After the above corrections, Pylint was still displaying a handful of warnings, however, these were false-positive results for the following reasons:
 
+- import-outside-toplevel: This is flagging for the signal import in apps.py files, which is acceptable.
+- unused-import, unused-argument and unused-variable: Flagging in various places, but all imports are required for method functionality.
+- missing-module-docstring: Flagging on unused files automatically created by django, such as __init.py.
 - invalid-name & unused-argument: 'e' is an accepted variable, used to capture errors in error handling functionality.
 - 'env' is the local file used to configure the development environment, as it is not pushed to live via .gitignore, pylint incorrectly believes the function is not used.
 
@@ -176,6 +179,19 @@ To clean up these false positives, I created a .pylintrc file and added the belo
 ### Google Lighthouse Audit
 
 I used Google's lighthouse audit to test the website conforms positively with Google's performance metrics, with the intent to achieve scores of 90% in all areas on desktop.
+
+![Google Lighthouse Audit Score](media/Google-Lighthouse-Audit.PNG)
+
+This shows 90%+ scores for all metrics except for performance. Upon checking the reasoning for the low performance score I decided to take no further action for the below reasons:
+
+<details>
+<Summary>Performance</Summary>
+
+![Performance Score](media/Google-Lighthouse-Audit-Performance.PNG)
+
+The driving factors to the low-performance score are, 'Serve images in next-gen formats', 'Eliminate Render Blocking Resources' and 'Remove Unused JavaScript'. Due to Safari only recently adopting WebP compatibility, I chose to keep images as .jpg. The 'Render Blocking'Resources' and 'Remove Unused JavaScript', the sources driving these are external resources, such as Boostrap and jQuery. Therefore as the underlying cause is due to third party scripts, no further on-site optimisation is suitable.
+
+</details>
 
 ## Responsive Device & Browser Testing
 
@@ -201,7 +217,7 @@ Note: Microsoft released Internet Explorer in 2013 and ceased active development
 
 ## Testing User Stories
 
-<
+
 &nbsp;
 
 ## Issues I had to overcome

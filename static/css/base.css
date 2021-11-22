@@ -852,7 +852,7 @@ p {
 }
 
 .programme-card {
-  height: 59rem;
+  height: 61rem;
   border-radius: 3px;
   overflow: hidden;
   -webkit-box-shadow: var(--box-shadow);
@@ -984,7 +984,7 @@ p {
 .programme-card__details li {
   text-align: center;
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .programme-card__details li:not(:last-child) {
