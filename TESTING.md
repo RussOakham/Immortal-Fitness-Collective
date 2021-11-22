@@ -270,4 +270,93 @@ Note: Microsoft released Internet Explorer in 2013 and ceased active development
 
 ## Issues I had to overcome
 
+### Recalculating Average Rating on New/Removed Customer Review
+
+During the e-commerce learning project (Boutique Ado) I completed with Code Institute, product ratings were hard coded into the database. Therefore, I had to determine a way for products ratings to dynamically update with an average, when new reviews are added or existing reviews are deleted.
+
+To do this, I chose to take a similar approach to how order totals are updated as items are added/removed from the basket - via using signals.
+
+To implement this, I committed to the following steps;
+
+<detail>
+<summary>1. Create a 'ProductReview' model:</summary>
+
+Create a model to save customer review details. This included creating a `RATING_OPTIONS` array, to be used as `choices` in the `rating` field.
+
+![ProductReview Model](media/ProductReview-Model.PNG)
+
+</detail>
+
+<detail>
+<summary>2. Update Product model with local formula: 'calculate_avg_rating':</summary>
+
+Update the Product model with a new local formula, called 'calculate_avg_rating' which when called, will retrieve all reviews for the product and calculate the average rating score. To do this I leveraged pythons in-build `aggregate()` and django models in-build `AVG` functions.
+
+![Product Model](media/ProductReview-ProductModal.PNG)
+
+</detail>
+
+<detail>
+<summary>3. Create receiver signals, to call the 'calculate_avg_rating' formula on new and deleted reviews:</summary>
+
+Create signals which call the 'calculate_avg_rating' function, when the ProductReview model is used in conjunction with the save() or delete() python functions. Using `instance.product` ensures that only the rating for the product the user is interacting with, is updated.
+
+![ProductReview Model](media/ProductReview-signals.PNG)
+
+</detail>
+
+### Pagination - Workout Programming
+
+To ensure the future proofing of the site, it is important that the programming pages, showing daily workouts are paginated. Without pagination, these pages would quickly grow to be extremely long and have a negative effect on user experience.
+
+To implement pagination, I chose to use django's inbuilt `Paginator` functionality, for which I followed the django documentation to implement;
+
+[Django Paginator Documentation](https://docs.djangoproject.com/en/3.2/topics/pagination/#using-paginator-in-a-view-function)
+
+I used Bootstrap's pagination styling to ensure a visually pleasing aesthetic, using [this article](https://ordinarycoders.com/blog/article/django-pagination) from ordinary coders for inspiration.
+
+One small issue I encountered, was the pagination causing the programme category filter to break and all workouts to be displayed. To rectify this, I added the pagination code to the `if 'category'` request code in the view file, as seen below;
+
+<detail>
+<summary>all_workouts - views.py</summary>
+
+![Paginator](media/Pagination.PNG)
+
+</detail>
+
+#### Datepicker use for choosing programmed workout date.
+
+To ensure a positive user experience, I felt it was important to include a visual datepicker for date selection on the 'Workout Management' and 'Edit Workout' pages. Used a datepicker would also ensure the correct date format is input, avoiding unnecessary form validation errors.
+
+To achieve this I again leveraged Bootstrap and decided to use the [Bootstrap Datepicker](https://bootstrap-datepicker.readthedocs.io/en/latest/) widget.
+
+Following the documentation, I had to complete  the following steps for implementation:
+
+<detail>
+<summary>1. Install bootstrap_datepicker_plus and add to WorkoutForm in forms.py:</summary>
+
+In my IDE command line I installed the package via the following command, then adding to the requirements.txt;
+
+```console
+python install bootstrap_datepicker_plus
+python freeze > requirements.txt
+```
+
+I then added this to the WorkoutForm class in forms.py, adding the widget and updating settings to `format='%d/%m/%Y'` to align to django's `DateField` field types required format under the 'Workout' model.
+
+![Bootstrap DatePicker](media/Bootstrap-DatePicker.PNG)
+
+</detail>
+
+<detail>
+<summary>2. Update form creation in html template:</summary>
+
+In order for the form to render with the added widget, the jinja formatting for form creation must be updated to include {{ form.media }}.
+
+![Form generation with widget](media\workout-form.PNG)
+
+</detail>
+
+#### Unique slug creation for programmed workouts.
+
 ## Issues still to overcome
