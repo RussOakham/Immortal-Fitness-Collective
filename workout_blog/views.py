@@ -22,6 +22,10 @@ def all_workouts(request):
         categories = request.GET['category'].split(',')
         workouts = workouts.filter(category__name__in=categories)
         categories = WorkoutProgramme.objects.filter(name__in=categories)
+        paginator = Paginator(workouts, 5)
+
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
 
     template = 'workout_blog/workouts.html'
     context = {
