@@ -199,19 +199,21 @@ To test the responsiveness of the site I used [Chrome DevTools](https://develope
 
 ### Responsiveness
 
-![Desktop Responsive Testing]()
+![Desktop Responsive Testing](media/Responsive-Test-Desktop.PNG)
 
-![Tablet Responsive Testing]()
+![Tablet Responsive Testing](media/Responsive-Test-Tablet.PNG)
 
-![Mobile Responsive Testing]()
+![Mobile Responsive Testing](media/Responsive-Test-Mobile.PNG)
+
+To ensure responsive design, I used bootstrap grid, flexbox, containers and custom media queries to ensure all site pages resized responsively for all mainstream device viewports.
 
 ### Browser Compatibility
 
-![Browser Compatibility Testing]()
+![Browser Compatibility Testing](media/Responsive-Test-Browser.PNG)
 
-Additionally, the site does not load properly while using Internet Explorer, due to compatibility issues.
+The site does not load properly while using Internet Explorer, due to compatibility issues.
 
-According to [caniuse](https://caniuse.com/usage-table) the current usage of Internet Explorer is just 0.9% of total browser users, therefore I am comfortable not supporting IE in the site design.
+According to [caniuse](https://caniuse.com/usage-table) the current usage of Internet Explorer is 0.7% of total browser users, therefore I am comfortable not supporting IE in the site design.
 
 Note: Microsoft released Internet Explorer in 2013 and ceased active development in 2015 when Microsoft Edge was released as the replacement, as evidenced by this article from Microsoft's design team. Since 2015 Microsoft has been actively encouraging users to adopt Edge over Explorer, with the only remaining updates for IE, being security patches and bug fixes.
 
