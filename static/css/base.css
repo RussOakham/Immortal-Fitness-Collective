@@ -202,6 +202,10 @@ p {
   color: var(--colour-black);
 }
 
+.font-green {
+  color: var(--colour-green-dark);
+}
+
 .font-small {
   font-size: var(--small-font-size) !important;
 }
@@ -719,7 +723,7 @@ p {
 .message-container {
   position: fixed;
   top: 72px;
-  right: calc((100vw - 15px) / 2);
+  right: 1rem;
   z-index: 9999;
 }
 
