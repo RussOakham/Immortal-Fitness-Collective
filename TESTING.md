@@ -35,14 +35,14 @@ I have filtered these errors and warnings for all other results.
 <details>
 <summary>about-us.html</summary>
 
-![Base & Home](media/HTML-AboutUs.PNG)
+![Base & Home](media/HTML-AboutUS.PNG)
 
 </details>
 
 <details>
 <summary>Programme.html</summary>
 
-![About Us](media/HTML-AProgramme.PNG)
+![About Us](media/HTML-Programme.PNG)
 
 </details>
 
@@ -107,7 +107,7 @@ I validated the JavaScript with [JSHint](https://jshint.com/).
 
 JSHint incorrectly identifies 'Stripe' as an undefined variable, however this is a variable used by Stripe and identified within their own scripts.
 
-![script.js](media/stripe.PNG)
+![script.js](media/JS-Stripe.PNG)
 </details>
 
 ### Python
@@ -125,13 +125,13 @@ All apps now received a score of over 9/10, any errors that do remain are either
 <details>
 <summary>Immortal Fitness Collective</summary>
 
-![IFC App](media/immortal_fitness_collective.PNG)
+![IFC App](media/Python-immortal_fitness_collective.PNG)
 </details>
 
 <details>
 <summary>Bag</summary>
 
-![Bag App](media/bag.PNG)
+![Bag App](media/Python-bag.PNG)
 </details>
 
 <details>
@@ -417,8 +417,6 @@ The first block adds an event handler for the click event in elements of the cla
 The second block adds a handler for the click event of the confirmation button inside the modal. It finds the element which toggled the modal, by the `review-id`, and redirect the page to its href, the delete URL in this case.
 
 </detail>
-
-
 
 ## Issues still to overcome
 

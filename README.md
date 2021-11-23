@@ -1051,7 +1051,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
       - Choose the correct repository from search results.
       - Select "Connect"
 
-      ![Connect GitHub Repo](media/heroku-connect-github-repo.PNG)
+      ![Connect GitHub Repo](media/heroku-connect-github-repo.png)
 
     - Manual Deployment:
 
@@ -1059,7 +1059,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
       - Select "Deploy Branch"
       - Heroku will return "Your App has successfully deployed". If this shows an error, troubleshooting will be needed.
 
-      ![Deploy Branch](media/heroku-deploy-branch.PNG)
+      ![Deploy Branch](media/heroku-deploy-branch.png)
 
 #### Setting Heroku Environmental Variables
 
