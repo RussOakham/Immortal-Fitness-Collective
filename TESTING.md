@@ -369,6 +369,57 @@ release: python manage.py migrate
 
 Upon implementing this, the site build completed and site functionality returned to normal.
 
+### Add confirmation modal for deleting products/reviews from list view.
+
+To ensure items are not deleted by accident, it is important to add a confirmation modal to item deletions. For pages where only a single database item is present (product_details, workout_details) this is simple, however for pages where multiple items are displayed in list format, this is more complicated.
+
+After researching how to implement this correctly, I found the following article by [Elise Lennion](https://elennion.wordpress.com/2018/10/08/bootstrap-4-delete-confirmation-modal-for-list-of-items/).
+
+The solution is to use javascript (jQuery) to pass the modal the unique id of the element which last triggered the modal, to ensure deletion of the correct one.
+
+To accomplish this I carried out the following steps;
+
+Below uses product reviews as an example, but confirmation modals also added to product and workout deletion.
+
+<detail>
+<summary>1. Create Bootstrap Modal and insert to HTML using template:</summary>
+
+Create modal template in new file `templates/products/delete_review_modal.html`:
+
+![Delete review HTML](media/delete-review-html.PNG)
+
+Insert html to product_detail page;
+
+![Insert Modal HTML](media/delete-review-insert-html.PNG)
+
+</detail>
+
+<detail>
+<summary>2. Update Delete links to call modal:</summary>
+
+Update 'Delete' a-link to open Bootstap modal via `data-toggle`:
+
+![Delete Review A-Link](media\delete-review-a-link.PNG)
+
+Update `data-target` to target modal id. Also include `confirm-delete` in class,`{{review.id}}` in button id and href uses django routing to point to `delete_review` url with correct review id as usual, these are all used in our next step for jQuery targeting.
+
+</detail>
+
+<detail>
+<summary>3. Pass review ID to modal using jQuery and using this to create redirect link to delete_review url:</summary>
+
+Create a new static javaScript file in `static/products/js/delete_review.js`:
+
+![Delete Review JavaScript](media/delete-review-js.PNG)
+
+The first block adds an event handler for the click event in elements of the class `confirm-delete`. When the click happens, it writes the id of the element in the `review-id` of the modal.
+
+The second block adds a handler for the click event of the confirmation button inside the modal. It finds the element which toggled the modal, by the `review-id`, and redirect the page to its href, the delete URL in this case.
+
+</detail>
+
+
+
 ## Issues still to overcome
 
 ### Improved slug generation for workout posts:
