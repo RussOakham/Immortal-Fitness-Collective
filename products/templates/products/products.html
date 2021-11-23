@@ -129,7 +129,14 @@
                   {% if request.user.is_superuser %}
                     <div class="ml-3">
                       <a href="{% url 'edit_product' product.id %}" class="btn-text font-small">Edit</a>
-                      <a href="{% url 'delete_product' product.id %}" class="btn-text btn-danger font-small">Delete</a>
+                      <a href="{% url 'delete_product' product_id=product.id %}" 
+                        class="btn-text btn-danger font-small confirm-delete-product" 
+                        title="Delete" 
+                        data-toggle="modal" 
+                        data-target="#confirmDeleteModalProduct" 
+                        id="{{product.id}}">
+                          Delete
+                      </a>
                     </div>
                   {% endif %}
                 </div>
@@ -149,14 +156,26 @@
   </a>
 </div>
 
+<section class="delete-modal">
+
+{% include "products/delete_product_modal.html" %}
+  
+</section>
+
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
+
 <script type="text/javascript">
   $('.btt-link').click(function(e) {
     window.scrollTo(0,0)
   })
+</script>
+
+<script 
+  type="text/javascript"
+  src="{% static 'products\js\delete_product.js' %}">
 </script>
 
 <script type="text/javascript">
@@ -181,4 +200,5 @@
     }
   })
 </script>
+
 {% endblock %}
