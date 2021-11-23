@@ -73,7 +73,14 @@
             {% if request.user.is_superuser %}
               <div class="ml-3 float-left">
                 <a href="{% url 'edit_workout' workout.slug %}" class="btn-text font-small" aria-label="Edit Workout">Edit</a>
-                <a href="{% url 'delete_workout' workout.slug %}" class="btn-text btn-danger font-small" aria-label="Delete Workout">Delete</a>
+                <a href="{% url 'delete_workout' workout.slug %}" 
+                  class="btn-text btn-danger font-small confirm-delete-workout" 
+                  title="Delete" 
+                  data-toggle="modal" 
+                  data-target="#confirmDeleteModalWorkout" 
+                  id="{{workout.slug}}">
+                    Delete
+                </a>
               </div>
             {% endif %}
             <div class="font-small float-right text-muted">
@@ -84,6 +91,22 @@
     </div>
   </div>
 </section>
+
+<section class="delete-modal">
+
+{% include "workout_blog/delete_workout_modal.html" %}
+  
+</section>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script 
+  type="text/javascript"
+  src="{% static 'workout_blog\js\delete_workout.js' %}">
+</script>
 
 {% endblock %}
 
