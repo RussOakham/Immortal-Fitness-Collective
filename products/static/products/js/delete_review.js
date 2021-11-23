@@ -1,9 +1,9 @@
 $(document).on("click", ".confirm-delete", function () {
-  $("#confirmDeleteModal").attr("review-id", $(this).attr("id"));
+  $("#confirmDeleteModalReview").attr("review-id", $(this).attr("id"));
 });
 
-$(document).on("click", "#confirmDeleteButtonModal", function () {
-  var review = $("#confirmDeleteButtonModal")
+$(document).on("click", "#confirmDeleteButtonModalReview", function () {
+  var review = $("#confirmDeleteButtonModalReview")
     .closest(".modal")
     .attr("review-id");
   window.location = $("#".concat(review)).attr("href");
