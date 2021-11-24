@@ -1,4 +1,4 @@
-# **Immortal Fitness Collective** - by Russell Oakham
+# :weight_lifting: **Immortal Fitness Collective** :weight_lifting: - by Russell Oakham
 
 ## **Project overview**
 
@@ -334,7 +334,6 @@ Overview of site and page structure, explaining functionality and purpose.
 <summary>Home Page:</summary>
 
 - _Hero Banner_: Promote 'Immortal Fitness Collective' brand awareness and call to action.
-- _Testimonials_: Customer testimonials to build brand confidence. -- TO DO --
 - _Programme Overview_: Banner promoting free fitness programmes on offer.
 - _Contact Us_: Modal popup to submit contact request form, so users can ask additional questions.
 
@@ -367,7 +366,7 @@ Overview of site and page structure, explaining functionality and purpose.
 <details>
 <summary>Shop / Product Catalogue:</summary>
 
-- _Search Bar_: Text input bar, allowing users to search products by keyword, category and minimum rating.
+- _Search Bar_: Text input bar, allowing users to search products by keyword in name and description.
 - _Product Catalogue_: Card format view of products in shop, showing title, image, rating, price and buy now option. Catalogue with update in line with search parameters entered in search bar.
 
 </details>
@@ -381,9 +380,41 @@ Overview of site and page structure, explaining functionality and purpose.
 - _Description & Details_: Description of product, including any relevant details.
 - _Size Picker_: Allows users to choose product size if applicable.
 - _Add to Cart_: Button allowing customers to add to cart.
-- _Product Price_: Overview of product price showing ex VAT, VAT and Total values.
+- _Product Price_: Overview of product price showing gross price, delivery cost and total values.
 - _Rate & Review_: Input area, allowing users to submit a rating and review for items they have purchased.
 - _Historic Reviews_: List of reviews submitted by users for the product.
+
+</details>
+
+<details>
+<summary>Add Product:</summary>
+
+_Input areas for below workout data points_:
+
+- _Product Title_: Text
+- _SKU_: Text
+- _Description & Details_: Text
+- _Size Picker_: Integer
+- _Rating_: Numeric
+- _Product Price_: Numeric
+- _Product Image_: File Upload
+
+</details>
+
+<details>
+<summary>Edit Product:</summary>
+
+Inputs are pre-populated with historic workout information.
+
+_Input areas for below workout data points_:
+
+- _Product Title_: Text
+- _SKU_: Text
+- _Description & Details_: Text
+- _Size Picker_: Integer
+- _Rating_: Numeric
+- _Product Price_: Numeric
+- _Product Image_: File Upload
 
 </details>
 
@@ -440,7 +471,8 @@ All inputs will pre-fill with customer information if user already logged in.
 <details>
 <summary>Add Workout:</summary>
 
-- _Input areas for below workout data points_:
+_Input areas for below workout data points_:
+
 - Date - Date Picker
 - Strength Workout Title - Text
 - Strength Workout - Text
@@ -456,7 +488,8 @@ All inputs will pre-fill with customer information if user already logged in.
 
 Inputs are pre-populated with historic workout information.
 
-- _Input areas for below workout data points_:
+_Input areas for below workout data points_:
+
 - Date - Date Picker
 - Strength Workout Title - Text
 - Strength Workout - Text
@@ -481,7 +514,7 @@ This is the sensory design section of a website, or how it looks, feels and soun
 
 #### **Colour & Styling**
 
-Upon deciding the brand the website as 'Immortal Fitness Collective' I found [this](markdown-resources/img/immortal-fc-logo.png) in Canva.
+Upon deciding the brand the website as 'Immortal Fitness Collective' I created [this](markdown-resources/img/immortal-fc-logo.png) logo in Canva.
 
 I decided to style the logo with the following three colours, to evoke the related emotions;
 
@@ -489,7 +522,7 @@ I decided to style the logo with the following three colours, to evoke the relat
 - Gun metal grey: To represent industry and hard work required to achieve the goal.
 - White: To denote transparency and honesty found in hard work.
 
-These colours also serve to provide a light and clean aesthetic, which fits desired design of the wider site very well. Once these colours were picked, I used Canva's colour palette generator to find complementary colours to use across the site.
+These colours also serve to provide a light and clean aesthetic, which fits desired design of the wider site very well. Once these colours were picked, I used Canva's colour palette generator to find inspiration for complementary colours to use across the site.
 
 <details>
 <summary>Colour Palette</summary>
@@ -502,13 +535,15 @@ I also used a selection of off-white and off-black colours to provide additional
 
 #### **Language/Tone**
 
-I wanted the language to reflect a semiserious but fun atmosphere, reflecting a the brands goal to deliver fitness programming via challenging, but fun fitness programming. Therefore content was written in this style, avoiding overly technical or formal language where possible.
+I wanted the language to reflect a semiserious but fun atmosphere, reflecting a the brands goal to deliver fitness programming via challenging, but fun workout programming. Therefore content was written in this style, avoiding overly technical or formal language where possible.
 
 Similarly, I wanted to use fonts that reinforce the identity of the site, while remaining easy to read. To achieve this I used the following two Google Fonts;
 
 - Roboto Mono - A monospaced addition to the Roboto type family, optimised for readability on screen of of all sizes and device types.
 - Poppins - A geometric sans serif, designed for to be monolinear and highly legible.
 - Sans-serif - Web safe font, used if primary two fonts fail to load.
+
+All these fonts are stylized with strong, straight lines - which reflects the feeling 'no-nonsense' messaging the site is trying to achieve.
 
 #### **Styling Considerations**
 
@@ -519,6 +554,13 @@ Before beginning development, I listed some styling ideas that I felt benefit th
   - Sticky top
   - Mobile: 'Burger' menu icon, expanding on click.
   - Logo: Navigates to the home page on click.
+  - Product Categories quick links
+  - Product Search Bar
+- Programming
+  - Blog style format, showing workouts for relevant programme
+- Product Pages:
+  - 'Leave a Review' form on page with 1-5 star rating.
+  - Historical Reviews rendered in list format.
 
 ## 2. **Features**
 
@@ -565,7 +607,7 @@ Both the Header and Footer are present and consistent on all website pages.
 <details>
 <summary>Programming pages:</summary>
 
-* **Latest Workouts**: Details of latest programmed workouts..
+* **Latest Workouts**: Details of latest programmed workouts.
 * **URL Filtering**: The navigation menu has links to both the fitness programmes on offer, clicking on each will automatically display workouts filtered by the programme you have selected.
 * **Back to top button**: Button situated in bottom right of screen, allowing users to instantly relocate their view to the top of the page.
 
@@ -605,34 +647,36 @@ Detailed information on selected product and shopping options:
 <details>
 <summary>Product Management Page:</summary>
 
-* **Input areas for below product data points**:
-  * _Category_ - Drop down menu
-  * _SKU_ - Text
-  * _Name_ - Text
-  * _Description_ - Text
-  * _Has Sizes_ - Drop down menu
-  * _Has Shoe Sizes_ - Drop down menu
-  * _Rating_ - Numeric
-  * _Price_ - Numeric
-  * _image url_ - Text
-  * _select image_ - file upload
+**Input areas for below product data points**:
+
+* _Category_ - Drop down menu
+* _SKU_ - Text
+* _Name_ - Text
+* _Description_ - Text
+* _Has Sizes_ - Drop down menu
+* _Has Shoe Sizes_ - Drop down menu
+* _Rating_ - Numeric
+* _Price_ - Numeric
+* _image url_ - Text
+* _select image_ - file upload
 
 </details>
 
 <details>
 <summary>Edit Product Page:</summary>
 
-* **Input areas for below product data points**:
-  * _Category_ - Drop down menu
-  * _SKU_ - Text
-  * _Name_ - Text
-  * _Description_ - Text
-  * _Has Sizes_ - Drop down menu
-  * _Has Shoe Sizes_ - Drop down menu
-  * _Rating_ - Numeric
-  * _Price_ - Numeric
-  * _image url_ - Text
-  * _select image_ - file upload
+**Input areas for below product data points**:
+
+* _Category_ - Drop down menu
+* _SKU_ - Text
+* _Name_ - Text
+* _Description_ - Text
+* _Has Sizes_ - Drop down menu
+* _Has Shoe Sizes_ - Drop down menu
+* _Rating_ - Numeric
+* _Price_ - Numeric
+* _image url_ - Text
+* _select image_ - file upload
 
 Data is pre-filled with existing product information on page load.
 
@@ -641,32 +685,34 @@ Data is pre-filled with existing product information on page load.
 <details>
 <summary>Workout Management Page:</summary>
 
-* **Input areas for below workout data points**:
-  * _Category_ - Drop down menu
-  * _Title_ - Text
-  * _Workout Date_ - Date picker
-  * _Weightlifting Title_ - Text
-  * _Weightlifting Description_ - Text
-  * _Weightlifting Title_ - Text
-  * _Weightlifting Description_ - Text
-  * _Weightlifting Title_ - Text
-  * _Weightlifting Description_ - Text
+**Input areas for below workout data points**:
+
+* _Category_ - Drop down menu
+* _Title_ - Text
+* _Workout Date_ - Date picker
+* _Weightlifting Title_ - Text
+* _Weightlifting Description_ - Text
+* _Weightlifting Title_ - Text
+* _Weightlifting Description_ - Text
+* _Weightlifting Title_ - Text
+* _Weightlifting Description_ - Text
 
 </details>
 
 <details>
 <summary>Edit Workout Page:</summary>
 
-* **Input areas for below workout data points**:
-  * _Category_ - Drop down menu
-  * _Title_ - Text
-  * _Workout Date_ - Date picker
-  * _Weightlifting Title_ - Text
-  * _Weightlifting Description_ - Text
-  * _Weightlifting Title_ - Text
-  * _Weightlifting Description_ - Text
-  * _Weightlifting Title_ - Text
-  * _Weightlifting Description_ - Text
+**Input areas for below workout data points**:
+
+* _Category_ - Drop down menu
+* _Title_ - Text
+* _Workout Date_ - Date picker
+* _Weightlifting Title_ - Text
+* _Weightlifting Description_ - Text
+* _Weightlifting Title_ - Text
+* _Weightlifting Description_ - Text
+* _Weightlifting Title_ - Text
+* _Weightlifting Description_ - Text
 
 Data is pre-filled with existing workout information on page load.
 
@@ -688,7 +734,7 @@ Data is pre-filled with existing workout information on page load.
 <details>
 <summary>User Profile page:</summary>
 
-* **Default Delivery Information**: Form pre-filled with users current delivery information, users can updated their information here.
+* **Default Delivery Information**: Form pre-filled with users current delivery information, users can update their information here.
 * **Order History**: Summary view of historic orders showing key order information and allowing users to view copy of order confirmation pages.
 
 </details>
