@@ -125,7 +125,7 @@ All apps now received a score of over 9/10, any errors that do remain are either
 <details>
 <summary>Immortal Fitness Collective</summary>
 
-![IFC App](media\Python-immoratal_fitness_collective.PNG)
+![IFC App](media/Python-immoratal_fitness_collective.PNG)
 </details>
 
 <details>
@@ -289,9 +289,9 @@ Create a model to save customer review details. This included creating a `RATING
 </details>
 
 <details>
-<summary>2. Update Product model with local formula: 'calculate_avg_rating':</summary>
+<summary>2. Update Product model with local formula: `calculate_avg_rating` :</summary>
 
-Update the Product model with a new local formula, called 'calculate_avg_rating' which when called, will retrieve all reviews for the product and calculate the average rating score. To do this I leveraged pythons in-build `aggregate()` and django models in-build `AVG` functions.
+Update the Product model with a new local formula, called `calculate_avg_rating` which when called, will retrieve all reviews for the product and calculate the average rating score. To do this I leveraged pythons in-build `aggregate()` and django models in-build `AVG` functions.
 
 ![Product Model](media/ProductReview-ProductModal.PNG)
 
@@ -300,7 +300,7 @@ Update the Product model with a new local formula, called 'calculate_avg_rating'
 <details>
 <summary>3. Create receiver signals, to call the 'calculate_avg_rating' formula on new and deleted reviews:</summary>
 
-Create signals which call the 'calculate_avg_rating' function, when the ProductReview model is used in conjunction with the save() or delete() python functions. Using `instance.product` ensures that only the rating for the product the user is interacting with, is updated.
+Create signals which call the `calculate_avg_rating` function, when the ProductReview model is used in conjunction with the `save()` or `delete()` python functions. Using `instance.product` ensures that only the rating for the product the user is interacting with, is updated.
 
 ![ProductReview Model](media/ProductReview-signals.PNG)
 
@@ -329,16 +329,16 @@ One small issue I encountered, was the pagination causing the programme category
 
 &nbsp;
 
-#### Datepicker use for choosing programmed workout date
+### Datepicker use for choosing programmed workout date
 
-To ensure a positive user experience, I felt it was important to include a visual datepicker for date selection on the 'Workout Management' and 'Edit Workout' pages. Used a datepicker would also ensure the correct date format is input, avoiding unnecessary form validation errors.
+To ensure a positive user experience, I felt it was important to include an interactive datepicker for date selection on the 'Workout Management' and 'Edit Workout' pages. Using a datepicker would also ensure the correct date format is input, avoiding unnecessary form validation errors.
 
 To achieve this I again leveraged Bootstrap and decided to use the [Bootstrap Datepicker](https://bootstrap-datepicker.readthedocs.io/en/latest/) widget.
 
 Following the documentation, I had to complete  the following steps for implementation:
 
 <details>
-<summary>1. Install bootstrap_datepicker_plus and add to WorkoutForm in forms.py:</summary>
+<summary>1. Install `bootstrap_datepicker_plus` and add to `WorkoutForm` in `forms.py`:</summary>
 
 In my IDE command line I installed the package via the following command, then adding to the requirements.txt;
 
@@ -347,7 +347,7 @@ python install bootstrap_datepicker_plus
 python freeze > requirements.txt
 ```
 
-I then added this to the WorkoutForm class in forms.py, adding the widget and updating settings to `format='%d/%m/%Y'` to align to django's `DateField` field types required format under the 'Workout' model.
+I then added this to the `WorkoutForm` class in `forms.py`, adding the widget and updating settings to `format='%d/%m/%Y'` to align to django's `DateField` field types required format under the `Workout` model.
 
 ![Bootstrap DatePicker](media/Bootstrap-DatePicker.PNG)
 
@@ -358,7 +358,7 @@ I then added this to the WorkoutForm class in forms.py, adding the widget and up
 
 In order for the form to render with the added widget, the jinja formatting for form creation must be updated to include {{ form.media }}.
 
-![Form generation with widget](media\workout-form.PNG)
+![Form generation with widget](media/workout-form.PNG)
 
 </details>
 
@@ -388,7 +388,7 @@ The solution is to use javascript (jQuery) to pass the modal the unique id of th
 
 To accomplish this I carried out the following steps;
 
-Below uses product reviews as an example, but confirmation modals also added to product and workout deletion.
+Note: Below uses product reviews as an example, but confirmation modals also added to product and workout deletion.
 
 <details>
 <summary>1. Create Bootstrap Modal and insert to HTML using template:</summary>
@@ -397,7 +397,7 @@ Create modal template in new file `templates/products/delete_review_modal.html`:
 
 ![Delete review HTML](media/delete-review-html.PNG)
 
-Insert html to product_detail page;
+Insert html to `product_detail` page;
 
 ![Insert Modal HTML](media/delete-review-insert-html.PNG)
 
@@ -408,7 +408,7 @@ Insert html to product_detail page;
 
 Update 'Delete' a-link to open Bootstap modal via `data-toggle`:
 
-![Delete Review A-Link](media\delete-review-a-link.PNG)
+![Delete Review A-Link](media/delete-review-a-link.PNG)
 
 Update `data-target` to target modal id. Also include `confirm-delete` in class,`{{review.id}}` in button id and href uses django routing to point to `delete_review` url with correct review id as usual, these are all used in our next step for jQuery targeting.
 
@@ -433,11 +433,11 @@ The second block adds a handler for the click event of the confirmation button i
 
 ### Improved slug generation for workout posts
 
-Currently the url-slug generated when workouts are posted is a combination of the category friendly name and the title.
+Currently the url-slug generated for workout posts, is a combination of the category `friendly_name` and `title`.
 
 ![Workout Blog Slug](media/workout-blog-slug.PNG)
 
-Site admins only plan to post one workout per day, so this is currently not an issue. However, there is still danger of human error causing a non-unique slug error. Adding a randomly generated ID to the slug would reduce this risk and be an improvement in future.
+Currently, site admins only plan to post one workout per programme per day, so this is not an issue at this time. However, there is still danger of human error causing a non-unique slug error. Adding a randomly generated ID to the slug would reduce this risk and be an improvement in future.
 
 ### Restrict reviews to verified purchasers
 
