@@ -781,11 +781,11 @@ Data is pre-filled with existing workout information on page load.
 
 #### Subscriptions
 
-The site notes Immortal Fitness Collective is planning to expand its offering with a nutrition programme to be launched in future. This could be monetized via integration of [Stripe Billing](https://stripe.com/gb/billing), to allow customer subscriptions.
+The site notes Immortal Fitness Collective is planning to expand its offering with a nutrition programme to be launched in the future. This could be monetized via integration of [Stripe Billing](https://stripe.com/gb/billing), to allow customer subscriptions.
 
 #### Expanded Search
 
-The product search functionality can be expanded to include additional search criteria such as search by product rating.
+The product search functionality can be expanded to include additional search criteria such as search by product rating or available sizes.
 
 #### Social Media Integration
 
@@ -799,7 +799,7 @@ Integrate Google and Apply Pay to the checkout experience, allowing users expand
 
 ## 3. **Database Design**
 
-Relational databases were used for this project. SQLite was used during development, while Heroku PostgreSQL is used in production. The database can be seen in the below diagram.
+Relational databases were used for this project. SQLite was used during development, while Heroku PostgreSQL is used in production. The database schema can be seen in the below diagram.
 
 ![Immortal Fitness Collective Relational Database](media/Immortal-Fitness-Collective-dbdiagram.png)
 
@@ -812,10 +812,10 @@ Relational databases were used for this project. SQLite was used during developm
 Languages
 </summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> - Programming language providing content and structure of the website.</li>
-<li><a href="https://en.wikipedia.org/wiki/CSS">CSS</a> - Programming language providing styling of the website.</li>
-<li><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> - Programming language used for various interactive elements of the website, including game logic, audio options etc.</li>
-<li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> - Programming language used to drive core site functionality including user login and push/retrieving database information.</li>
+<li><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> - Provides content and structure of the website.</li>
+<li><a href="https://en.wikipedia.org/wiki/CSS">CSS</a> - Provides styling of the website.</li>
+<li><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> - Used for various interactive elements of the website, including game logic, audio options etc.</li>
+<li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> - Used to drive core site functionality including user login and push/retrieving database information.</li>
 <li><a href="https://en.wikipedia.org/wiki/Jinja_(template_engine)">Jinja</a> - Used to generate HTML from site templates</li>
 </ul>
 </details>
@@ -827,8 +827,6 @@ Languages
 <li><a href="https://fontawesome.com/">Font Awesome</a> - Library used for icons, such as social links and other images.</li>
 <li><a href="https://fonts.google.com/">Google Fonts</a> - Font style library.</li>
 <li><a href="https://jqueryui.com/">jQuery</a> - JavaScript library used for simplification of JS scripts and DOM manipulation.</li>
-<li><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> - Micro-framework to simplify Python scripting and web server tasks.</li>
-<li><a href="https://werkzeug.palletsprojects.com/en/1.0.x/">Werkzeug</a> - Python library to manage user management integrity.</li>
 </ul>
 </details>
 
@@ -837,9 +835,6 @@ Languages
 <ul>
 <li>
   <a href="https://www.djangoproject.com/">Django</a> - Python based web framework, allowing rapid development and clean, pragmatic design. Used throughout the site to manage all back-end functionality and front end rendering.
-</li>
-<li>
-  <a href="https://jquery.com/">jQuery</a> - JavaScript library, allowing quick and simple DOM manipulation and event handling.
 </li>
 </ul>
 </details>
@@ -880,6 +875,9 @@ Languages
 <summary>Deployment Platform</summary>
 <ul>
 <li><a href="https://www.heroku.com/">Heroku</a> - Remote hosting platform, for hosting of python driven websites and applications.</li>
+<li>
+<a href="https://aws.amazon.com/">Amazon AWS</a> - Used for saving and serving of site static and media files
+</li>
 </ul>
 </details>
 
@@ -887,7 +885,7 @@ Languages
 
 ## 5. **Testing**
 
-The testing process can be seen in the [TESTING.md](testing.md) document.
+The testing process can be seen in the [TESTING.md](TESTING.md) document.
 
 &nbsp;
 
@@ -909,7 +907,7 @@ In a code editor of your choice;
 4. Click on the 'Code' button.
 5. Under 'HTTPS' click the clipboard icon to the right of the URL.
 6. In your IDE of choice, open a repository or create a new repository.
-7. Open Terminal \('Terminal' then 'New Terminal' from the top ribbon menu in GitPod.\)
+7. Open Terminal \('Terminal' then 'New Terminal' from the top ribbon menu in your IDE.\)
 8. Type 'git clone', paste URL link and press enter.
 
 Additional information around these cloning steps can be found on [GitHub Pages Help Page](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
@@ -937,7 +935,7 @@ Ensure you add `env.py` to your `.gitignore` file, this will ensure none of your
 
 ##### Stripe
 
-To fine your Stripe keys, login to your Stripe account and under 'Developers' tab look for 'Publishable Key' and 'Secret Key' - these will be 'STRIPE_PUBLIC_KEY' and 'STRIPE_SECRET_KEY' respectively.
+To find your Stripe keys, login to your Stripe account and under 'Developers' tab look for 'Publishable Key' and 'Secret Key' - these will be 'STRIPE_PUBLIC_KEY' and 'STRIPE_SECRET_KEY' respectively.
 
 The webhook secret key 'STRIPE_WH_SECRET' can be found under 'Webhooks' once you have created an endpoint, which should be set to receive all events and match this url structure.
 
@@ -1015,7 +1013,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
     - Tells Heroku the command to launch the app.
     - To create:
 
-      - in your IDE terminal, type: python app.py > Procfile
+      - in your IDE terminal, type: `python app.py > Procfile`
       - Optional: If planning to add or update models within the app, Heroku will need to run migrations prior to deployment. To do this, add the following code to your Procfile:
 
       ```Procfile
@@ -1025,7 +1023,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
   - .gitignore (optional)
     - Lists files and directories which should be deployed to live app, such as files with environmental passkeys.
     - To create:
-      - In your IDE terminal, type: touch .gitignore
+      - In your IDE terminal, type: `touch .gitignore`
       - List the files and directories to be excluded from live deployment, within the .gitignore file.
       - Save in your repository root directory.
 
@@ -1037,7 +1035,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
   heroku login -i
   ```
 
-  - Migrate teh database into Postgres
+  - Migrate the database into Postgres
 
   ```console
   heroku run python manage.py migrate
@@ -1140,7 +1138,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
   - Select 'Deploy'
   - Ensure app is connected to correct repository
   - Under 'Automatic Deployment' section:
-  - Select 'Enable Automatic Deployment"
+    - Select 'Enable Automatic Deployment'
 
 #### Initial Commit
 
@@ -1155,8 +1153,8 @@ Within your local IDE commit and push your recent changes. Heroku will automatic
 
 - Select 'Properties > Static Website Hosting', using the following settings;
 
-  - Index Document: index.html
-  - Error Document: error.html
+  - Index Document: `index.html`
+  - Error Document: `error.html`
 
 - Under 'Permissions > CORS' use:
 
@@ -1182,8 +1180,8 @@ Within your local IDE commit and push your recent changes. Heroku will automatic
 - Under 'Permissions > Bucket Policy':
 
   - Generate Bucket Policy and take note of your `Bucket ARN`.
-  - Select: 'S3 Bucket Policy' as 'Type of Policy'
-  - Under 'Principle' enter '*'
+  - Select: 'S3 Bucket Policy' as `'Type of Policy'`
+  - Under 'Principle' enter `*`
   - Under 'Amazon Resource Name (ARN)' enter your `Bucket ARN`.
   - Select 'Add Statement'
   - Select 'Generate Policy'
@@ -1193,7 +1191,7 @@ Within your local IDE commit and push your recent changes. Heroku will automatic
 
 - Under 'Access Control List (ACL)', use the following settings:
 
-  - 'Everyone (public access)', select: 'List'.
+  - 'Everyone (public access)', select: List.
 
 ### Setting up AWS IAM (Identity and Access Management)
 
@@ -1248,7 +1246,7 @@ Download the `CSV` file containing your access key and secret access key. Keep t
 
 #### Install required packages
 
-- Install boto3 and django-storages, using the following code in your local IDE command line;
+- Install `boto3` and `django-storages`, using the following code in your local IDE command line;
 
 ```python
 pip install boto3
@@ -1290,12 +1288,12 @@ The following are websites and articles that I used for reference and inspiratio
 ### **Technical**
 
 - [Real Favicon Generator](https://realfavicongenerator.net/) - For the generation of Favicon icons and code.
-- [Materialize Docs](https://materializecss.com/getting-started.html) - For guidance on Materialize use and adaptations.
+- [Bootstrap Docs](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - For guidance on Bootstrap use and adaptations.
 - [CSS-Tricks](https://css-tricks.com/) - For implementing CSS effects such as box-shadow.
 - [w3Schools](https://www.w3schools.com/) - For checking proper syntax of HTML and CSS elements.
 - [Autoprefixer](https://autoprefixer.github.io/) - For generating CSS browser prefixes.
 - [Stackoverflow](https://stackoverflow.com/) - For researching and troubleshooting JavaScript and Python code issues.
-- [Django Documentation](https://docs.djangoproject.com/en/3.2/) - For research proper implementation of django functionality.
+- [Django Documentation](https://docs.djangoproject.com/en/3.2/) - For researching proper implementation of django functionality.
 
 ### **Content**
 
@@ -1322,6 +1320,7 @@ The photos and images used for this site were obtained.
   - [Dumbbell](media/dumbbell.jpg): [Marcel Huebner](https://www.shutterstock.com/g/MarcelHuebner)
   - [Kettle bell](media/kettlebell.jpg): [Lipskiy](https://www.shutterstock.com/g/unclepodger)
   - [No image](media/no-image-available.png): [Adobe Stock](https://stock.adobe.com/uk/search/images?k=no+image+available&asset_id=308681935)
+  - [Branded Apparel](media/IFC-badge-hoodie-white.png): [T-Shirt Studio](https://www.tshirtstudio.com/)
 
 ### **Acknowledgements**
 
