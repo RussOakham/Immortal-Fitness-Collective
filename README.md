@@ -2,15 +2,15 @@
 
 ## **Project overview**
 
-Immortal Fitness Collective is an online fitness platform, designed to promote fitness within their community via free online fitness plans and selling of fitness apparel, equipment and accessories.
+Immortal Fitness Collective is an online fitness platform, designed to promote healthy living within their community via free online workout plans and selling of fitness apparel, equipment and accessories.
 
-The site is created to engage users who have an interest in improving their personal fitness, with focus on two core fitness programming areas - improved general fitness (everyday fitness) and elite fitness for athletes (competitor fitness).
+The site is created to engage users who have an interest in improving their personal fitness, with focus on two core programming areas - improved general fitness (everyday fitness) and elite fitness for athletes (competitor fitness).
 
 I have used HTML, CSS, JavaScript and Python (Django and Flask) to build the site, ensuring it is fully responsive for user interaction on their chosen devices.
 
 ## **Deployed site**
 
-The live website can be found at teh following link; [Immortal Fitness Collective](https://immortal-fitness-collective.herokuapp.com/)
+The live website can be found at the following link; [Immortal Fitness Collective](https://immortal-fitness-collective.herokuapp.com/)
 
 ![Immortal Fitness Collective](media/ifc-responsive.PNG)
 
@@ -23,7 +23,6 @@ The following details should be used when trying to submit an order on the check
 - CVC: Any three digits
 
 ## **Table of Contents**
-
 
 * [**Project overview**](#project-overview)
 * [**Deployed site**](#deployed-site)
@@ -83,7 +82,6 @@ The following details should be used when trying to submit an order on the check
   + [**Acknowledgements**](#acknowledgements)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 ## 1. **UX**
 
@@ -281,7 +279,7 @@ Overview of UX design decisions, including examples of websites I have viewed as
       <td>US505</td>
       <td>Generic User</td>
       <td>Receive assurance personal and payment information is safe and secure</td>
-      <td>Confidently provide perosonal and payment information needed to make a purchase</td>
+      <td>Confidently provide personal and payment information needed to make a purchase</td>
     </tr>
     <tr>
       <td>US506</td>
@@ -485,7 +483,7 @@ This is the sensory design section of a website, or how it looks, feels and soun
 
 Upon deciding the brand the website as 'Immortal Fitness Collective' I found [this](markdown-resources/img/immortal-fc-logo.png) in Canva.
 
-I decided to style the logo with the following three colours, to envoke the related emotions;
+I decided to style the logo with the following three colours, to evoke the related emotions;
 
 - Gold: To represent a goal to be striven for.
 - Gun metal grey: To represent industry and hard work required to achieve the goal.
@@ -532,7 +530,9 @@ The site allows normal users to browse daily workouts and follow the free fitnes
 <summary>The Header:</summary>
 
 * **Website Logo**: Builds brand awareness amongst users.
+
 * **Navigation Bar**: Allows users to navigate the site easily and intuitively, as well as login/register their account and search for products
+
 </details>
 
 <details>
@@ -606,16 +606,16 @@ Detailed information on selected product and shopping options:
 <summary>Product Management Page:</summary>
 
 * **Input areas for below product data points**:
-    * _Category_ - Drop down menu
-    * _SKU_ - Text
-    * _Name_ - Text
-    * _Description_ - Text
-    * _Has Sizes_ - Drop down menu
-    * _Has Shoe Sizes_ - Drop down menu
-    * _Rating_ - Numeric
-    * _Price_ - Numeric
-    * _image url_ - Text
-    * _select image_ - file upload
+  * _Category_ - Drop down menu
+  * _SKU_ - Text
+  * _Name_ - Text
+  * _Description_ - Text
+  * _Has Sizes_ - Drop down menu
+  * _Has Shoe Sizes_ - Drop down menu
+  * _Rating_ - Numeric
+  * _Price_ - Numeric
+  * _image url_ - Text
+  * _select image_ - file upload
 
 </details>
 
@@ -623,18 +623,18 @@ Detailed information on selected product and shopping options:
 <summary>Edit Product Page:</summary>
 
 * **Input areas for below product data points**:
-    * _Category_ - Drop down menu
-    * _SKU_ - Text
-    * _Name_ - Text
-    * _Description_ - Text
-    * _Has Sizes_ - Drop down menu
-    * _Has Shoe Sizes_ - Drop down menu
-    * _Rating_ - Numeric
-    * _Price_ - Numeric
-    * _image url_ - Text
-    * _select image_ - file upload
+  * _Category_ - Drop down menu
+  * _SKU_ - Text
+  * _Name_ - Text
+  * _Description_ - Text
+  * _Has Sizes_ - Drop down menu
+  * _Has Shoe Sizes_ - Drop down menu
+  * _Rating_ - Numeric
+  * _Price_ - Numeric
+  * _image url_ - Text
+  * _select image_ - file upload
 
-Data is pre-filled with exisiting product information on page load.
+Data is pre-filled with existing product information on page load.
 
 </details>
 
@@ -642,15 +642,15 @@ Data is pre-filled with exisiting product information on page load.
 <summary>Workout Management Page:</summary>
 
 * **Input areas for below workout data points**:
-    * _Category_ - Drop down menu
-    * _Title_ - Text
-    * _Workout Date_ - Date picker
-    * _Weightlifting Title_ - Text
-    * _Weightlifting Description_ - Text
-    * _Weightlifting Title_ - Text
-    * _Weightlifting Description_ - Text
-    * _Weightlifting Title_ - Text
-    * _Weightlifting Description_ - Text
+  * _Category_ - Drop down menu
+  * _Title_ - Text
+  * _Workout Date_ - Date picker
+  * _Weightlifting Title_ - Text
+  * _Weightlifting Description_ - Text
+  * _Weightlifting Title_ - Text
+  * _Weightlifting Description_ - Text
+  * _Weightlifting Title_ - Text
+  * _Weightlifting Description_ - Text
 
 </details>
 
@@ -658,17 +658,17 @@ Data is pre-filled with exisiting product information on page load.
 <summary>Edit Workout Page:</summary>
 
 * **Input areas for below workout data points**:
-    * _Category_ - Drop down menu
-    * _Title_ - Text
-    * _Workout Date_ - Date picker
-    * _Weightlifting Title_ - Text
-    * _Weightlifting Description_ - Text
-    * _Weightlifting Title_ - Text
-    * _Weightlifting Description_ - Text
-    * _Weightlifting Title_ - Text
-    * _Weightlifting Description_ - Text
+  * _Category_ - Drop down menu
+  * _Title_ - Text
+  * _Workout Date_ - Date picker
+  * _Weightlifting Title_ - Text
+  * _Weightlifting Description_ - Text
+  * _Weightlifting Title_ - Text
+  * _Weightlifting Description_ - Text
+  * _Weightlifting Title_ - Text
+  * _Weightlifting Description_ - Text
 
-Data is pre-filled with exisiting workout information on page load.
+Data is pre-filled with existing workout information on page load.
 
 </details>
 
@@ -688,7 +688,7 @@ Data is pre-filled with exisiting workout information on page load.
 <details>
 <summary>User Profile page:</summary>
 
-* **Default Delivery Information**: Form prefilled with users current delivery information, users can updated their information here.
+* **Default Delivery Information**: Form pre-filled with users current delivery information, users can updated their information here.
 * **Order History**: Summary view of historic orders showing key order information and allowing users to view copy of order confirmation pages.
 
 </details>
@@ -814,7 +814,7 @@ Languages
 <li><a href="https://tinypng.com/">TinyPNG</a> & <a href="https://tinyjpg.com/">TinyJPG</a> -  Minimise image file sizes and maximise page load speed.</li>
 <li><a href="https://www.remove.bg/">remove.bg</a> - Remove backgrounds from png images.</li>
 <li><a href="https://www.canva.com/">Canva</a> - Color Palette Generation and Logo</li>
-<li><a href="https://imagecolorpicker.com/">Image Color Picker</a> - Determine Hex code color in exisiting graphics</li>
+<li><a href="https://imagecolorpicker.com/">Image Color Picker</a> - Determine Hex code color in existing graphics</li>
 <li><a href="https://realfavicongenerator.net/">Real Favicon Generator</a> - Generate favicons and icons for desktop and mobile usage.</li>
 <li><a href="https://autoprefixer.github.io/">Autoprefixer</a> - Vendor prefixes to CSS rules.</li>
 <li><a href="http://ami.responsivedesign.is/">Am I Responsive?</a> - Responsive design demo in ReadMe summary.</li>
@@ -923,7 +923,7 @@ Create a new superuser (super admin) for the site via entering the following cod
 python manage.py createsuperuser
 ```
 
-#### Run development server locally:
+#### Run development server locally
 
 To run a the application on your local development server, type the following command into your local IDE command line:
 
@@ -1038,7 +1038,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
   ```console
   ALLOWED_HOSTS = ['immortal-fitness-collective.herokuapp.com', 'localhost']
   ```
- 
+
 - From the Heroku application top menu:
 
   - Select 'Deploy'
@@ -1073,7 +1073,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
 
   - Under 'Config Vars', select "Reveal Config Vars"
   - Add following environment variables in key-value pairs, click "Add" to add additional pairings.
-   
+
     |**Key**|**Value**|
     |:-----|:-----|
     |AWS_ACCESS_KEY_ID|`<your variable here>`|
@@ -1100,7 +1100,7 @@ The site is hosted using [Heroku](https://www.heroku.com/), deployed directly fr
 
 Within your local IDE commit and push your recent changes. Heroku will automatically deploy the app once GitHub has received your pushed code.
 
-### Setting up Amazon S3 bucket:
+### Setting up Amazon S3 bucket
 
 - Create an [Amazon AWS](https://aws.amazon.com/) account.
 - Select S3 from the service menu and select create new bucket with below settings:
@@ -1169,9 +1169,9 @@ Within your local IDE commit and push your recent changes. Heroku will automatic
 
  ```console
   "Resource": [
-			      "<S3 Bucket ARN>",
-			      "<S3 Bucket ARN>/*"
-              ]
+  "<S3 Bucket ARN>",
+  "<S3 Bucket ARN>/*"
+    ]
  ```
 
   Using your S3 `Bucket ARN` from 'Create Bucket Policy' step
@@ -1179,7 +1179,6 @@ Within your local IDE commit and push your recent changes. Heroku will automatic
 - Click 'Next Step' and 'Review Policy'
 - Name your policy accordingly, e.g. 'IFC-Policy'
 - Select: 'Create Policy'
-
 
 #### Set Policy to User Group
 
@@ -1275,9 +1274,8 @@ The photos and images used for this site were obtained.
   - [Coach 3](media/coach-3.jpg): [Daniel Krason](https://www.shutterstock.com/g/danielkrason)
   - [Skipping Rope](media/skipping-rope.jpeg): [Pixabay](https://pixabay.com/photos/sport-fitness-workout-gym-crossfit-1283791/)
   - [Dumbbell](media/dumbbell.jpg): [Marcel Huebner](https://www.shutterstock.com/g/MarcelHuebner)
-  - [Kettlebell](media/kettlebell.jpg): [Lipskiy](https://www.shutterstock.com/g/unclepodger)
+  - [Kettle bell](media/kettlebell.jpg): [Lipskiy](https://www.shutterstock.com/g/unclepodger)
   - [No image](media/no-image-available.png): [Adobe Stock](https://stock.adobe.com/uk/search/images?k=no+image+available&asset_id=308681935)
-
 
 ### **Acknowledgements**
 
