@@ -36,4 +36,3 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile__form-input'
             self.fields[field].label = False
-            self.fields['default_phone_number'].label = "Please include country code e.g. +44"
