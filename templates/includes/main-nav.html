@@ -1,17 +1,17 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item d-blockd-md-none">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 {{ home_page }}" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" 
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 {{ about_us }}" 
                 href="{% url 'about_us' %}" id="about-us-link">About Us</a>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="programming-link"
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 {{ programming_page }}" href="#" id="programming-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Programming
             </a>
@@ -22,7 +22,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link"
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 {{ all_products }}" href="#" id="all-products-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
@@ -35,7 +35,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link"
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 {{ clothing }}" href="#" id="clothing-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Clothing
             </a>
@@ -48,7 +48,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="accessories-link"
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 {{ accessories }}" href="#" id="accessories-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Accessories
             </a>
@@ -62,7 +62,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="equipment-link"
+            <a class="logo-font font-weight-bold nav-link text-black {{ equipment }}" href="#" id="equipment-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Equipment
             </a>

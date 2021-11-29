@@ -20,6 +20,7 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    category = 'all_products'
 
     if request.GET:
         if 'sort' in request.GET:
@@ -41,6 +42,27 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+            for c in categories:
+                print(str(c))
+                if str(c) == 'tees_tanks':
+                    category = 'clothing'
+                if str(c) == 'footwear':
+                    category = 'clothing'
+                if str(c) == 'hoodies_longsleeves':
+                    category = 'clothing'
+                if str(c) == 'drinkware':
+                    category = 'accessories'
+                if str(c) == 'patches':
+                    category = 'accessories'
+                if str(c) == 'caps_beanies':
+                    category = 'accessories'
+                if str(c) == 'other':
+                    category = 'accessories'
+                if str(c) == 'skipping_ropes':
+                    category = 'equipment'
+                if str(c) == 'bells':
+                    category = 'equipment'
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -54,11 +76,13 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    print(category)
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        category: 'active'
     }
 
     return render(request, 'products/products.html', context)

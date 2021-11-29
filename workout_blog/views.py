@@ -31,7 +31,8 @@ def all_workouts(request):
     context = {
         'workouts': workouts,
         'current_category': categories,
-        'page_obj': page_obj
+        'page_obj': page_obj,
+        'programming_page': 'active',
     }
 
     return render(request, template, context)

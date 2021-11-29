@@ -7,11 +7,17 @@ def index(request):
     """ A view to return the index page """
 
     template = 'home/index.html'
-    return render(request, template)
+    context = {
+        "home_page": "active"
+    }
+    return render(request, template, context)
 
 
 def about_us(request):
     """ A view to return the about us page """
 
     template = 'home/about-us.html'
-    return render(request, template)
+    context = {
+        "about_us": "active"
+    }
+    return render(request, template, context)
