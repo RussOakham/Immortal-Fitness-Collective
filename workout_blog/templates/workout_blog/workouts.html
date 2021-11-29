@@ -57,18 +57,17 @@
               <div class="card-text">
                 {{ workout.weightlifting_workout | linebreaks }}
               </div>
-            {% endif %}
 
             <hr class="w-50 center-self">
+            {% endif %}
 
             {% if workout.metcon_title %}
               <h5 class="heading-tertiary">{{ workout.metcon_title }}</h5>
               <div class="card-text">
                 {{ workout.metcon_workout | linebreaks }}
               </div>
-            {% endif %}
-
             <hr class="w-50 center-self">
+            {% endif %}
 
             {% if workout.skills_title %}
               <h5 class="heading-tertiary">{{ workout.skills_title }}</h5>
