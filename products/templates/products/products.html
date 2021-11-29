@@ -104,10 +104,10 @@
             </div>
             <div class="product-card-footer">
               <div class="row">
-                <div class="col">
+                <div class="col product-card-footer__content margin-bottom-sm">
                   <p class="product-card-footer__price">£{{ product.price }}</p>
                   {% if product.category %}
-                  <p class="product-card-footer__rating">
+                  <p class="product-card-footer__category">
                     <a
                       class="product-card-footer__category text-muted"
                       href="{% url 'products' %}?category={{ product.category.name }}"
@@ -127,7 +127,7 @@
                   </p>
                   {% endif %}
                   {% if request.user.is_superuser %}
-                    <div class="ml-3">
+                    <div class="ml-3 text-center">
                       <a href="{% url 'edit_product' product.id %}" class="btn-text font-small">Edit</a>
                       <a href="{% url 'delete_product' product_id=product.id %}" 
                         class="btn-text btn-danger font-small confirm-delete-product" 

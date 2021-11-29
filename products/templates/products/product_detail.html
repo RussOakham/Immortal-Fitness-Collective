@@ -41,31 +41,33 @@
     <div class="col-12 col-md-6">
       <div class="product-detail__content-container vert-center">
         <div class="product-detail__content">
-          <h1 class="product-detail__name heading-secondary margin-bottom-med">
+          <h1 class="product-detail__name heading-secondary margin-bottom-sm">
             {{ product.name }}
           </h1>
-          <p class="product-detail__price">£{{ product.price }}</p>
-          {% if product.category %}
-          <p class="product-card-footer__rating">
-            <a
-              class="product-detail__category text-muted"
-              href="{% url 'products' %}?category={{ product.category.name }}"
-            >
-              <i class="fas fa-tag"></i> {{ product.category.friendly_name }}
-            </a>
-          </p>
-          {% endif %}
-          
-          {% if product.rating %}
-          <p class="product-detail__rating">
-            <i class="fas fa-star product-card-footer__icon"></i>
-            {{ product.rating }}
-          </p>
-          {% else %}
-          <p class="product-detail__rating">
-            <i class="fas fa-star product-card-footer__icon"></i> No Rating
-          </p>
-          {% endif %}
+          <div class="product-detail__content-top margin-bottom-sm">
+            <p class="product-detail__price">£{{ product.price }}</p>
+            {% if product.category %}
+            <p class="product-detail__rating">
+              <a
+                class="product-detail__category text-muted"
+                href="{% url 'products' %}?category={{ product.category.name }}"
+              >
+                <i class="fas fa-tag"></i> {{ product.category.friendly_name }}
+              </a>
+            </p>
+            {% endif %}
+            
+            {% if product.rating %}
+            <p class="product-detail__rating">
+              <i class="fas fa-star product-card-footer__icon"></i>
+              {{ product.rating }}
+            </p>
+            {% else %}
+            <p class="product-detail__rating">
+              <i class="fas fa-star product-card-footer__icon"></i> No Rating
+            </p>
+            {% endif %}
+          </div>
 
           {% if request.user.is_superuser %}
             <div class="ml-3">
