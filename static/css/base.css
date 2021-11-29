@@ -1225,7 +1225,7 @@ p {
   margin-left: 1rem;
 }
 
-/* ----------------  Image upload widget  ------------ */
+/* ----------------  Image upload widget & Form Styling  ------------ */
 
 .btn-file {
   position: relative;
@@ -1251,6 +1251,15 @@ p {
   background-color: var(--colour-red);
   border-color: var(--colour-red);
   border-radius: 0;
+}
+
+#div_id_default_phone_number {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#div_id_default_phone_number label {
+  color: #6c757d!important;
 }
 
 /* ----------------  Shopping Bag Page   ------------ */
