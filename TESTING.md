@@ -444,3 +444,11 @@ Currently, site admins only plan to post one workout per programme per day, so t
 Currently anyone with a registered profile can leave a review for a product, even if they have not purchased it yet - however, customers who have purchased the product are marked as 'verified purchaser' when leaving a review. An improvement would be to restrict users to only be able to leave a review after they have purchased the product.
 
 This could be managed via implementing signals to mark a user as a verified purchaser of a product on successful purchase completion.
+
+#### Improved phone number validation
+
+The phone number input field in both the profile and checkout models currently uses simple `CharField` validation, which leaves it open to human error such as inputting text or incorrect formats. I attempted to remedy this by using [django-phonenumber-field](https://pypi.org/project/django-phonenumber-field/0.2a3/), which allows you to use django to validate user input abides by a number of international phone number formats. While is worked well for the profile page, I encountered issues with the checkout page when attempted to update a phone number using the 'update delivery information' checkbox.
+
+Currently the python code handling stripe payment processing checks uses standard HTML form validation to check if `form.is_valid()' before processing payment, as the validation provided by 'django-phonenumber-field' is not accounted for here, the stripe payment was going through, despite the form returning an error.
+
+It is likely this can bug can be overcome in future via implementing a `clean()` method within the form, to allow custom validation to run properly, as mentioned in django's [Form API](https://docs.djangoproject.com/en/3.2/ref/forms/api/#django.forms.Form.clean) documentation.
