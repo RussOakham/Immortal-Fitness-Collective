@@ -1253,12 +1253,14 @@ p {
   border-radius: 0;
 }
 
-#div_id_default_phone_number {
+#div_id_default_phone_number,
+#div_id_phone_number {
   display: flex;
   flex-direction: column-reverse;
 }
 
-#div_id_default_phone_number label {
+#div_id_default_phone_number label,
+#div_id_phone_number label {
   color: #6c757d!important;
 }
 
